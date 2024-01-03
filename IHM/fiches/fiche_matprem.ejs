@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="css/fiche_matprem.css">
+<script src="js/fiches/fiche_matprem.js"></script>
+
+
+<% let newDataFiche=JSON.stringify(infoFiche); %>
+    <section class="fiche fichematprem">
+        <section class="zonetitre">
+            <section class="titrepage">
+                <div class="titre"></div>
+                <div class="elcour"></div>
+            </section>
+            <span class="closefiche">&#10005;</span>
+        </section>
+        <section class="zonecorps">
+            <input type="hidden" name="" id="cachefiche" value="<%= newDataFiche %>">
+            <section class="section section1">
+                <div class="grdata">
+                    <label for="">Code :</label>
+                    <input type="text" class="codetable" id="codematprem" disabled>
+                </div>
+                <div class="grdata">
+                    <label class="requis" for="">Libellé :</label>
+                    <input type="text" id="libmatprem" autocomplete="off">
+                </div>
+            </section>
+            <section class="section section2">
+                <div class="grdata">
+                    <label class="requis" for="">Conditionnement :</label>
+                    <select name="" id="listecond">
+                        <option value="1">Unités</option>
+                        <option value="2">Cartons</option>
+                        <option value="3">Boîtes</option>
+                    </select>
+                </div>
+                <div class="grdata">
+                    <label class="requis" for="">Stock alerte :</label>
+                    <input type="number" id="stockalerte" autocomplete="off" min="1">
+                </div>
+            </section>
+        </section>
+        <div class="zonebtn">
+            <button class="btnappli" id="btnannul">Annuler</button>
+            <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+        </div>
+    </section>

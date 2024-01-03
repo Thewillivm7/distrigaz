@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/configappli.css'>
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src='js/fiches/configappli.js'></script>
+</head>
+
+<body>
+    <section class="configappli">
+        <section class="zonetitre">
+            Configuration de l'application
+        </section>
+        <section class="zonemain_config">
+            <section class="zone zoneconfig">
+                <section class="section section1">
+                    <div class="grdata">
+                        <label for="">Titre de l'application</label>
+                        <input type="text" name="" id="titreappli">
+                    </div>
+                    <div class="gricone">
+                        <div class="grdata">
+                            <label for="">Logo de l'application</label>
+                            <select name="" id="listeicone"></select>
+                        </div>
+                        <img src="" alt="" id="iconeappli">
+                    </div>
+                </section>
+                <section class="section section2">
+                    <section class="zoneinit">
+                        <div class="grdata">
+                            <label for="">Base de données de l'application</label>
+                            <input type="text" name="" id="bddappli">
+                        </div>
+                        <div class="grdata">
+                            <button class="btnappli" id="btndata" disabled>Afficher données ...</button>
+                            <button class="btnappli" id="btnvue">Créer les vues</button>
+                        </div>
+                    </section>
+                    <section class="zoneinfobdd">
+                        <section class="zonetable">
+                            <div class="grdata">
+                                <label for="">Table menu</label>
+                                <span class="infobdd" id="tablemenu"></span>
+                            </div>
+                            <div class="grdata">
+                                <label for="">Table module</label>
+                                <span class="infobdd" id="tablemodule"></span>
+                            </div>
+                        </section>
+                        <section class="zonevue">
+                            <div class="grdata">
+                                <label for="">Vue menu</label>
+                                <span class="infobdd" id="vuemenu"></span>
+                            </div>
+                            <div class="grdata">
+                                <label for="">Vue module</label>
+                                <span class="infobdd" id="vuemodule"></span>
+                            </div>
+                        </section>
+                    </section>
+
+                </section>
+                <section class="section section3">
+
+                </section>
+                <section class="section section4">
+                    <div class="grdata">
+                        <label for="">Présentation du menu</label>
+                        <select name="" id="menuConfig">
+                            <option value="0">Par module</option>
+                            <option value="1">Par option</option>
+                        </select>
+                    </div>
+                </section>
+            </section>
+            <section class="zone zonetheme">
+                <div class="titretheme">Configuration des thèmes</div>
+            </section>
+        </section>
+
+        <section class="zonebtn">
+            <button class="btnappli" id="btnenrconfig">Enregistrer</button>
+        </section>
+    </section>
+</body>
+
+</html>

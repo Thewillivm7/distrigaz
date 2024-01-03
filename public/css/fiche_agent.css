@@ -1,0 +1,61 @@
+@import url("styles.css");
+.ficheagent {
+  width: max(50vw, 700px);
+  height: auto;
+  overflow: hidden;
+  transform: translateY(-2vh);
+  gap: 25px;
+}
+.ficheagent .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.ficheagent .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.ficheagent .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.ficheagent .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.ficheagent .zonetitre .closefiche:hover {
+  color: red;
+}
+.ficheagent .zonecorps {
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  gap: 45px;
+  overflow: hidden;
+  padding: 25px;
+}
+.ficheagent .zonecorps input[type=date] {
+  text-align: center;
+}
+.ficheagent .zonecorps #nomagent,
+.ficheagent .zonecorps #matragent {
+  text-transform: uppercase;
+}
+.ficheagent .zonecorps #prenomagent {
+  text-transform: capitalize;
+}
+.ficheagent .zonecorps .section {
+  gap: 25px;
+}
+.ficheagent .zonecorps .section .grdata {
+  gap: 15px;
+}
+.ficheagent .zonecorps .section2 {
+  grid-template-columns: 100px 1fr 1.5fr;
+}
+.ficheagent .zonecorps .section3 {
+  grid-template-columns: 1.5fr 2fr 0.75fr;
+}
+.ficheagent .zonecorps .section4 {
+  grid-template-columns: 0.75fr 1fr 1fr;
+}

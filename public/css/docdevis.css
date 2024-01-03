@@ -1,0 +1,175 @@
+@import url("styles.css");
+@media print {
+  body {
+    margin: 0;
+    box-shadow: none;
+  }
+}
+.docdevis {
+  width: 800px;
+  aspect-ratio: 0.6993006993;
+  overflow-y: auto;
+  padding: 28px;
+  grid-template-rows: auto 1fr auto auto;
+  padding-bottom: 15px;
+  gap: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+.docdevis .devisentete {
+  background-color: #fff;
+  grid-template-rows: 100px 1fr;
+  gap: 20px;
+  padding: 0 28px;
+}
+.docdevis .devisentete .lig1 {
+  grid-auto-flow: column;
+}
+.docdevis .devisentete .lig1 .zonelogo {
+  align-content: center;
+}
+.docdevis .devisentete .lig1 .zonelogo img {
+  width: 50%;
+}
+.docdevis .devisentete .lig1 .zoneinfodevis {
+  padding: 0 25px;
+  gap: 10px;
+  align-content: center;
+  justify-content: right;
+  text-align: right;
+}
+.docdevis .devisentete .lig1 .zoneinfodevis p {
+  font-size: 1.4em;
+  text-align: center;
+}
+.docdevis .devisentete .lig1 .zoneinfodevis span {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+.docdevis .devisentete .infoste {
+  gap: 5px;
+}
+.docdevis .devisentete .infoste .prev_nomste {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.docdevis .devisentete .lig3 {
+  grid-auto-flow: column;
+}
+.docdevis .devisentete .lig3 .infoclient #prev_nomclient {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.docdevis .devisentete .lig3 .infodate {
+  grid-auto-flow: column;
+  justify-content: right;
+  padding: 0 15px;
+  gap: 5px;
+  align-content: center;
+}
+.docdevis .devisentete .lig3 .infodate #prev_datedevis {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.docdevis .deviscorps {
+  grid-template-rows: 35px 1fr;
+  border: 1px solid #ccc;
+}
+.docdevis .deviscorps .enttabdevis,
+.docdevis .deviscorps .ligartdevis,
+.docdevis .deviscorps .infopieddevis {
+  background-color: #203229;
+  grid-template-columns: 50px 3fr 1fr 1fr 1fr;
+  align-content: center;
+  padding: 0 10px;
+  gap: 3px;
+}
+.docdevis .deviscorps .enttabdevis .colent,
+.docdevis .deviscorps .enttabdevis .ligartdevis,
+.docdevis .deviscorps .enttabdevis .colart,
+.docdevis .deviscorps .ligartdevis .colent,
+.docdevis .deviscorps .ligartdevis .ligartdevis,
+.docdevis .deviscorps .ligartdevis .colart,
+.docdevis .deviscorps .infopieddevis .colent,
+.docdevis .deviscorps .infopieddevis .ligartdevis,
+.docdevis .deviscorps .infopieddevis .colart {
+  color: #fff;
+  align-items: center;
+  padding-left: 7px;
+  font-size: 1.1em;
+}
+.docdevis .deviscorps .enttabdevis .colent:not(:nth-child(2)),
+.docdevis .deviscorps .enttabdevis .ligartdevis:not(:nth-child(2)),
+.docdevis .deviscorps .enttabdevis .colart:not(:nth-child(2)),
+.docdevis .deviscorps .ligartdevis .colent:not(:nth-child(2)),
+.docdevis .deviscorps .ligartdevis .ligartdevis:not(:nth-child(2)),
+.docdevis .deviscorps .ligartdevis .colart:not(:nth-child(2)),
+.docdevis .deviscorps .infopieddevis .colent:not(:nth-child(2)),
+.docdevis .deviscorps .infopieddevis .ligartdevis:not(:nth-child(2)),
+.docdevis .deviscorps .infopieddevis .colart:not(:nth-child(2)) {
+  text-align: center;
+}
+.docdevis .deviscorps .detailtabdevis {
+  align-content: flex-start;
+  gap: 5px;
+}
+.docdevis .deviscorps .detailtabdevis .ligartdevis {
+  gap: 5px;
+  padding: 10px;
+  box-shadow: 0 7px 12px -12px #666;
+  background-color: #fff;
+}
+.docdevis .deviscorps .detailtabdevis .ligartdevis .colart {
+  align-content: flex-start;
+  color: #203229;
+}
+.docdevis .deviscorps .detailtabdevis .ligartdevis .colart .article {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.docdevis .devispied {
+  background-color: #ffffff;
+  align-content: flex-start;
+}
+.docdevis .devispied .ligpied {
+  grid-template-columns: 3fr 100px 1fr;
+  font-weight: bold;
+  padding: 5px;
+  text-align: left;
+  justify-items: right;
+  column-gap: 5px;
+}
+.docdevis .devispied .ligpied .colpied {
+  padding: 5px 10px;
+  background-color: #e7e4e4;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.docdevis .devispied .ligpied .colpied:nth-child(1) {
+  background-color: #fff;
+}
+.docdevis .devispied .ligpied .colpied:nth-child(2) {
+  width: 100%;
+}
+.docdevis .devispied .ligpied .colpied:last-child {
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+.docdevis .devispied .liglettre {
+  padding-top: 10px;
+  text-align: center;
+  align-content: center;
+}
+.docdevis .devispied .liglettre #montantlettre {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.docdevis .piedpage {
+  align-content: flex-start;
+  justify-items: center;
+}
+.docdevis .piedpage p {
+  font-size: 0.6em;
+}

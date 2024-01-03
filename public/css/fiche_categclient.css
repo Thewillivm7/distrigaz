@@ -1,0 +1,48 @@
+@import url("styles.css");
+.fichecategclient {
+  width: 40vw;
+  height: auto;
+  overflow: hidden;
+  transform: translateY(-70%);
+}
+.fichecategclient .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.fichecategclient .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.fichecategclient .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.fichecategclient .zonetitre .titrepage .elcour {
+  font-size: inherit;
+  color: var(--couleurprinc, #610e4f);
+  font-weight: bold;
+}
+.fichecategclient .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.fichecategclient .zonetitre .closefiche:hover {
+  color: red;
+}
+.fichecategclient .zonecorps {
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  gap: 15px;
+  overflow: hidden;
+}
+.fichecategclient .zonecorps .section .grdata {
+  grid-template-columns: auto 1fr;
+}
+.fichecategclient .zonecorps .section3 .grdata {
+  grid-template-columns: auto 1fr 40px;
+}
+.fichecategclient .zonecorps .section3 .grdata img {
+  width: 25px;
+}

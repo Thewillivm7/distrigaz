@@ -1,0 +1,90 @@
+@import url("styles.css");
+.configappli {
+  background-color: #fff;
+  justify-self: center;
+  width: max(1500px, 80vw);
+  height: 90%;
+  box-shadow: 0 0 25px rgba(17, 34, 51, 0.2588235294);
+  border-radius: 10px;
+  grid-template-rows: auto 1fr auto;
+  gap: 15px;
+}
+.configappli .btnappli {
+  padding: 5px 30px;
+  justify-self: right;
+}
+.configappli .zonetitre {
+  align-items: center;
+  font-size: 1.5em;
+  color: var(--couleurprinc, #610e4f);
+  padding: 15px 25px;
+  box-shadow: 0 12px 12px -12px #aaa;
+}
+.configappli .zonemain_config {
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+.configappli .zonemain_config .zone {
+  border: var(--bordinput_norm);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(170, 170, 170, 0.5607843137);
+}
+.configappli .zonemain_config .zoneconfig {
+  align-content: start;
+  padding: 15px 30px;
+  gap: 10px;
+}
+.configappli .zonemain_config .zoneconfig .section {
+  align-items: center;
+  border: var(--bordinput_norm);
+  border-radius: 10px;
+}
+.configappli .zonemain_config .zoneconfig .section .grdata {
+  gap: 10px;
+  padding: 10px 25px;
+}
+.configappli .zonemain_config .zoneconfig .section1 {
+  gap: 15px;
+  grid-template-columns: 1fr 1.5fr;
+}
+.configappli .zonemain_config .zoneconfig .section1 .gricone {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.configappli .zonemain_config .zoneconfig .section1 .gricone img {
+  justify-self: center;
+  height: 60px;
+}
+.configappli .zonemain_config .zoneconfig .section2 {
+  gap: 15px;
+}
+.configappli .zonemain_config .zoneconfig .section2 .zoneinit {
+  grid-template-columns: 1.5fr 1fr;
+}
+.configappli .zonemain_config .zoneconfig .section2 .zoneinit .grdata:last-child {
+  align-self: self-end;
+}
+.configappli .zonemain_config .zoneconfig .section2 .zoneinit .grdata:last-child .btnappli {
+  width: 200px;
+}
+.configappli .zonemain_config .zoneconfig .section2 .zoneinfobdd {
+  grid-template-columns: 1fr 1fr;
+}
+.configappli .zonemain_config .zoneconfig .section2 .zoneinfobdd .infobdd {
+  border: var(--bordinput_norm);
+  height: 37px;
+  line-height: 37px;
+  padding-left: 10px;
+  font-size: 1.05em;
+}
+.configappli .zonemain_config .zoneconfig .section4 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.configappli .zonemain_config .zonetheme {
+  border: var(--bordinput_norm);
+}
+.configappli .zonebtn {
+  padding: 15px 25px;
+  box-shadow: 0 -12px 12px -12px #aaa;
+}

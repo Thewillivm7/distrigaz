@@ -1,0 +1,59 @@
+@import url("styles.css");
+.fichearticle {
+	width: 40vw;
+	height: max-content;
+	overflow: hidden;
+	transform: translateY(-20vh);
+	padding: 20px;
+
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			font-size: 1.05em;
+			.titre {
+				font-size: inherit;
+			}
+			.elcour {
+				font-size: inherit;
+				font-weight: bold;
+			}
+		}
+		.closefiche {
+			font-size: 1.05em;
+			cursor: pointer;
+			&:hover {
+				color: red;
+			}
+		}
+	}
+	.zonecorps {
+		padding: 25px !important;
+		align-content: start;
+		grid-template-columns: 2fr 1fr;
+		.zoneinfoart {
+			border-radius: 10px;
+			gap: 25px;
+			.section1 {
+				.grdata {
+					grid-template-columns: auto 1fr;
+					gap: 20px;
+				}
+			}
+			.section2 {
+				grid-template-columns: 2fr 1fr !important;
+				gap: 25px;
+			}
+		}
+		.zoneimage {
+			place-items: center;
+			img {
+				width: 100px;
+			}
+		}
+	}
+}

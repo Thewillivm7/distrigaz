@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="css/fiche_profil.css">
+<script src="js/fiches/fiche_profil.js"></script>
+<script>
+    var infoFiche = <%- JSON.stringify(infoFiche) %>;
+</script>
+
+<section class="fiche ficheprofil">
+    <section class="zonetitre">
+        <section class="titrepage">
+            <div class="titre"></div>
+            <div class="elcour"></div>
+        </section>
+        <span class="closefiche">&#10005;</span>
+    </section>
+    <section class="zonecorps">
+        <div class="section section1">
+            <div class="grdata">
+                <label for="">Code profil : </label>
+                <input type="text" class="codetable" disabled id="codeprofil">
+            </div>
+            <div class="grdata">
+                <label class="requis" for="">Libellé profil : </label>
+                <input type="text" class="" id="libprofil">
+            </div>
+        </div>
+
+        <section class="zonemenuprofil">
+            <section class="menu menudispo">
+                <div class="titremenu">
+                    <span>Menus disponibles</span>
+                    <span class="allmenu" id="ajouttout">&#10010;</span>
+                </div>
+                <section class="xlistemenu listemenudispo"></section>
+            </section>
+            <section class="menu menuprofil">
+                <div class="titremenu">
+                    <span>Menus du profil</span>
+                    <span class="allmenu" id="supptout">&#10005;</span>
+                </div>
+                <section class="xlistemenu listemenuprofil"></section>
+            </section>
+        </section>
+    </section>
+    <div class="zonebtn">
+        <button class="btnappli" id="btnannul">Annuler</button>
+        <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+{
+  "titreappli": "",
+  "iconeappli": "logo-olive.png",
+  "bddappli": "distrigaz",
+  "menuconfig": "0",
+  "tablemenu": "t_menu",
+  "tablemodule": "t_module",
+  "vuemenu": "v_menumodule",
+  "vuemodule": "v_module",
+  "listeaction" : [
+    {"id":"btnedit","action":"Modifier", "icone":"edit","fonction":"fonctionEdit"},
+    {"id":"btnsupp","action":"Supprimer", "icone":"supp","fonction":"fonctionSupp"},
+    {"id":"btnprint","action":"Imprimer", "icone":"print","fonction":"fonctionPrint"},
+    {"id":"btncde","action":"Générer la commande", "icone":"cde","fonction":"fonctionGenBC"},
+    {"id":"btnbat","action":"Lancer le BAT", "icone":"bat","fonction":"fonctionBAT"},
+    {"id":"btnodp","action":"Lancer la production", "icone":"odp","fonction":"fonctionODP"}
+  ]
+}

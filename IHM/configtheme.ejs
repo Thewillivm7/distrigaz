@@ -1,0 +1,220 @@
+<link rel="stylesheet" href="css/configtheme.css">
+<section class="configtheme">
+    <div class="zonetitre">
+        <span>Configuration du thème de l'application</span>
+        <span class="closetheme">&#10005;</span>
+    </div>
+    <section class="corpstheme">
+        <section class="zone zonetheme">
+            <div class="titrezone titretheme">Thèmes de l'application</div>
+            <section class="detail detailtheme">
+                <div class="cadreconfig cadreclair">
+                    <img src="assets/icones/iconepage/themeclair.png" alt="">
+                </div>
+                <div class="cadreconfig cadresombre">
+                    <img src="assets/icones/iconepage/themesombre.png" alt="">
+                </div>
+            </section>
+        </section>
+        <section class="zone zonecouleur">
+            <div class="titrezone titrecouleur">Choisissez votre couleur</div>
+            <section class="detail detailcouleur">
+                <div class="cadreconfig">
+                    <div class="config couleur"></div>
+                </div>
+                <div class="cadreconfig">
+                    <div class="config couleur"></div>
+                </div>
+                <div class="cadreconfig">
+                    <div class="config couleur"></div>
+                </div>
+                <div class="cadreconfig">
+                    <div class="config couleur"></div>
+                </div>
+                <div class="cadreconfig">
+                    <div class="config couleur"></div>
+                </div>
+                <div class="cadreconfig">
+                    <div class="config couleur"></div>
+                </div>
+            </section>
+        </section>
+        <section class="zone zonebordure">
+            <div class="titrezone titrebordure">Bordure des zones</div>
+            <section class="detail detailbordure">
+                <div class="cadreconfig cadrebordure" data-code="bordure">
+                    <span class="config">avec bordures sans ombre</span>
+                </div>
+                <div class="cadreconfig cadreombre" data-code="ombre">
+                    <span class="config">avec ombre sans bordure </span>
+                </div>
+            </section>
+        </section>
+        <section class="zone zonetypemenu">
+            <div class="titrezone titrebordure">Type de menu</div>
+            <section class="detail detailtypemenu">
+                <div class="cadreconfig cadrevert" data-code="vertical">
+                    <span class="config">Menu Vertical</span>
+                </div>
+                <div class="cadreconfig cadrehoriz" data-code="horizontal">
+                    <span class="config">Menu Horizontal </span>
+                </div>
+            </section>
+        </section>
+    </section>
+</section>
+<script>
+    $(() => {
+        let themeCour = "themeclair", codecouleurCour = "couleur1", couleurCour, bordureCour = "bordure", themeAppli, typeMenu ="vertical"
+
+        const changeTheme = (p_theme) => {
+            themeAppli = dataTheme[p_theme];
+            USER_THEME = p_theme;
+            $.each(themeAppli, function (propriete, valeur) {
+                $(document.documentElement).css(`--${propriete}`, valeur);
+            });
+            changeBordure(bordureCour);
+            changeCouleur(couleurCour);
+            // changeTypeMenu(typeMenu);
+            enrUserConfig();
+        }
+        const changeBordure = (p_bordure) => {
+            if (bordureCour === "bordure") {
+                $(document.documentElement).css(`--couleur_ombre`, "transparent");
+                $(document.documentElement).css(`--couleur_bordcadre`, themeAppli["couleur_bordcadre"]);
+            } else {
+                $(document.documentElement).css(`--couleur_ombre`, themeAppli["couleur_ombre"]);
+                $(document.documentElement).css(`--couleur_bordcadre`, "transparent");
+            }
+            enrUserConfig()
+        }      
+         const changeTypeMenu = (p_typemenu) => {
+            $(".zonetypemenu .cadreconfig").removeClass("actif")
+            if (typeMenu === "vertical") {
+                $(".cadrevert").addClass("actif");
+                $(document.documentElement).css(`--couleur_ombre`, "transparent");
+                $(document.documentElement).css(`--couleur_bordcadre`, themeAppli["couleur_bordcadre"]);
+                $(".zonemenu_horiz").hide();
+                $(".zonemenu_vert").fadeIn(300);
+                $(".accueil .main").css("grid-template-columns","auto 1fr")
+            } else {
+                $(".cadrehoriz").addClass("actif")
+                $(document.documentElement).css(`--couleur_ombre`, themeAppli["couleur_ombre"]);
+                $(document.documentElement).css(`--couleur_bordcadre`, "transparent");
+                $(".zonemenu_vert").hide();
+                $(".zonemenu_horiz").fadeIn(300);
+                $(".accueil .main").css("grid-template-columns", "1fr !important")
+                $(".accueil .zonemain").css("width", "100vw")
+
+            }
+            enrUserConfig()
+        }
+        const changeCouleur = (p_listeCouleur) => {
+            $(".configtheme .cadreconfig").removeClass("actif")
+
+            $.each(p_listeCouleur, function (propriete, valeur) {
+                $(document.documentElement).css(`--${propriete}`, valeur);
+            });
+            let cadreCoul = $(`[data-coul='${codecouleurCour}']`);
+            cadreCoul.addClass("actif")
+            if (themeCour === "themeclair") {
+                $(".cadreclair").addClass("actif")
+            } else {
+                $(".cadresombre").addClass("actif")
+            }
+            if (bordureCour === "bordure") {
+                $(".cadrebordure").addClass("actif")
+            } else {
+                $(".cadreombre").addClass("actif")
+            }
+            if (typeMenu === "vertical") {
+                $(".cadrevert").addClass("actif")
+            } else {
+                $(".cadrehoriz").addClass("actif")
+            }
+            enrUserConfig();
+
+        }
+        const initTheme = () => {
+            let userTheme = localStorage.getItem("usertheme");
+            if (userTheme && userTheme != "undefined" && userTheme != "") {
+                let tabTheme = userTheme.split(",");
+                if (tabTheme.length === 4) {
+                    themeCour = $.trim(tabTheme[0]);
+                    codecouleurCour = $.trim(tabTheme[1])
+                    bordureCour = $.trim(tabTheme[2])
+                    typeMenu = $.trim(tabTheme[3])
+                }
+            }
+            themeAppli = dataTheme[themeCour];
+            changeTheme(themeCour)
+            couleurCour = dataTheme['couleur'][codecouleurCour];
+            changeCouleur(couleurCour)
+            changeBordure(bordureCour);
+            changeTypeMenu(typeMenu);
+
+        }
+        const afficheCouleur = () => {
+            let listeCouleur = dataTheme['couleur'];
+            let listeCodeCouleur = Object.keys(listeCouleur)
+            let detCouleur = $(".detailcouleur");
+            detCouleur.empty()
+            for (let couleur of listeCodeCouleur) {
+                let strCoul =
+                    `<div class="cadreconfig " data-coul="${couleur}">
+                    <div class="config ${couleur}"></div>
+                </div>`;
+                let bgc = listeCouleur[couleur]['fondnormal'];
+                detCouleur.append(strCoul)
+                $(`.${couleur}`).css("background-color", bgc);
+            }
+        }
+        const enrUserConfig = () => {
+            let userConfig = `${themeCour},${codecouleurCour},${bordureCour},${typeMenu}`
+            localStorage.setItem("usertheme", userConfig)
+        }
+
+        //#region events
+        $(".detailtheme .cadreconfig").on("click", function (e) {
+            e.stopPropagation();
+            if ($(this).hasClass("cadreclair")) {
+                themeCour = "themeclair"
+            } else {
+                themeCour = "themesombre";
+            }
+            changeTheme(themeCour);
+
+        })
+
+        $(".zonecouleur").on("click", ".cadreconfig", function (e) {
+            e.stopPropagation();
+            let cadre = $(this);
+            codecouleurCour = cadre.attr("data-coul");
+            couleurCour = dataTheme['couleur'][codecouleurCour];
+            changeCouleur(couleurCour)
+
+        })
+
+        $(".zonebordure .cadreconfig").on("click", function (e) {
+            e.stopPropagation();
+            bordureCour = $(this).attr("data-code");
+            $(this).addClass("actif");
+            changeBordure(bordureCour);
+
+        })
+        $(".zonetypemenu .cadreconfig").on("click", function (e) {
+            e.stopPropagation();
+            if ($(this).hasClass()) return;
+            typeMenu = $(this).attr("data-code");
+            changeTypeMenu();
+        })
+        $("accueil").on("click",()=>{
+            
+        })
+        //#endregion
+        //#region 
+        afficheCouleur();
+        initTheme();
+        //#endregion
+    })
+</script>

@@ -1,0 +1,85 @@
+@import url("styles.css");
+.connexion {
+  padding: 0 25px;
+  align-content: center;
+  height: 100%;
+  grid-template-rows: auto 1fr;
+  gap: 25px;
+}
+.connexion .zoneinfo {
+  display: inline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.connexion .form {
+  display: grid;
+  gap: 15px;
+}
+.connexion .form .zonesaisie {
+  gap: 15px;
+}
+.connexion .form .zonesaisie .grdata {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: 0.3s;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid var(--couleur_bordnorm);
+  grid-template-columns: auto 1fr auto;
+}
+.connexion .form .zonesaisie .grdata:hover {
+  border: 1px solid var(--couleur_bordhover);
+}
+.connexion .form .zonesaisie .grdata:focus-within {
+  box-shadow: 0 0 25px rgba(14, 21, 25, 0.2666666667);
+  border: 1px solid var(--fondnormal);
+}
+.connexion .form .zonesaisie .grdata input {
+  border: none;
+  background-color: transparent;
+}
+.connexion .form .zonesaisie .grdata input:focus {
+  border: none;
+}
+.connexion .form .zonesaisie .grdata img {
+  width: 20px;
+}
+.connexion .form .zonesaisie .grdata #cb_onoff {
+  display: none;
+}
+.connexion .form .zonesaisie .grdata #img_on {
+  display: block;
+}
+.connexion .form .zonesaisie .grdata #img_off {
+  display: none;
+}
+.connexion .form .zonesaisie .grdata #lab_cb {
+  cursor: pointer;
+}
+.connexion .form .zonesaisie .grdata #cb_onoff:checked ~ #lab_cb #img_on {
+  display: none;
+}
+.connexion .form .zonesaisie .grdata #cb_onoff:checked ~ #lab_cb #img_off {
+  display: block;
+}
+.connexion .form .zonefirsttime {
+  justify-self: right;
+  font-size: 14px;
+  line-height: 20px;
+  width: fit-content;
+  text-align: right;
+}
+.connexion .form .zonefirsttime:not(:disabled) {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+.connexion .form .zonebtn {
+  padding: 15px;
+  place-items: center;
+}
+.connexion .form .zonebtn .btnappli {
+  width: 80% !important;
+}

@@ -1,0 +1,178 @@
+@import url("styles.css");
+
+.ficheprofil {
+	width: 60vw;
+	height: 75vh;
+	overflow: hidden;
+	transform: translateY(-45px);
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			font-size: 1.05em;
+			.titre {
+				font-size: inherit;
+			}
+		}
+		.closefiche {
+			font-size: 1.05em;
+			cursor: pointer;
+			&:hover {
+				color: red;
+			}
+		}
+	}
+	.zonecorps {
+		align-content: start;
+		grid-template-rows: auto 1fr;
+		gap: 35px;
+		overflow: hidden;
+		padding: 25px;
+		#libprofil {
+			text-transform: uppercase;
+		}
+		.section {
+			gap: 25px;
+			.grdata {
+				grid-template-columns: auto 1fr;
+				align-items: center;
+				width: 100%;
+				gap: 15px;
+			}
+		}
+		.section1 {
+			grid-template-columns: auto 1fr;
+		}
+
+		.zonemenuprofil {
+			border-radius: 5px;
+			gap: 40px;
+			grid-template-columns: 1fr 1fr;
+			overflow: hidden;
+			.menu {
+				grid-template-rows: auto 1fr;
+				overflow: hidden;
+				border: 1px solid var(--couleur_bordnorm);
+				.titremenu {
+					padding: 10px 25px;
+					background-color: #283645;
+					align-items: center;
+					grid-template-columns: 1fr auto;
+					span {
+						color: #fff;
+					}
+					.allmenu {
+						display: grid;
+						place-items: center;
+						cursor: pointer;
+						width: 30px;
+						aspect-ratio: 1;
+						padding: 5px;
+						border: 1px solid #eee;
+						position: relative;
+						color: #fff;
+						&::before {
+							position: absolute;
+							top: 0;
+							right: 35px;
+							white-space: nowrap;
+							background-color: var(--couleur_fondcadre);
+							color: var(--couleur_texte);
+							font-size: 0.8em;
+							padding: 5px 15px;
+							display: none;
+							border-radius: 5px;
+							border: 1px solid #fff;
+						}
+					}
+				}
+				.xlistemenu {
+					gap: 5px;
+					overflow: hidden;
+					overflow-y: auto;
+					align-content: start;
+					.xligmenu {
+						white-space: nowrap;
+						grid-template-columns: 30px 1fr 30px;
+						padding: 5px 10px;
+						align-items: center;
+						transition: 0.3s;
+						height: 35px;
+						gap: 20px;
+						&:hover {
+							background-color: var(--couleur_texte);
+							.coldata {
+								color: var(--couleur_fondcadre);
+							}
+							.btndel,
+							.btnplus {
+								display: grid;
+							}
+						}
+						.btnplus,
+						.btndel {
+							display: none;
+							font-weight: bold;
+							width: 25px;
+							place-items: center;
+							height: 25px;
+							background-color: #054b4b;
+							color: #fff;
+							cursor: pointer;
+						}
+						.btndel {
+							background-color: #8b0758;
+						}
+						.coldata {
+							&:first-child {
+								text-align: right;
+							}
+						}
+					}
+				}
+			}
+			.menudispo {
+				.allmenu {
+					&:hover {
+						&::before {
+							content: "Ajouter tout";
+							display: block;
+						}
+					}
+				}
+				.xlistemenu {
+					.xligmenu {
+						&.selected {
+							display: none;
+						}
+					}
+				}
+			}
+			.menuprofil {
+				.titremenu {
+					background-color: #7e1266;
+					.allmenu {
+						&:hover {
+							&::before {
+								content: "Supprimer  tout";
+								display: block;
+							}
+						}
+					}
+				}
+				.xlistemenu {
+					.xligmenu {
+						display: none;
+						&.selected {
+							display: grid;
+						}
+					}
+				}
+			}
+		}
+	}
+}

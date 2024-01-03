@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/listecommande.css">
+    <script src="js/listecommande.js" type=""></script>
+</head>
+
+<body>
+    <section class="listecommande">
+        <section class="titrepage">
+            <span>Gestion des commandes client</span>
+            <div class="closeliste">&#10005;</div>
+        </section>
+        <section class="tablist">
+            <section class="headlist">
+                <div class="colhead">N° commande</div>
+                <div class="colhead">Date</div>
+                <div class="colhead">Client</div>
+                <div class="colhead">N° Devis</div>
+                <div class="colhead">Nb lignes d'articles</div>
+                <div class="colhead">Montant Total</div>
+                <div class="colhead">Statut</div>
+                <div class="colhead">Actions</div>
+            </section>
+            <section class="bodylist" id="bodylist">
+            </section>
+            <div class="footerlist">
+            </div>
+        </section>
+    </section>
+    <section class="modal modalfiche">
+
+    </section>
+    <section class="modal modalconfirmation">
+        <div class="confirmation">
+            <div class="titreconfirmation">
+                <div class="titre">Confirmation de désactivation </div>
+                <div class="btnclose">&#10005;</div>
+
+            </div>
+            <div class="corpsconfirmation">
+                <div class="messageconfirm">
+                    <div class="message">Confirmez-vous la désactivation (O/N) ?</div>
+                </div>
+                <div class="dataconfirm">021 - SORO Joseph </div>
+            </div>
+            <div class="piedconfirmation">
+                <button class="btnappli btnoui">Oui</button>
+                <button class="btnappli btnnon">Non</button>
+            </div>
+        </div>
+    </section>
+    <section class="modal modalprint">
+        <section class="zoneparam">
+            <div class="closeprint">&#10005;</div>
+            <div class="zonebtnprint">
+                <button class="btnappli">Envoyer par mail</button>
+                <button class="btnappli">Enregistrer PDF</button>
+                <button class="btnappli">Imprimer</button>
+            </div>
+            <div class="zoneinfodevis"></div>
+        </section>
+        <section class="zonepreview"></section>
+    </section>
+    <section class="modal modalprod">
+
+    </section>
+</body>
+
+</html>

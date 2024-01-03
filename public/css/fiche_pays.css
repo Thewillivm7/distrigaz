@@ -1,0 +1,46 @@
+@import url("styles.css");
+.fichepays {
+  width: 40vw;
+  height: auto;
+  overflow: hidden;
+  transform: translateY(-10vh);
+}
+.fichepays .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.fichepays .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.fichepays .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.fichepays .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.fichepays .zonetitre .closefiche:hover {
+  color: red;
+}
+.fichepays .zonecorps {
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  gap: 15px;
+  overflow: hidden;
+}
+.fichepays .zonecorps #libpays {
+  text-transform: uppercase;
+}
+.fichepays .zonecorps .section .grdata {
+  grid-template-columns: auto 1fr;
+}
+.fichepays .zonecorps .section3 .grdata {
+  grid-template-columns: auto 1fr 40px;
+}
+.fichepays .zonecorps .section3 .grdata img {
+  width: 25px;
+}

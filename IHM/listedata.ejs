@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="css/listedata.css">
+
+<script src="js/listedata.js" type=""></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+<script>
+    var dataMenu = <%- JSON.stringify(dataMenu) %>;
+    var dataListe = <%- JSON.stringify(dataListe) %>;
+</script>
+
+<section class=" listedata">
+    <section class="titrepage">
+        <%=dataMenu.titrepage%>
+            <%if (dataMenu.textenew!="" ){%>
+                <button class="btnappli" id="btnnew">
+                    <%=dataMenu.textenew %>
+                </button>
+                <%}%>
+                    <div class="closeliste">&#10005;</div>
+    </section>
+    <section class="zonefiltre">
+        <img src="assets/icones/iconepage/loupe.png" alt="">
+        <input type="text" name="" id="filtredata">
+        <span id="clearfilter">&#10005;</span>
+    </section>
+
+    <section class="tablist">
+        <section class="headlist">
+            <% for(col of dataMenu.tabcol ){%>
+                <div class="colhead">
+                    <%=col.entete%>
+                </div>
+                <%}%>
+                    <% if(dataMenu.listeaction.length>0){%>
+                        <div class="colhead headaction">Actions</div>
+                        <%}%>
+
+        </section>
+        <section class="bodylist" id="bodylist">
+
+
+        </section>
+        <div class="footerlist">
+            <%=dataListe.length %> lignes
+        </div>
+    </section>
+</section>
+<section class="modalfiche">
+<div class="facture-details">
+    <!-- Les détails de la facture seront affichés ici -->
+</div>
+</section>
+<section class="modalconfirmation">
+    <div class="confirmation">
+        <div class="titreconfirmation">
+            <div class="titre">Confirmation de désactivation </div>
+            <div class="btnclose">&#10005;</div>
+
+        </div>
+        <div class="corpsconfirmation">
+            <div class="messageconfirm">
+                <div class="message">Confirmez-vous la désactivation (O/N) ?</div>
+            </div>
+            <div class="dataconfirm">021 - SORO Joseph </div>
+        </div>
+        <div class="piedconfirmation">
+            <button class="btnappli btnoui">Oui</button>
+            <button class="btnappli btnnon">Non</button>
+        </div>
+    </div>
+</section>
+<script>
+
+</script>

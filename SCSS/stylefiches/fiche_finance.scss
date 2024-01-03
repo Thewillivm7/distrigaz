@@ -1,0 +1,121 @@
+@import url("styles.css");
+.fichefinance {
+	width: 50vw;
+	height: auto;
+	overflow: hidden;
+	transform: translateY(-20px);
+	gap: 25px;
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			font-size: 1.05em;
+
+			.titre {
+				font-size: inherit;
+			}
+		}
+		.closefiche {
+			font-size: 1.05em;
+			cursor: pointer;
+			&:hover {
+				color: red;
+			}
+		}
+	}
+	.zonecorps {
+		grid-template-columns: 3fr 1.2fr;
+		gap: 25px !important;
+		.zonesaisie,
+		.infoclient {
+			border-radius: 5px;
+		}
+		.zone {
+			padding: 5px 25px;
+			border-radius: 10px;
+			border: 1px solid var(--couleur_bordcadre);
+		}
+		.zonesaisie {
+			align-content: start;
+			gap: 20px;
+			padding: 15px;
+			.section1 {
+				grid-template-columns: auto 1fr;
+				align-items: center;
+				gap: 20px;
+			}
+			.section2 {
+				padding: 0 !important;
+				grid-template-columns: 1.5fr 1fr;
+				gap: 5px;
+				align-content: start;
+				.grdata {
+					gap: 7px !important;
+					padding: 10px;
+				}
+			}
+			.section3 {
+				gap: 15px;
+				.grdata {
+					grid-template-columns: 100px 1fr;
+					gap: 10px;
+					align-items: center;
+					#montant {
+						width: 200px;
+						font-size: 1.2em;
+						font-weight: bold;
+						text-align: right;
+					}
+					#libop {
+						height: 50px;
+						padding: 10px;
+					}
+				}
+			}
+		}
+		.zoneinfo {
+			justify-items: center;
+			.zonechiffre {
+				align-content: flex-start;
+				gap: 15px;
+				padding: 15px;
+				width: 100%;
+				.grdata {
+					gap: 10px;
+					span {
+						height: 35px;
+						text-align: right;
+						font-size: 1.2em;
+						font-weight: bold;
+						width: 100%;
+						min-width: 5vw;
+						line-height: 35px;
+						border: 1px solid var(--couleur_bordnorm);
+						padding: 0 10px;
+						border-radius: 5px;
+						background-color: #aaaaaa42;
+					}
+					#payetotal {
+						background-color: #65f165;
+					}
+					#avoirtotal {
+						background-color: #f15d87;
+					}
+					#soldeclient {
+						background-color: #062e5e;
+						color: #fff !important;
+					}
+					#seuilcommande {
+						background-color: maroon;
+						color: #fff;
+					}
+				}
+			}
+			padding: 10px;
+		}
+	}
+}

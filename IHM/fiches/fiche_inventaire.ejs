@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="css/fiche_inventaire.css">
+<script defer src="js/fiches/fiche_inventaire.js"></script>
+<script>
+        var infoFiche = <%- JSON.stringify(infoFiche) %>;
+
+</script>
+<section class="fiche ficheinventaire">
+
+    <section class="zonetitre">
+        <section class="titrepage">
+            <div class="titre"></div>
+            <div class="elcour" id="numinventaire"></div>
+        </section>
+        <span class="closefiche">&#10005;</span>
+    </section>
+    <section class="zonecorps">
+
+        <section class="tablist">
+            <section class="headlist">
+                <div class="colhead">Article</div>
+                <div class="colhead">Qté Physique</div>
+                <div class="colhead">Qté Théorique</div>
+                <div class="colhead">Ecart</div>
+            </section>
+            <section class="corpslist">
+
+            </section>
+        </section>
+
+    </section>
+    <div class="zonebtn">
+        <button class="btnappli" id="btnannul">Annuler</button>
+        <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+    </div>
+</section>

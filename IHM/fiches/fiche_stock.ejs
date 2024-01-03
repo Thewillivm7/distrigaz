@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="css/fiche_stock.css">
+<script defer src="js/fiches/fiche_stock.js"></script>
+<script>
+    var infoFiche = <%- JSON.stringify(infoFiche) %>;
+</script>
+<section class="fiche fichestock">
+    <section class="zonetitre">
+        <section class="titrepage">
+            <div class="titre"></div>
+            <div class="elcour"></div>
+        </section>
+        <span class="closefiche">&#10005;</span>
+    </section>
+    <section class="zonecorps">
+        <section class="entfiche">
+            <section class="section section1">
+                <div class="grdata zoneclient">
+                    <label for="">Fournisseur : </label>
+                    <div id="client"></div>
+                </div>
+                <div class="grdata zoneobjet">
+                    <label for="">Objet de la stock </label>
+                    <textarea name="" id="objetstock"></textarea>
+                </div>
+            </section>
+            <section class="section section2">
+                <div class="grsec zonenum">
+                    <label for="">Stock N°</label>
+                    <span id="numstock"></span>
+                </div>
+                <div class="grsec zonedate">
+                    <label for="">Date : </label>
+                    <input type="date" name="" id="datestock">
+                </div>
+                <div class="grsec zonetva">
+                    <label for="">Appliquer TVA ?</label>
+                    <div class="cadretva">
+                        <input type="checkbox" name="" id="tvacb">
+                        <label for="tvacb" id="labeltva">
+                            <div class="z_non">Non</div>
+                            <div class="curseur"></div>
+                            <div class="z_oui">Oui</div>
+
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="tablist">
+            <section class="headlist">
+                <div class="colhead">#</div>
+                <div class="colhead">Article</div>
+                <div class="colhead">Qté</div>
+                <div class="colhead">Prix unitaire</div>
+                <div class="colhead">Total HT</div>
+                <div class="btnaddart">&#10010</div>
+            </section>
+            <section class="bodylist"></section>
+        </section>
+        <section class="piedfiche">
+            <label for="">Nb Articles :</label>
+            <div class="valeur" id="totallig">0</div>
+            <label for="">Total HT :</label>
+            <div class="valeur" id="totalht">0</div>
+            <label for="">Total TVA :</label>
+            <div class="valeur" id="totaltva">0</div>
+            <label for="">Net à payer :</label>
+            <div class="valeur" id="totalttc">0</div>
+        </section>
+    </section>
+    <div class="zonebtn">
+        <button class="btnappli" id="btnannul">Annuler</button>
+        <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+    </div>
+</section>

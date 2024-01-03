@@ -1,0 +1,85 @@
+@import url("styles.css");
+.fichecommande {
+  width: 60vw;
+  height: 60vh;
+  overflow: hidden;
+  transform: translateY(-20%);
+}
+.fichecommande .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.fichecommande .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.fichecommande .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.fichecommande .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.fichecommande .zonetitre .closefiche:hover {
+  color: red;
+}
+.fichecommande .zonecorps {
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  gap: 15px;
+  overflow: hidden;
+}
+.fichecommande .zonecorps .listearticle {
+  grid-template-rows: 50px 30px 1fr;
+  gap: 10px;
+}
+.fichecommande .zonecorps .listearticle .infocommande {
+  align-content: center;
+  padding-left: 25px;
+  font-size: 1.5em;
+  background-color: #f4f6f8;
+}
+.fichecommande .zonecorps .listearticle .enttab {
+  box-shadow: 0 12px 12px -12px #0b8d7a;
+}
+.fichecommande .zonecorps .listearticle .enttab,
+.fichecommande .zonecorps .listearticle .ligdata {
+  gap: 5px;
+  grid-template-columns: 1fr 70px 90px 80px 100px 70px;
+}
+.fichecommande .zonecorps .listearticle .enttab .coldata,
+.fichecommande .zonecorps .listearticle .ligdata .coldata {
+  text-align: right;
+  padding-right: 5px;
+  width: 100%;
+}
+.fichecommande .zonecorps .listearticle .enttab .coldata:nth-last-child(2),
+.fichecommande .zonecorps .listearticle .ligdata .coldata:nth-last-child(2) {
+  text-align: center;
+}
+.fichecommande .zonecorps .listearticle .enttab .coldata:last-child,
+.fichecommande .zonecorps .listearticle .ligdata .coldata:last-child {
+  text-align: center;
+}
+.fichecommande .zonecorps .listearticle .enttab .colart,
+.fichecommande .zonecorps .listearticle .ligdata .colart {
+  padding-left: 15px;
+  text-align: left;
+  gap: 5px;
+}
+.fichecommande .zonecorps .listearticle .enttab .colart .codeart,
+.fichecommande .zonecorps .listearticle .ligdata .colart .codeart {
+  font-weight: bold;
+}
+.fichecommande .zonecorps .listearticle .enttab .colart .descart,
+.fichecommande .zonecorps .listearticle .ligdata .colart .descart {
+  padding-left: 25px;
+  font-style: italic;
+  font-size: 0.9em;
+}
+.fichecommande .zonecorps .listearticle .ligdata .coldata:nth-last-child(2) {
+  font-size: 0.8em;
+}

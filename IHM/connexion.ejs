@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="css/connexion.css">
+<section class="connexion">
+    <div class="zonetitre">
+        <img src="assets/icones/iconepage/person.png" alt="">
+        Connexion
+    </div>
+    <div class="zoneinfo">
+        Saisissez votre <b>login</b> et <b>votre mot de passe</b> et cliquez sur <b>CONNEXION</b>
+    </div>
+    <form action="" class="form">
+        <section class="zonesaisie">
+            <div class="grdata">
+                <img src="assets/icones/iconepage/profil.png" alt="">
+                <input type="text" placeholder="Votre login" id="userlogin" value="admin">
+            </div>
+            <div class="grdata">
+                <img src="assets/icones/iconepage/password.png" alt="">
+                <input type="password" placeholder="Votre mot de passe" id="userpassword" value="0">
+                <input type="checkbox" name="" id="cb_onoff">
+                <label for="cb_onoff" id="lab_cb">
+                    <img id="img_on" src="assets/icones/iconepage/eye_on.png" alt="">
+                    <img id="img_off" src="assets/icones/iconepage/eye_off.png" alt="">
+                </label>
+            </div>
+        </section>
+        <div class="zonefirsttime">
+            Mot de passe oublié ? <br> 1ère connexion ? cliquez ici
+        </div>
+        <div class="zonebtn">
+            <button type="submit" class="btnappli" id="btnconnexion">Connexion</button>
+        </div>
+    </form>
+
+</section>
+<script>
+    $(async () => {
+        await $.getScript("appliUtils.js");
+        let userLogin = "", userPassword = ""
+        //#region events
+
+        $(".connexion .zonefirsttime").on("click", () => {
+            userLogin = $.trim($(".connexion #userlogin").val());
+            if (userLogin === "") {
+                $(".zonemessage").text("Vous devez saisir votre login")
+                return;
+            }
+            let resReq = postData("/firsttime", { userlogin: userLogin })
+            if (+resReq.status === 404) {
+                $(".zonemessage").text("Login non trouvé !")
+                return
+            }
+            window.location.replace("/getotp");
+        })
+
+        $(".connexion #userlogin").on("focus", () => {
+            $(".zonemessage").text("")
+        })
+
+        $(".connexion input").on("input", () => {
+            userLogin = $.trim($(".connexion #userlogin").val());
+            userPassword = $.trim($(".connexion #userpassword").val());
+            $(".connexion #btnconnexion").prop("disabled", userPassword === "" || userLogin == "")
+        })
+
+        $(".connexion #btnconnexion").on("click", (e) => {
+            e.preventDefault()
+            userLogin = $.trim($(".connexion #userlogin").val());
+            userPassword = $.trim($(".connexion #userpassword").val());
+            let resConnexion = postData("/connexion", { userlogin: userLogin, userpassword: userPassword })
+            if (resConnexion.res === 404) {
+                $(".zonemessage").text("Login ou mot de passe incorrect !");
+                return;
+            }
+            if (+resConnexion.res === 200) {
+                window.location.replace("/accueil");
+                return;
+            }
+            if (resConnexion.res === 300) {
+                window.location.replace("/configAppli");
+            }
+
+        })
+        $(".connexion #cb_onoff").on("change", function () {
+            if ($(this).prop("checked")) {
+                $(".connexion #userpassword").attr("type", "text")
+            } else {
+                $(".connexion #userpassword").attr("type", "password")
+            }
+        })
+        //#endregion
+
+
+        $(".connexion #userlogin").focus();
+        $(".connexion #btnconnexion").trigger("click")
+    })
+
+</script>

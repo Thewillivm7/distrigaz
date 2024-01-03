@@ -1,0 +1,85 @@
+{
+       "themeclair": {
+        "couleur_fond": "#eee",
+        "couleur_fondcadre": "#fff",
+        "couleur_ombre": "#aaaaaa80",
+        "couleur_bordnorm": "#ccc",
+        "couleur_bordcadre": "#999",
+        "couleur_bordhover": "#999",
+        "fond_menuhover": "#000000be",
+        "texte_menuhover": "#fff",
+        "couleur_texte": "#1d2936",
+        "input_inactif": "#eee",
+        "filtre_img":"none",
+        "filtre_imginv":"invert(100%) sepia(100%) saturate(2%) hue-rotate(275deg) brightness(104%) contrast(101%)"
+    },
+    "themesombre": {
+        "couleur_fond": "#123",
+        "couleur_fondcadre": "#223344",
+        "couleur_ombre": "#676666cb",
+        "couleur_bordnorm": "#aaa",
+        "couleur_bordcadre": "#aaa",
+        "couleur_bordhover": "#eee",
+        "fond_menuhover": "#000000be",
+        "texte_menuhover": "#fff",
+        "couleur_texte": "#fff",
+        "input_inactif": "#00000076",
+        "filtre_img":"invert(100%) sepia(100%) saturate(2%) hue-rotate(275deg) brightness(104%) contrast(101%)",
+        "filtre_imginv":"none"
+
+    },
+ 
+    "couleur": {
+      
+        "couleur1": {
+            "fondnormal": "#0cd60c",
+            "fondhover":"#088808",
+            "textenormal": "#fff",
+            "textehover": "#fff",
+            "fondinactif": "#666",
+            "texteinactif": "#eee"
+        },
+        "couleur3": {
+            "fondnormal": "#185ef4",
+            "fondhover":"#0e3485",
+            "textenormal": "#fff",
+            "textehover": "#fff",
+            "fondinactif": "#666",
+            "texteinactif": "#eee"
+        },
+        "couleur4": {
+            "fondnormal": "#ff0099",
+            "fondhover":"#900a5a",
+            "textenormal": "#fff",
+            "textehover": "#fff",
+            "fondinactif": "#666",
+            "texteinactif": "#eee"
+        },
+        "couleur5": {
+            "fondnormal": "#9c08b0",
+            "fondhover":"#640970",
+            "textenormal": "#fff",
+            "textehover": "#fff",
+            "fondinactif": "#666",
+            "texteinactif": "#eee"
+        },
+        "couleur6": {
+            "fondnormal": "#0fbdb7",
+            "fondhover":"#076461",
+            "textenormal": "#fff",
+            "textehover": "#fff",
+            "fondinactif": "#666",
+            "texteinactif": "#eee"
+        },
+      
+        "couleur8": {
+            "fondnormal": "#e21515",
+            "fondhover":"#880f0f",
+            "textenormal": "#fff",
+            "textehover": "#fff",
+            "fondinactif": "#666",
+            "texteinactif": "#eee"
+        }
+        
+    }
+}

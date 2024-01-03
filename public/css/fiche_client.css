@@ -1,0 +1,104 @@
+@import url("styles.css");
+.ficheclient {
+  width: max(50vw, 700px);
+  height: auto;
+  overflow: hidden;
+  transform: translateY(-5%);
+}
+.ficheclient .infoext {
+  height: 37px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.ficheclient .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.ficheclient .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.ficheclient .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.ficheclient .zonetitre .titrepage .elcour {
+  font-size: inherit;
+  color: var(--fondnormal);
+  font-weight: bold;
+}
+.ficheclient .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.ficheclient .zonetitre .closefiche:hover {
+  color: red;
+}
+.ficheclient .zonecorps {
+  grid-template-columns: 1fr 175px;
+  gap: 25px;
+}
+.ficheclient .zonecorps .zoneprinc {
+  align-content: start;
+  gap: 15px;
+  grid-template-rows: auto auto;
+  overflow: hidden;
+}
+.ficheclient .zonecorps .zoneprinc .section {
+  padding: 25px;
+  border: 1px solid var(--couleur_bordcadre);
+  border-radius: 10px;
+  gap: 20px;
+  position: relative;
+}
+.ficheclient .zonecorps .zoneprinc .section1 {
+  grid-template-columns: 150px 1fr 1fr;
+}
+.ficheclient .zonecorps .zoneprinc .section1 #seuilcommande {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.ficheclient .zonecorps .zoneprinc .section2 {
+  grid-template-columns: 100% !important;
+  grid-template-rows: 1fr 1fr;
+}
+.ficheclient .zonecorps .zoneprinc .section2 .grsec {
+  grid-auto-flow: column;
+  gap: 20px;
+}
+.ficheclient .zonecorps .zonefinance {
+  padding: 15px;
+  border: 1px solid var(--couleur_bordcadre);
+  border-radius: 10px;
+  align-content: start;
+  gap: 15px;
+}
+.ficheclient .zonecorps .zonefinance .grdata {
+  align-content: center;
+  gap: 7px;
+}
+.ficheclient .zonecorps .zonefinance .grdata .infoext {
+  color: #050000;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.15em;
+  padding: 10px;
+}
+.ficheclient .zonecorps .zonefinance .grdata #soldeinit {
+  border: 1px solid var(--couleur_bordcadre);
+  color: var(--couleur_texte);
+}
+.ficheclient .zonecorps .zonefinance .grdata #caclient {
+  background-color: #b3b0b0 !important;
+}
+.ficheclient .zonecorps .zonefinance .grdata #totalpaiement {
+  background-color: #c9ffc9 !important;
+}
+.ficheclient .zonecorps .zonefinance .grdata #totalavoir {
+  background-color: #fcb9b9 !important;
+}
+.ficheclient .zonecorps .zonefinance .grdata #soldeclient {
+  background-color: #b4b4f7 !important;
+}

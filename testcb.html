@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .main {
+            margin: 25px;
+        }
+
+        .zoui,
+        .znon {
+            width: 100px;
+            text-align: center;
+            background-color: #dd1a1a;
+            color: #fff;
+            height: inherit;
+            line-height: 35px;
+
+        }
+
+        .zoui {
+            background-color: green;
+        }
+
+        .zone {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            transition: 0.6s ease-in-out;
+            position: absolute;
+            width: 100%;
+            height: 30px;
+
+        }
+
+        #cb {
+            display: none;
+
+        }
+
+        #cb:checked~#labelcb .zone {
+            transform: translateX(-100%);
+        }
+
+        #labelcb {
+            display: grid;
+            align-items: center;
+            width: 100px;
+            height: 80px;
+            position: relative;
+            overflow-x: hidden;
+            cursor: pointer;
+            /* border: 1px solid #ccc; */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <input type="checkbox" name="" id="cb">
+        <label for="cb" class="" id="labelcb">
+            <div class="zone">
+                <div class="zoui">OUI</div>
+                <div class="znon">NON</div>
+            </label>
+    </div>
+    </div>
+</body>
+
+</html>

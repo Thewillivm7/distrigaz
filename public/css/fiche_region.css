@@ -1,0 +1,46 @@
+@import url("styles.css");
+.ficheregion {
+  width: 40vw;
+  height: auto;
+  overflow: hidden;
+  transform: translateY(-70%);
+}
+.ficheregion .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.ficheregion .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.ficheregion .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.ficheregion .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.ficheregion .zonetitre .closefiche:hover {
+  color: red;
+}
+.ficheregion .zonecorps {
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  gap: 15px;
+  overflow: hidden;
+}
+.ficheregion .zonecorps #libregion {
+  text-transform: uppercase;
+}
+.ficheregion .zonecorps .section .grdata {
+  grid-template-columns: auto 1fr;
+}
+.ficheregion .zonecorps .section3 .grdata {
+  grid-template-columns: auto 1fr 40px;
+}
+.ficheregion .zonecorps .section3 .grdata img {
+  width: 25px;
+}

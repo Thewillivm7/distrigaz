@@ -1,0 +1,69 @@
+@import url("styles.css");
+$couleurprinc: var(--couleurprinc, #610e4f);
+$ombrepanel: var(--ombrepanel, #0e1519);
+$couleurcopy: var(--couleurcopy, #fccdf2);
+$bordinput_norm: var(--bordinput_norm);
+$bordinput_hover: var(--bordinput_hover);
+.fichecom {
+	width: 50vw;
+	height: auto;
+	overflow: hidden;
+	transform: translateY(-35%);
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			font-size: 1.05em;
+
+			.titre {
+				font-size: inherit;
+			}
+			.elcour {
+				font-size: inherit;
+				color: $couleurprinc;
+				font-weight: bold;
+			}
+		}
+		.closefiche {
+			font-size: 1.05em;
+			cursor: pointer;
+			&:hover {
+				color: red;
+			}
+		}
+	}
+	.zonecorps {
+		align-content: start;
+		grid-template-rows: auto auto 1fr;
+		gap: 25px;
+		padding: 30px 25px;
+
+		overflow: hidden;
+		input[type="date"] {
+			text-align: center;
+		}
+		.section {
+			box-shadow: 0 0 7px #ccccccb6;
+		}
+		.section1 {
+			grid-template-columns: auto 1fr;
+			select {
+				max-width: 250px;
+			}
+			.grdata {
+				grid-template-columns: auto 1fr;
+				gap: 15px;
+			}
+		}
+		.section2 {
+			grid-template-columns: 150px 1fr 1.5fr;
+		}
+		.section3 {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}

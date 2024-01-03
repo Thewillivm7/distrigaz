@@ -1,0 +1,125 @@
+@import url("styles.css");
+.ficheinventaire {
+  width: max(45vw, 700px) !important;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s;
+  transform: translateY(-10vh);
+  padding: 25px 0;
+}
+.ficheinventaire * {
+  user-select: none;
+}
+.ficheinventaire .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.ficheinventaire .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.05em;
+}
+.ficheinventaire .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.ficheinventaire .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.ficheinventaire .zonetitre .closefiche:hover {
+  color: red;
+}
+.ficheinventaire .zonecorps {
+  align-content: start;
+  overflow: hidden;
+  grid-template-rows: auto 1fr 60px;
+}
+.ficheinventaire .zonecorps .tablist {
+  padding-top: 5px;
+  align-content: start;
+  gap: 12px;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+}
+.ficheinventaire .zonecorps .tablist .headlist {
+  box-shadow: 0 12px 12px -12px #8f8e8e, 0 -12px 12px -12px #8f8e8e;
+  font-weight: bold;
+  align-items: center;
+}
+.ficheinventaire .zonecorps .tablist .headlist .colhead {
+  padding-right: 10px;
+}
+.ficheinventaire .zonecorps .tablist .headlist,
+.ficheinventaire .zonecorps .tablist .datarow {
+  grid-template-columns: 1fr 150px 150px 100px;
+  padding: 10px;
+  padding-right: 20px;
+  gap: 10px;
+}
+.ficheinventaire .zonecorps .tablist .headlist .colhead,
+.ficheinventaire .zonecorps .tablist .headlist .coldata,
+.ficheinventaire .zonecorps .tablist .datarow .colhead,
+.ficheinventaire .zonecorps .tablist .datarow .coldata {
+  text-align: right;
+}
+.ficheinventaire .zonecorps .tablist .headlist .colhead:nth-child(1),
+.ficheinventaire .zonecorps .tablist .headlist .coldata:nth-child(1),
+.ficheinventaire .zonecorps .tablist .datarow .colhead:nth-child(1),
+.ficheinventaire .zonecorps .tablist .datarow .coldata:nth-child(1) {
+  text-align: left;
+}
+.ficheinventaire .zonecorps .tablist .corpslist {
+  overflow: hidden;
+  padding: 15px;
+  align-content: start;
+  border-radius: 10px;
+  border: 1px solid var(--couleur_bordnorm);
+}
+.ficheinventaire .zonecorps .tablist .corpslist .datarow {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--couleur_bordnorm);
+  align-content: start;
+  gap: 10px;
+  align-items: center;
+}
+.ficheinventaire .zonecorps .tablist .corpslist .datarow .qtetheo,
+.ficheinventaire .zonecorps .tablist .corpslist .datarow .ecart {
+  border-radius: 5px;
+  align-items: center;
+  padding: 0 10px;
+  height: 40px;
+  width: 100%;
+  border: 1px dotted var(--couleur_bordnorm);
+  text-align: right;
+  background-color: #eee;
+}
+.ficheinventaire .piedfiche {
+  z-index: 50;
+  align-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  grid-template-columns: auto 1fr auto 2fr auto 2fr auto 2fr;
+  border: 1px solid var(--couleur_bordcadre);
+  border-radius: 10px;
+}
+.ficheinventaire .piedfiche .valeur {
+  display: grid;
+  align-content: center;
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  text-align: right;
+  font-size: 2em;
+  padding-right: 10px;
+  color: var(--fondnormal);
+}
+.ficheinventaire .piedfiche .valeur:last-child {
+  font-weight: bold;
+}
+.ficheinventaire .piedfiche #totallig {
+  text-align: center;
+}

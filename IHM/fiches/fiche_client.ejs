@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="css/fiche_client.css">
+<script src="js/fiches/fiche_client.js"></script>
+<script>
+    var infoFiche = <%- JSON.stringify(infoFiche) %>;
+</script>
+<section class="fiche ficheclient">
+    <section class="zonetitre">
+        <section class="titrepage">
+            <div class="titre"></div>
+            <div class="elcour"></div>
+        </section>
+        <span class="closefiche">&#10005;</span>
+    </section>
+    <section class="zonecorps">
+        <section class="zoneprinc">
+            <section class="section section1">
+                <div class="grdata">
+                    <label for="">Code client</label>
+                    <input type="text" name="" id="codeclient" class="codetable" disabled>
+                </div>
+
+                <div class="grdata">
+                    <label for="">Type client</label>
+                    <select name="" id="listetype"></select>
+                </div>
+                <div class="grdata">
+                    <label for="">Seuil de commande</label>
+                    <input type="number" name="" id="seuilclient" >
+                </div>
+            </section>
+            <section class="section section2">
+                <section class="grsec grsec1">
+                    <div class="grdata">
+                        <label for="">Nom du client</label>
+                        <input type="text" id="nomclient">
+                    </div>
+                    <div class="grdata">
+                        <label for="">Téléphone</label>
+                        <input type="text" id="telclient">
+                    </div>
+                    <div class="grdata">
+                        <label for="">Email</label>
+                        <input type="text" id="emailclient">
+                    </div>
+                </section>
+                <section class="grsec grsec2">
+
+                    <div class="grdata">
+                        <label for="">Depot</label>
+                        <select class=""id="listedepot"></select>
+                    </div>
+                    <div class="grdata">
+                        <label for="">Adresse</label>
+                        <input class=""id="adresse"></input>
+                    </div>
+
+                </section>
+            </section>
+        </section>
+        <section class="zonefinance">
+            <div class="grdata">
+                <label for="">Solde de départ</label>
+                <span class="infoext" id="soldeinit">0</span>
+            </div>
+            <div class="grdata">
+                <label for="">CA réalisé</label>
+                <span class="infoext" id="caclient">0</span>
+            </div>
+            <div class="grdata">
+                <label for="">Total paiement</label>
+                <span class="infoext" id="totalpaiement">0</span>
+            </div>
+            <div class="grdata">
+                <label for="">Total avoir</label>
+                <span class="infoext" id="totalavoir">0</span>
+            </div>
+            <div class="grdata">
+                <label for="">Solde actuel</label>
+                <span class="infoext" id="soldeclient">0</span>
+            </div>
+        </section>
+
+    </section>
+    <div class="zonebtn">
+        <button class="btnappli" id="btnannul">Annuler</button>
+        <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+    </div>
+</section>

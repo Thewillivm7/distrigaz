@@ -1,0 +1,42 @@
+@import url("styles.css");
+.ficheagence {
+  width: 40vw;
+  height: auto;
+  overflow: hidden;
+}
+.ficheagence .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.ficheagence .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.ficheagence .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.ficheagence .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.ficheagence .zonetitre .closefiche:hover {
+  color: red;
+}
+.ficheagence .zonecorps {
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  gap: 15px;
+  overflow: hidden;
+}
+.ficheagence .zonecorps .section .grdata {
+  grid-template-columns: auto 1fr;
+}
+.ficheagence .zonecorps .section3 .grdata {
+  grid-template-columns: auto 1fr 40px;
+}
+.ficheagence .zonecorps .section3 .grdata img {
+  width: 25px;
+}

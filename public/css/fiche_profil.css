@@ -1,0 +1,156 @@
+@import url("styles.css");
+.ficheprofil {
+  width: 60vw;
+  height: 75vh;
+  overflow: hidden;
+  transform: translateY(-45px);
+}
+.ficheprofil .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.ficheprofil .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.ficheprofil .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.ficheprofil .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.ficheprofil .zonetitre .closefiche:hover {
+  color: red;
+}
+.ficheprofil .zonecorps {
+  align-content: start;
+  grid-template-rows: auto 1fr;
+  gap: 35px;
+  overflow: hidden;
+  padding: 25px;
+}
+.ficheprofil .zonecorps #libprofil {
+  text-transform: uppercase;
+}
+.ficheprofil .zonecorps .section {
+  gap: 25px;
+}
+.ficheprofil .zonecorps .section .grdata {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+.ficheprofil .zonecorps .section1 {
+  grid-template-columns: auto 1fr;
+}
+.ficheprofil .zonecorps .zonemenuprofil {
+  border-radius: 5px;
+  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu {
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border: 1px solid var(--couleur_bordnorm);
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .titremenu {
+  padding: 10px 25px;
+  background-color: #283645;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .titremenu span {
+  color: #fff;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .titremenu .allmenu {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  width: 30px;
+  aspect-ratio: 1;
+  padding: 5px;
+  border: 1px solid #eee;
+  position: relative;
+  color: #fff;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .titremenu .allmenu::before {
+  position: absolute;
+  top: 0;
+  right: 35px;
+  white-space: nowrap;
+  background-color: var(--couleur_fondcadre);
+  color: var(--couleur_texte);
+  font-size: 0.8em;
+  padding: 5px 15px;
+  display: none;
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .xlistemenu {
+  gap: 5px;
+  overflow: hidden;
+  overflow-y: auto;
+  align-content: start;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .xlistemenu .xligmenu {
+  white-space: nowrap;
+  grid-template-columns: 30px 1fr 30px;
+  padding: 5px 10px;
+  align-items: center;
+  transition: 0.3s;
+  height: 35px;
+  gap: 20px;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .xlistemenu .xligmenu:hover {
+  background-color: var(--couleur_texte);
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .xlistemenu .xligmenu:hover .coldata {
+  color: var(--couleur_fondcadre);
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .xlistemenu .xligmenu:hover .btndel,
+.ficheprofil .zonecorps .zonemenuprofil .menu .xlistemenu .xligmenu:hover .btnplus {
+  display: grid;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .xlistemenu .xligmenu .btnplus,
+.ficheprofil .zonecorps .zonemenuprofil .menu .xlistemenu .xligmenu .btndel {
+  display: none;
+  font-weight: bold;
+  width: 25px;
+  place-items: center;
+  height: 25px;
+  background-color: #054b4b;
+  color: #fff;
+  cursor: pointer;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .xlistemenu .xligmenu .btndel {
+  background-color: #8b0758;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menu .xlistemenu .xligmenu .coldata:first-child {
+  text-align: right;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menudispo .allmenu:hover::before {
+  content: "Ajouter tout";
+  display: block;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menudispo .xlistemenu .xligmenu.selected {
+  display: none;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menuprofil .titremenu {
+  background-color: #7e1266;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menuprofil .titremenu .allmenu:hover::before {
+  content: "Supprimer  tout";
+  display: block;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menuprofil .xlistemenu .xligmenu {
+  display: none;
+}
+.ficheprofil .zonecorps .zonemenuprofil .menuprofil .xlistemenu .xligmenu.selected {
+  display: grid;
+}

@@ -1,0 +1,26 @@
+[
+    
+    {"userlogin":"admin",
+    "userpassword":"0",
+    "userlastname":"KOUA",
+    "userfirstname":"Kinimo Jacques",
+    "useremail":"jacques.koua@kalitope-ci.com",
+    "fonction":"Administrateur",
+    "initial":"01",
+    "service":"Administrateur",
+    "userprofil":"0"   
+}
+,
+    {"userlogin":"admin02",
+    "userpassword":"gaode",
+    "userlastname":"GAODE",
+    "userfirstname":"Mierille ELodie",
+    "useremail":"mireille.gaode@kalitope-ci.com",
+    "fonction":"Administrateur",
+    "initial":"02",
+    "service":"Administrateur",
+    "userprofil":"0"   
+}
+
+   
+]

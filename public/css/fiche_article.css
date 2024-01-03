@@ -1,0 +1,56 @@
+@import url("styles.css");
+.fichearticle {
+  width: 40vw;
+  height: max-content;
+  overflow: hidden;
+  transform: translateY(-20vh);
+  padding: 20px;
+}
+.fichearticle .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.fichearticle .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.fichearticle .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.fichearticle .zonetitre .titrepage .elcour {
+  font-size: inherit;
+  font-weight: bold;
+}
+.fichearticle .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.fichearticle .zonetitre .closefiche:hover {
+  color: red;
+}
+.fichearticle .zonecorps {
+  padding: 25px !important;
+  align-content: start;
+  grid-template-columns: 2fr 1fr;
+}
+.fichearticle .zonecorps .zoneinfoart {
+  border-radius: 10px;
+  gap: 25px;
+}
+.fichearticle .zonecorps .zoneinfoart .section1 .grdata {
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+}
+.fichearticle .zonecorps .zoneinfoart .section2 {
+  grid-template-columns: 2fr 1fr !important;
+  gap: 25px;
+}
+.fichearticle .zonecorps .zoneimage {
+  place-items: center;
+}
+.fichearticle .zonecorps .zoneimage img {
+  width: 100px;
+}

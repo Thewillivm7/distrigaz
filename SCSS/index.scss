@@ -1,0 +1,53 @@
+@import url("styles.css");
+.index {
+	width: 100vw;
+	height: 100vh;
+	background-image: linear-gradient(var(--fondnormal), #0e1519);
+	position: fixed;
+	overflow: hidden;
+	place-items: center;
+	align-content: center;
+	gap: 20px;
+	.zoneconnexion {
+		background-color: #fff;
+		width: min(400px, 98vw);
+		height: min(650px, 90vh);
+		border-radius: 10px;
+		box-shadow: 0 0 25px var(--couleur_ombre);
+		grid-template-rows: 1fr 25px auto;
+		padding: 15px;
+		gap: 15px;
+		.zonetitre {
+			justify-items: center;
+			font-size: min(20px, 5vw);
+			color: var(--fondnormal);
+			font-weight: bold;
+			img {
+				width: 70px;
+			}
+		}
+		.zoneinfo {
+			font-size: 14px;
+		}
+		.zonecorps {
+			.form {
+				gap: 15px;
+			}
+		}
+		.zonemessage {
+			color: red;
+			text-align: center;
+		}
+		.zonelogo {
+			place-items: center;
+			padding-top: 15px;
+			img {
+				height: 80px;
+			}
+		}
+	}
+	.copyright {
+		color: #fff;
+		font-size: 12px;
+	}
+}

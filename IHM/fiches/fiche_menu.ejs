@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/fiche_menu.css">
+    <script src="js/fiches/fiche_menu.js"></script>
+    <script>
+    var  infoFiche = <%- JSON.stringify(infoFiche) %>;
+</script>
+</head>
+
+<body>
+    <section class="fiche fichemenu">
+        <section class="zonetitre">
+            <section class="titrepage">
+                <div class="titre"></div>
+                <div class="menucour"></div>
+            </section>
+            <span class="closefiche">&#10005;</span>
+        </section>
+        <section class="zonecorps">
+            <section class="zone zonegeneral">
+                <section class="section section1">
+                    <div class="grdata">
+                        <label>Code menu</label>
+                        <input type="text" name="" id="codemenu" class="codetable" disabled>
+                    </div>
+                    <div class="grdata">
+                        <label class="requis">Libellé menu</label>
+                        <input type="text" name="" id="libmenu">
+                    </div>
+                    <div class="grdata">
+                        <label class="requis">Module lié</label>
+                        <select name="" id="listemodule"></select>
+                    </div>
+                    <div class="grdata">
+                        <label class="requis">Titre de la page</label>
+                        <input type="text" name="" id="titrepage">
+                    </div>
+                </section>
+                <section class="section section2">
+                    <div class="grdata">
+                        <label class="requis">Icône du menu</label>
+                        <select name="" id="listeicone"></select>
+                    </div>
+                    <div class="grdata">
+                        <label class="requis">Fiche du menu</label>
+                        <select name="" id="listefiche"></select>
+                    </div>
+                    <section class="grdata zonetype">
+                        <div class="typepage">
+                            <label>Paramètres</label>
+                            <input type="radio" name="typepage" id="typeparam" value="0">
+                        </div>
+                        <div class="typepage">
+                            <label>Autre</label>
+                            <input type="radio" name="typepage" id="typeautre" value="1">
+                        </div>
+                    </section>
+                </section>
+            </section>
+            <section class="zone zoneliste">
+                <section class="zoneconfig">
+                    <section class="zonetable">
+                        <div class="grdata">
+                            <label for="">Table liée</label>
+                            <select name="" id="listetable"></select>
+                        </div>
+                        <div class="grdata">
+                            <label for="">Champ clé</label>
+                            <input type="text" name="" id="champcle">
+                        </div>
+                    </section>
+                    <section class="zonedim">
+                        <div class="grdata">
+                            <label id="labelnew">Texte du bouton NOUVEAU</label>
+                            <input type="text" name="" id="textenew">
+                        </div>
+                        <div class="grdata">
+                            <label for="">Largeur page</label>
+                            <input type="text" name="" id="pagewidth">
+                        </div>
+                        <div class="grdata">
+                            <label for="">Hauteur</label>
+                            <input type="text" name="" id="pageheight">
+                        </div>
+                    </section>
+                    <section class="zoneaction">
+                    </section>
+                </section>
+                <section class="zonevue">
+                    <div class="grdata vue">
+                        <label for="">Vue de la liste :</label>
+                        <select name="" id="listevue"></select>
+                    </div>
+                    <section class="zonetabchamp">
+                        <div class="enttab">
+                            <div class="colent"><input type="checkbox" name="" id="togglebtn"></div>
+                            <div class="colent">Champ</div>
+                            <div class="colent">Entête</div>
+                            <div class="colent">Largeur</div>
+                            <div class="colent">Alignement</div>
+                        </div>
+                        <div class="detailtab">
+
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <div class="zonebtn">
+            <button class="btnappli" id="btnannul">Annuler</button>
+            <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+        </div>
+    </section>
+</body>
+
+</html>

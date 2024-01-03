@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>KALITOPE RHPlus | Application de suivi des RH v1.1 </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/accueil.css'>
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="jquery-ui-1.12.1.js"></script>
+    <script src="js/accueil.js"></script>
+    <script>
+        var infoMenuUser = <%- JSON.stringify(infoMenu) %>;
+        var infoUser = <%- JSON.stringify(infoUser) %>;
+        var dataTheme = <%- JSON.stringify(dataTheme) %>;
+    </script>
+</head>
+
+<body>
+    <%- include("configtheme") %>
+    <section class="accueil">
+        <section class="header">
+            <section class="zonelogo">
+                <img class="logo" src="" alt="">
+            </section>
+            <section class="zonehamnotif">
+                <span class="btnham">&#9776;</span>
+                <img src="assets/icones/iconepage/notification.png" alt="" class="notif">
+            </section>
+            <section class="zoneentete">
+                <section class="zonemenu_horiz">
+                    <section class="zonemodule"></section>
+                </section>
+            </section>
+        </section>
+        <section class="main">
+            <section class="zonemenu_vert">
+            </section>
+            <section class="zonemain">
+                <section class="zonelistedata"></section>
+            </section>
+        </section>
+        <section class="footer">
+            <section class="zonecompte">
+                <div class="zoneimage">
+                    <% let avatar="assets/avatar/avatarhomme.png" ;if(infoUser.sexeagent=="F" )
+                                    {avatar="assets/avatar/avatarfemme.png" } %>
+                                    <img src="<%=avatar%>" alt="" width="100%">
+                </div>
+                <section class="infocompte">
+                    <div class="zoneprofil">
+                        <%=infoUser.profilAgent%>
+                    </div>
+                    <div class="zonematr">
+                        <%=infoUser.login%>
+                    </div>
+                    <section class="zoneinfo">
+                        <section class="grnom">
+
+                            <div class="prenom">
+                                <%=infoUser.prenomAgent%>
+                            </div>
+                            <div class="nom">
+                                <%=infoUser.nomAgent%>
+                            </div>
+                        </section>
+                        <div class="fonction">
+                            <%=infoUser.fonctionAgent%>
+                        </div>
+                        <div class="service">
+                            <%=infoUser.serviceAgent%>
+                        </div>
+                        <div class="agence">
+                            <%=infoUser.agenceAgent%>
+                        </div>
+                        <div class="email">
+                            <%=infoUser.emailAgent%>
+                        </div>
+                    </section>
+                    <div class="zoneaction">
+                        <div class="changepwd">
+                            <img src="assets/icones/iconepage/password.png" alt="">
+                            <a href="/checkotp">Changer de mot de passe</a>
+                        </div>
+                        <div class="logout">
+                            <img src="assets/icones/iconepage/logout.png" alt="">
+                            <a href="/">Déconnexion</a>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <div class="zonecopyright">
+                Application de gestion | DistriGaz version 1.0 - © KALITOPE 2023-2025 - Tous droits réservés
+            </div>
+            <div class="dateheure"></div>
+            <div class="settings">
+                <img src="assets/icones/iconepage/settings.png" alt="">
+            </div>
+        </section>
+
+    </section>
+</body>
+
+</html>

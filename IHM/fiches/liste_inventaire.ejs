@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="css/listeinventaire.css">
+<script defer src="js/listeinventaire.js" type=""></script>
+<script>
+        var infoFiche = <%- JSON.stringify(menuSelected) %>;
+    </script>
+<section class="listeinventaire">
+    <section class="titrepage">
+        <div class="titre">Gestion des inventaires de stock</div>
+        <button class="btnappli" id="btnnew">Nouvel inventaire</button>
+        <div class="closeliste">&#10005;</div>
+    </section>
+    <section class="zonefiltre">
+        <img src="assets/icones/iconepage/loupe.png" alt="">
+        <input type="text" name="" id="filtredata">
+        <span id="clearfilter">&#10005;</span>
+    </section>
+    <section class="tablist">
+        <section class="headlist">
+            <div class="colhead">N° inventaire</div>
+            <div class="colhead">Libellé</div>
+            <div class="colhead">Statut</div>
+            <div class="colhead headaction">Actions</div>
+        </section>
+        <section class="bodylist" id="bodylist">
+        </section>
+        <div class="footerlist">
+        </div>
+    </section>
+</section>
+<section class="modal modalfiche">
+</section>
+<section class="modal modalconfirmation">
+    <div class="confirmation">
+        <div class="titreconfirmation">
+            <div class="titre">Confirmation de désactivation </div>
+            <div class="btnclose">&#10005;</div>
+
+        </div>
+        <div class="corpsconfirmation">
+            <div class="messageconfirm">
+                <div class="message">Confirmez-vous la désactivation (O/N) ?</div>
+            </div>
+            <div class="dataconfirm"></div>
+        </div>
+        <div class="piedconfirmation">
+            <button class="btnappli btnoui">Oui</button>
+            <button class="btnappli btnnon">Non</button>
+        </div>
+    </div>
+</section>

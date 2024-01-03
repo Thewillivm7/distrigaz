@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="css/fiche_module.css">
+<script src="js/fiches/fiche_module.js"></script>
+
+
+<% let newDataFiche=JSON.stringify(infoFiche);%>
+    <input type="hidden" name="" id="cachefiche" value="<%= newDataFiche %>">
+    <section class="fiche fichemodule">
+        <section class="zonetitre">
+            <section class="titrepage">
+                <div class="titre">Mise à jour des modules</div>
+                <div class="elcour"></div>
+            </section>
+            <span class="closefiche">&#10005;</span>
+        </section>
+        <section class="zonecorps">
+            <section class="section section1">
+                <div class="grdata">
+                    <label for="">Code module : </label>
+                    <input type="text" class="codetable" disabled id="codemodule">
+                </div>
+
+            </section>
+            <section class="section section2">
+                <div class="grdata">
+                    <label class="requis" for="">Libellé module : </label>
+                    <input type="text" class="" id="libmodule">
+                </div>
+            </section>
+            <section class="section section3">
+                <div class="grdata">
+                    <label class="" for="">Icône du module : </label>
+                    <select name="" id="listeicone"></select>
+
+                    <img id="iconemodule" src="" alt="">
+                </div>
+            </section>
+        </section>
+        <div class="zonebtn">
+            <button class="btnappli" id="btnannul">Annuler</button>
+            <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+        </div>
+    </section>

@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="css/fiche_agent.css">
+<script src="js/fiches/fiche_agent.js"></script>
+
+<script>
+    var infoFiche = <%- JSON.stringify(infoFiche) %>;
+</script>
+<section class="fiche ficheagent">
+    <section class="zonetitre">
+        <section class="titrepage">
+            <div class="titre"> </div>
+            <div class="elcour"></div>
+        </section>
+        <span class="closefiche">&#10005;</span>
+    </section>
+    <section class="zonecorps">
+        <section class="section section1">
+            <div class="grdata">
+                <label for="">Login</label>
+                <input type="text" class="codetable" id="loginagent" disabled>
+            </div>
+            <div class="grdata">
+                <label for="">Matricule</label>
+                <input type="text" id="matragent" autocomplete="off">
+            </div>
+            <div class="grdata">
+                <label class="requis" for="">Profil</label>
+                <select name="" id="listeprofil">
+                    </select>
+            </div>
+        </section>
+        <section class="section section2">
+            <div class="grdata">
+                <label class="requis" for="">Civilité</label>
+                <select name="" id="listecivilite">
+                        <option value="1">M.</option>
+                        <option value="2">Mme</option>
+                        <option value="3">Mlle</option>
+                    </select>
+            </div>
+            <div class="grdata">
+                <label class="requis" for="">Nom</label>
+                <input type="text" id="nomagent" autocomplete="off">
+            </div>
+            <div class="grdata">
+                <label class="requis" for="">Prénoms</label>
+                <input type="text" id="prenomagent" autocomplete="off">
+            </div>
+        </section>
+        <section class="section section3">
+            <div class="grdata">
+                <label class="requis" for="">Dépot</label>
+                <select name="" id="listedepot">
+                    </select>
+            </div>
+            <div class="grdata">
+                <label for="">Fonction</label>
+                <input type="text" name="" id="fonctionagent" autocomplete="off">
+            </div>
+            <div class="grdata">
+                <label class="requis" for="">Date d'embauche</label>
+                <input type="date" name="" id="dateemb">
+            </div>
+        </section>
+        <section class="section section4">
+            <div class="grdata">
+                <label for="">Date de naissance</label>
+                <input type="date" id="datenais" autocomplete="off">
+            </div>
+            <div class="grdata">
+                <label class="requis" for="">Email</label>
+                <input type="email" name="" id="emailagent" autocomplete="off">
+            </div>
+            <div class="grdata">
+                <label for="">Téléphone</label>
+                <input type="text" name="" id="telagent" autocomplete="off">
+            </div>
+        </section>
+    </section>
+    <div class="zonebtn">
+        <button class="btnappli" id="btnannul">Annuler</button>
+        <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+    </div>
+</section>

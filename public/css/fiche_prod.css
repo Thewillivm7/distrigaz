@@ -1,0 +1,156 @@
+@charset "UTF-8";
+@import url("styles.css");
+.ficheprod {
+  width: 60vw;
+  height: auto;
+  overflow: hidden;
+  transform: translateY(-45px);
+}
+.ficheprod .bat {
+  color: green;
+}
+.ficheprod .odp {
+  color: #d31875;
+}
+.ficheprod .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.ficheprod .zonetitre .titrepage {
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.ficheprod .zonetitre .titrepage .titre {
+  font-size: inherit;
+  font-weight: bold;
+}
+.ficheprod .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.ficheprod .zonetitre .closefiche:hover {
+  color: red;
+}
+.ficheprod .zonecorps {
+  gap: 2vh;
+}
+.ficheprod .zonecorps .section {
+  border: var(--bordinput_norm);
+  padding: 10px;
+  border-radius: 10px;
+}
+.ficheprod .zonecorps .section1 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.ficheprod .zonecorps .section2 {
+  grid-template-columns: 3fr 1fr 1fr;
+  position: relative;
+}
+.ficheprod .zonecorps .section2::before {
+  position: absolute;
+  content: "Article à produire";
+  top: -15px;
+  left: 40%;
+  padding: 7px 20px;
+  border-radius: 5px;
+  background-color: #456;
+  font-weight: bold;
+  color: #fff;
+}
+.ficheprod .zonecorps .section2 .zoneart {
+  padding: 10px;
+  gap: 10px;
+}
+.ficheprod .zonecorps .section2 .zoneart #infosarticle {
+  font-size: 18px;
+  font-weight: bold;
+}
+.ficheprod .zonecorps .section2 .zoneart #descart {
+  padding: 10px;
+  font-size: 18px;
+}
+.ficheprod .zonecorps .section2 .zoneqte {
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  align-content: center;
+}
+.ficheprod .zonecorps .section2 .zoneqte #qteart {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: right;
+  width: max-content;
+}
+.ficheprod .zonecorps .section2 .zonedelai {
+  gap: 10px;
+  align-content: start;
+}
+.ficheprod .zonecorps .section2 .zonedelai #delailiv {
+  text-align: center;
+}
+.ficheprod .zonecorps .section3 {
+  grid-template-columns: 1fr 1.2fr;
+  height: 250px;
+  overflow: hidden;
+}
+.ficheprod .zonecorps .section3 .zoneetape {
+  overflow: hidden;
+  align-content: start;
+  grid-template-rows: auto 1fr;
+}
+.ficheprod .zonecorps .section3 .zoneetape .entetape {
+  padding: 5px 10px;
+  background-color: #6c6e6c;
+  color: #fff;
+  font-size: 15px;
+}
+.ficheprod .zonecorps .section3 .zoneetape .listeetape {
+  align-content: start;
+  overflow-y: auto;
+  padding: 15px;
+  border: var(--bordinput_norm);
+}
+.ficheprod .zonecorps .section3 .zoneetape .listeetape .etapeprod {
+  align-items: center;
+  grid-template-columns: 1fr auto;
+  height: 35px;
+}
+.ficheprod .zonecorps .section3 .zoneetape .listeetape .etapeprod:hover {
+  background-color: var(--couleurcopy, #fccdf2);
+}
+.ficheprod .zonecorps .section3 .zoneetape .listeetape .etapeprod:hover .btnetape {
+  display: grid;
+}
+.ficheprod .zonecorps .section3 .zoneetape .listeetape .etapeprod .libetape {
+  white-space: nowrap;
+  padding: 0 10px;
+}
+.ficheprod .zonecorps .section3 .zoneetape .listeetape .etapeprod .btnetape {
+  place-items: center;
+  font: 20px;
+  font-weight: bold;
+  background-color: var(--couleurprinc, #610e4f);
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
+}
+.ficheprod .zonecorps .section3 .etapesel .entetape {
+  background-color: rgb(17, 15, 15);
+}
+.ficheprod .zonecorps .section3 .etapesel .etapeprod {
+  grid-template-columns: 25px 1fr auto !important;
+}
+.ficheprod .zonecorps .section3 .etapesel .etapeprod .ordre {
+  text-align: right;
+}
+.ficheprod .zonecorps .section3 .etapedispo .etapeprod.selected {
+  display: none;
+}
+.ficheprod .zonecorps .section4 #commentodp {
+  height: 70px;
+  padding: 10px;
+}

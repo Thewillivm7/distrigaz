@@ -1,0 +1,370 @@
+@charset "UTF-8";
+@import url("styles.css");
+.listedevis {
+  z-index: 9;
+  height: auto;
+  max-height: 70vh;
+  width: 90%;
+  border: var(--bordinput_norm, #ddd);
+  border-radius: 10px;
+  margin: 25px auto;
+  font-size: 20px;
+  padding: 25px;
+  grid-template-rows: auto 1fr;
+  gap: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 25px rgba(19, 47, 75, 0.2274509804);
+}
+.listedevis .titrepage {
+  align-items: center;
+  grid-auto-flow: column;
+  position: relative;
+}
+.listedevis .titrepage span {
+  font-size: 18pt;
+}
+.listedevis .titrepage .closeliste {
+  right: -40px;
+  top: -40px;
+  background-color: #fff;
+  height: 35px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 5px #aaa;
+  transition: 0.5s;
+  border: 2px solid #fff;
+  position: absolute;
+}
+.listedevis .titrepage .closeliste:hover {
+  border: none;
+  background-color: var(--couleurprinc, #610e4f);
+  color: #fff;
+}
+.listedevis .titrepage .btnappli {
+  padding: 0 25px;
+  justify-self: right;
+}
+.listedevis .tablist {
+  grid-template-rows: auto 1fr 40px;
+  align-content: start;
+  padding: 15px;
+  border-radius: 10px;
+  border: var(--bordinput_norm, #ddd);
+  overflow: hidden;
+}
+.listedevis .tablist .headlist {
+  align-items: center;
+  grid-auto-flow: column;
+  border-bottom: var(--bordinput_norm, #ddd);
+  font-size: 14px;
+}
+.listedevis .tablist .headlist .colhead {
+  position: relative;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-weight: 550;
+}
+.listedevis .tablist .headlist .colhead::first-letter {
+  text-transform: uppercase;
+}
+.listedevis .tablist .headlist .colhead:not(:first-child) {
+  border-left: 1px dotted #ddd;
+}
+.listedevis .tablist .headlist .colhead::after {
+  right: 5px;
+  position: absolute;
+  content: "⬆";
+  font-size: 1.5em;
+  font-weight: normal;
+  transform: translateY(-4px);
+  color: #999;
+  display: none;
+}
+.listedevis .tablist .headlist .colhead:hover::after {
+  display: block;
+}
+.listedevis .tablist .headlist .headaction {
+  text-align: center;
+}
+.listedevis .tablist .headlist,
+.listedevis .tablist .datarow {
+  gap: 5px;
+  align-items: center;
+  grid-template-columns: 100px 100px 2fr 2fr 120px 120px 100px 130px;
+}
+.listedevis .tablist .headlist .colhead,
+.listedevis .tablist .headlist .coldata,
+.listedevis .tablist .datarow .colhead,
+.listedevis .tablist .datarow .coldata {
+  padding: 5px 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.listedevis .tablist .headlist .colhead:last-child,
+.listedevis .tablist .headlist .coldata:last-child,
+.listedevis .tablist .datarow .colhead:last-child,
+.listedevis .tablist .datarow .coldata:last-child {
+  text-align: center;
+}
+.listedevis .tablist .headlist .colhead:nth-child(1), .listedevis .tablist .headlist .colhead:nth-child(7),
+.listedevis .tablist .headlist .coldata:nth-child(1),
+.listedevis .tablist .headlist .coldata:nth-child(7),
+.listedevis .tablist .datarow .colhead:nth-child(1),
+.listedevis .tablist .datarow .colhead:nth-child(7),
+.listedevis .tablist .datarow .coldata:nth-child(1),
+.listedevis .tablist .datarow .coldata:nth-child(7) {
+  text-align: center;
+}
+.listedevis .tablist .headlist .colhead:nth-child(2),
+.listedevis .tablist .headlist .coldata:nth-child(2),
+.listedevis .tablist .datarow .colhead:nth-child(2),
+.listedevis .tablist .datarow .coldata:nth-child(2) {
+  text-align: center;
+}
+.listedevis .tablist .headlist .colhead:nth-child(5), .listedevis .tablist .headlist .colhead:nth-child(6),
+.listedevis .tablist .headlist .coldata:nth-child(5),
+.listedevis .tablist .headlist .coldata:nth-child(6),
+.listedevis .tablist .datarow .colhead:nth-child(5),
+.listedevis .tablist .datarow .colhead:nth-child(6),
+.listedevis .tablist .datarow .coldata:nth-child(5),
+.listedevis .tablist .datarow .coldata:nth-child(6) {
+  text-align: right;
+}
+.listedevis .tablist .bodylist {
+  gap: 10px;
+  font-size: 11.5pt;
+  align-content: start;
+  overflow: auto;
+  overflow: hidden;
+  overflow-y: auto;
+  padding-top: 18px;
+}
+.listedevis .tablist .bodylist .datarow {
+  border-bottom: var(--bordinput_norm, #ddd);
+  padding: 5px 0;
+}
+.listedevis .tablist .bodylist .datarow:hover .colaction .action {
+  display: block;
+}
+.listedevis .tablist .bodylist .datarow .valide {
+  color: #ca1667;
+  font-weight: bold;
+}
+.listedevis .tablist .bodylist .datarow .coldata {
+  font-size: 11.5pt;
+  text-overflow: ellipsis;
+}
+.listedevis .tablist .bodylist .datarow .coldata::first-letter {
+  text-transform: uppercase;
+}
+.listedevis .tablist .bodylist .datarow .colaction {
+  align-items: center;
+  gap: 5px;
+  grid-auto-flow: column;
+  justify-content: right;
+  width: auto;
+  padding: 0 15px;
+}
+.listedevis .tablist .bodylist .datarow .colaction .action {
+  position: relative;
+  z-index: 3;
+  display: none;
+  cursor: pointer;
+  filter: none;
+}
+.listedevis .tablist .bodylist .datarow .colaction .action img {
+  width: 20px;
+}
+.listedevis .tablist .bodylist .datarow .colaction .action::after {
+  z-index: 5;
+  position: absolute;
+  content: attr(data-action);
+  padding: 5px 20px;
+  background-color: #123;
+  color: #fff;
+  top: -25px;
+  right: 0;
+  display: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  place-items: center;
+  white-space: nowrap;
+}
+.listedevis .tablist .bodylist .datarow .colaction .action:hover::after {
+  display: grid;
+}
+.listedevis .tablist .footerlist {
+  justify-content: right;
+  align-items: end;
+  grid-auto-flow: column;
+  box-shadow: 0 -12px 12px -12px #aaa;
+  gap: 5px;
+  padding: 0 10px;
+  color: var(--couleurprinc, #610e4f);
+}
+
+.modal {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(22, 34, 41, 0.5725490196);
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  place-items: center;
+  overflow: hidden;
+}
+
+.modalfiche .fiche {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 5px 15px;
+  overflow: hidden;
+  max-height: 90vh;
+  transition: 0.5s;
+  grid-template-rows: auto 1fr auto;
+  align-content: start;
+}
+.modalfiche .fiche .codetable {
+  width: 80px;
+}
+.modalfiche .fiche .zonetitre {
+  padding: 7px 15px;
+  font-size: 13pt;
+  box-shadow: 0 6px 6px -6px #aaa;
+}
+.modalfiche .fiche .zonecorps {
+  align-content: start;
+  padding: 10px 5px;
+  gap: 15px;
+  overflow-y: auto;
+}
+.modalfiche .fiche .zonecorps .section {
+  padding: 15px;
+  grid-auto-flow: column;
+  gap: 25px;
+}
+.modalfiche .fiche .zonecorps .section .grdata {
+  align-items: center;
+  white-space: nowrap;
+  gap: 10px 15px;
+}
+.modalfiche .fiche .zonebtn {
+  align-items: center;
+  padding: 0 25px;
+  grid-auto-flow: column;
+  box-shadow: 0 -6px 6px -6px #aaa;
+  padding: 10px 25px;
+}
+.modalfiche .fiche .zonebtn .btnappli {
+  width: 170px;
+  padding: 10px 25px !important;
+}
+.modalfiche .fiche .zonebtn .btnappli:last-child {
+  justify-self: right;
+}
+
+@keyframes anim01 {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.modalconfirmation .confirmation {
+  top: 75px;
+  position: absolute;
+  height: 300px;
+  width: 600px;
+  background-color: #fff;
+  grid-template-rows: auto 1fr auto;
+  animation: anim01 0.3s ease-in-out 0.1s 1 normal forwards;
+  transform: scale(0);
+}
+.modalconfirmation .confirmation .titreconfirmation {
+  padding: 15px 25px;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  background-color: var(--couleurprinc, #610e4f);
+  color: #fff;
+}
+.modalconfirmation .confirmation .titreconfirmation > div {
+  font-size: 1.2em;
+}
+.modalconfirmation .confirmation .titreconfirmation .btnclose {
+  cursor: pointer;
+  color: #aaa;
+}
+.modalconfirmation .confirmation .titreconfirmation .btnclose:hover {
+  color: #fff;
+}
+.modalconfirmation .confirmation .corpsconfirmation {
+  padding: 15px;
+  gap: 25px;
+  text-align: center;
+  align-content: center;
+}
+.modalconfirmation .confirmation .corpsconfirmation .messageconfirm {
+  text-align: center;
+}
+.modalconfirmation .confirmation .corpsconfirmation .dataconfirm {
+  text-align: center;
+  color: var(--couleurprinc, #610e4f);
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.modalconfirmation .confirmation .piedconfirmation {
+  align-items: center;
+  padding: 15px;
+  grid-auto-flow: column;
+  justify-items: center;
+}
+.modalconfirmation .confirmation .piedconfirmation .btnappli {
+  padding: 0 30px;
+  height: 35px !important;
+}
+
+.modalprint {
+  grid-template-rows: auto 1fr;
+  gap: 5px;
+}
+.modalprint .zoneparam {
+  gap: 5px;
+  padding: 10px 45px;
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+}
+.modalprint .zoneparam .closeprint {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 1.4em;
+  color: #666;
+  cursor: pointer;
+}
+.modalprint .zoneparam .closeprint:hover {
+  color: #000;
+}
+.modalprint .zoneparam .zonebtnprint {
+  padding: 10px 25px;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.modalprint .zoneparam .zonebtnprint .btnappli {
+  width: 170px;
+}
+.modalprint .zonepreview {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(67, 68, 70, 0.7725490196);
+  justify-items: center;
+  overflow: hidden;
+  overflow-y: auto;
+  position: relative;
+}

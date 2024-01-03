@@ -1,0 +1,107 @@
+@import url("styles.css");
+.ficheclient {
+	width: max(50vw, 700px);
+	height: auto;
+	overflow: hidden;
+	transform: translateY(-5%);
+	.infoext {
+		height: 37px;
+		padding: 10px;
+		border-radius: 5px;
+	}
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			font-size: 1.05em;
+
+			.titre {
+				font-size: inherit;
+			}
+			.elcour {
+				font-size: inherit;
+				color: var(--fondnormal);
+				font-weight: bold;
+			}
+		}
+		.closefiche {
+			font-size: 1.05em;
+			cursor: pointer;
+			&:hover {
+				color: red;
+			}
+		}
+	}
+	.zonecorps {
+		grid-template-columns: 1fr 175px;
+		gap: 25px;
+		.zoneprinc {
+			align-content: start;
+			gap: 15px;
+			grid-template-rows: auto auto;
+			overflow: hidden;
+			.section {
+				padding: 25px;
+				border: 1px solid var(--couleur_bordcadre);
+				border-radius: 10px;
+				gap: 20px;
+				position: relative;
+			}
+			.section1 {
+				grid-template-columns: 150px 1fr 1fr;
+				#seuilcommande {
+					font-size: 1.2em;
+					font-weight: bold;
+				}
+			}
+			.section2 {
+				grid-template-columns: 100% !important;
+				grid-template-rows: 1fr 1fr;
+
+				.grsec {
+					grid-auto-flow: column;
+					gap: 20px;
+				}
+			}
+		}
+		.zonefinance {
+			padding: 15px;
+			border: 1px solid var(--couleur_bordcadre);
+			border-radius: 10px;
+			align-content: start;
+			gap: 15px;
+			.grdata {
+				align-content: center;
+				gap: 7px;
+				.infoext {
+					color: #050000;
+					text-align: right;
+					font-weight: bold;
+					font-size: 1.15em;
+					padding: 10px;
+				}
+				#soldeinit {
+					border: 1px solid var(--couleur_bordcadre);
+					color: var(--couleur_texte);
+				}
+
+				#caclient {
+					background-color: #b3b0b0 !important;
+				}
+				#totalpaiement {
+					background-color: #c9ffc9 !important;
+				}
+				#totalavoir {
+					background-color: #fcb9b9 !important;
+				}
+				#soldeclient {
+					background-color: #b4b4f7 !important;
+				}
+			}
+		}
+	}
+}

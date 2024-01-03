@@ -1,0 +1,159 @@
+@import url("styles.css");
+.fichemenu {
+  width: max(1000px, 60vw);
+  height: min(750px, 98vh);
+  overflow: auto;
+  grid-template-rows: auto 1fr auto;
+}
+.fichemenu .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.fichemenu .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 13pt;
+}
+.fichemenu .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.fichemenu .zonetitre .titrepage .menucour {
+  font-size: inherit;
+  color: var(--couleurprinc, #610e4f);
+  font-weight: bold;
+}
+.fichemenu .zonetitre .closefiche {
+  font-size: 1.01em;
+  color: #aaa;
+  cursor: pointer;
+}
+.fichemenu .zonetitre .closefiche:hover {
+  color: #000;
+}
+.fichemenu .zonecorps {
+  grid-template-rows: auto auto 1fr;
+  gap: 15px;
+  overflow-y: scroll;
+}
+.fichemenu .zonecorps .section1 {
+  grid-template-columns: auto 1fr 1fr 1fr;
+}
+.fichemenu .zonecorps .section1 .grdata {
+  grid-template-rows: auto 1fr;
+}
+.fichemenu .zonecorps .section2 {
+  grid-template-columns: 1fr repeat(3, auto);
+}
+.fichemenu .zonecorps .section3 {
+  grid-template-columns: 1fr 2.5fr;
+  overflow: hidden;
+}
+.fichemenu .zonecorps .section3 .zonedata {
+  border: var(--bordinput_norm, #ddd);
+  grid-template-rows: auto auto 1fr;
+  overflow: hidden;
+}
+.fichemenu .zonecorps .section3 .zonedata .titresection {
+  text-align: center;
+  padding: 10px 25px;
+  font-size: 1.1em;
+  border-bottom: var(--bordinput_norm, #ddd);
+}
+.fichemenu .zonecorps .section3 .zonedata .zonetable {
+  grid-template-columns: 1fr 1fr;
+  padding: 10px 25px;
+  align-items: center;
+  gap: 15px;
+}
+.fichemenu .zonecorps .section3 .zonedata .zonetable .grdata {
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+}
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp {
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  gap: 5px;
+}
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .enttab,
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .ligch {
+  align-items: center;
+  padding: 10px;
+  grid-template-columns: 50px repeat(4, 1fr);
+  gap: 10px;
+  border-bottom: var(--bordinput_norm);
+}
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .enttab .colent,
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .enttab .colch,
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .ligch .colent,
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .ligch .colch {
+  text-align: center;
+}
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .enttab .colent input,
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .enttab .colent select,
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .enttab .colch input,
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .enttab .colch select,
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .ligch .colent input,
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .ligch .colent select,
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .ligch .colch input,
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .ligch .colch select {
+  text-align: center;
+  width: 100% !important;
+}
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .enttab {
+  box-shadow: 0 5px 5px -5px #aaa;
+  font-weight: bold;
+}
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .detailtab {
+  align-content: start;
+  overflow-y: auto;
+}
+.fichemenu .zonecorps .section3 .zonedata .zonetabchamp .detailtab .ligch {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.fichemenu .zonecorps .section3 .zonecomp {
+  padding: 15px;
+  grid-template-rows: auto auto auto;
+  align-content: start;
+  gap: 20px;
+  border: var(--bordinput_norm, #ddd);
+  border-right: none;
+}
+.fichemenu .zonecorps .section3 .zonecomp .grdata {
+  gap: 15px;
+}
+.fichemenu .zonecorps .section3 .zonecomp .typepage {
+  border: var(--bordinput_norm, #ddd);
+  padding: 20px 10px;
+  position: relative;
+}
+.fichemenu .zonecorps .section3 .zonecomp .typepage ::before {
+  content: "Type de page";
+  position: absolute;
+  background-color: #fff;
+  top: -10px;
+  left: 15px;
+  padding: 0 5px;
+  font-style: italic;
+  font-size: 0.8em;
+}
+.fichemenu .zonecorps .section3 .zonecomp .typepage .zonetype {
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 15px;
+}
+.fichemenu .zonecorps .section3 .zonecomp .typepage .zonetype .grradio {
+  justify-content: center;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+}
+.fichemenu .zonecorps .section3 .zonecomp .typepage .zonetype .grradio:last-child {
+  justify-self: right;
+}
+.fichemenu .zonecorps .section3 .zonecomp .typepage .zonetype select {
+  width: 100%;
+}

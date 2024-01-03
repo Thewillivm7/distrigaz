@@ -1,0 +1,172 @@
+@media print {
+  body {
+    margin: 0;
+    box-shadow: none;
+  }
+}
+.doccommande {
+  inset: 0;
+  margin: auto;
+  width: 842px;
+  height: 1191px;
+  overflow-y: auto;
+  padding: 28px;
+  grid-template-rows: auto 1fr 200px 50px;
+  padding-bottom: 0;
+  gap: 10px;
+  border: 2px solid #ddd;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.doccommande .commandeentete {
+  background-color: #fff;
+  grid-template-rows: 100px 1fr;
+  gap: 20px;
+  padding: 0 28px;
+}
+.doccommande .commandeentete .lig1 {
+  grid-auto-flow: column;
+}
+.doccommande .commandeentete .lig1 .zonelogo img {
+  width: 50%;
+}
+.doccommande .commandeentete .lig1 .zoneinfocommande {
+  padding: 0 25px;
+  gap: 10px;
+  align-content: center;
+  justify-content: right;
+}
+.doccommande .commandeentete .lig1 .zoneinfocommande p {
+  font-size: 1.4em;
+}
+.doccommande .commandeentete .lig1 .zoneinfocommande span {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+.doccommande .commandeentete .infoste {
+  gap: 5px;
+}
+.doccommande .commandeentete .infoste .nomste {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.doccommande .commandeentete .lig3 {
+  grid-auto-flow: column;
+}
+.doccommande .commandeentete .lig3 .infoclient #prev_nomclient {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.doccommande .commandeentete .lig3 .infodate {
+  grid-auto-flow: column;
+  justify-content: right;
+  padding: 0 15px;
+  gap: 5px;
+  align-content: center;
+}
+.doccommande .commandeentete .lig3 .infodate #prev_datecommande {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.doccommande .commandecorps {
+  grid-template-rows: 35px 1fr;
+  border: 1px solid #ccc;
+}
+.doccommande .commandecorps .enttabcommande,
+.doccommande .commandecorps .ligartcommande,
+.doccommande .commandecorps .infopiedcommande {
+  background-color: #203229;
+  grid-template-columns: 50px 3fr 1fr 1fr 1fr;
+  align-content: center;
+  padding: 0 10px;
+  gap: 3px;
+}
+.doccommande .commandecorps .enttabcommande .colent,
+.doccommande .commandecorps .enttabcommande .ligartcommande,
+.doccommande .commandecorps .enttabcommande .colart,
+.doccommande .commandecorps .ligartcommande .colent,
+.doccommande .commandecorps .ligartcommande .ligartcommande,
+.doccommande .commandecorps .ligartcommande .colart,
+.doccommande .commandecorps .infopiedcommande .colent,
+.doccommande .commandecorps .infopiedcommande .ligartcommande,
+.doccommande .commandecorps .infopiedcommande .colart {
+  color: #fff;
+  align-items: center;
+  padding-left: 7px;
+  font-size: 1.1em;
+}
+.doccommande .commandecorps .enttabcommande .colent:not(:nth-child(2)),
+.doccommande .commandecorps .enttabcommande .ligartcommande:not(:nth-child(2)),
+.doccommande .commandecorps .enttabcommande .colart:not(:nth-child(2)),
+.doccommande .commandecorps .ligartcommande .colent:not(:nth-child(2)),
+.doccommande .commandecorps .ligartcommande .ligartcommande:not(:nth-child(2)),
+.doccommande .commandecorps .ligartcommande .colart:not(:nth-child(2)),
+.doccommande .commandecorps .infopiedcommande .colent:not(:nth-child(2)),
+.doccommande .commandecorps .infopiedcommande .ligartcommande:not(:nth-child(2)),
+.doccommande .commandecorps .infopiedcommande .colart:not(:nth-child(2)) {
+  text-align: center;
+}
+.doccommande .commandecorps .detailtabcommande {
+  align-content: flex-start;
+  gap: 5px;
+}
+.doccommande .commandecorps .detailtabcommande .ligartcommande {
+  gap: 5px;
+  padding: 10px;
+  box-shadow: 0 7px 12px -12px #666;
+  background-color: #fff;
+}
+.doccommande .commandecorps .detailtabcommande .ligartcommande .colart {
+  align-content: flex-start;
+  color: #203229;
+}
+.doccommande .commandecorps .detailtabcommande .ligartcommande .colart .article {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.doccommande .commandepied {
+  background-color: rgb(255, 255, 255);
+  align-content: flex-start;
+}
+.doccommande .commandepied .ligpied {
+  grid-template-columns: 3fr 100px 1fr;
+  font-weight: bold;
+  padding: 5px;
+  text-align: left;
+  justify-items: right;
+  column-gap: 5px;
+}
+.doccommande .commandepied .ligpied .colpied {
+  padding: 5px 10px;
+  background-color: #e7e4e4;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.doccommande .commandepied .ligpied .colpied:nth-child(1) {
+  background-color: #fff;
+}
+.doccommande .commandepied .ligpied .colpied:nth-child(2) {
+  width: 100%;
+}
+.doccommande .commandepied .ligpied .colpied:last-child {
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+.doccommande .commandepied .liglettre {
+  padding-top: 10px;
+  text-align: center;
+  align-content: center;
+}
+.doccommande .commandepied .liglettre #montantlettre {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.doccommande .piedpage {
+  align-content: flex-start;
+  justify-items: center;
+}
+.doccommande .piedpage p {
+  font-size: 0.7em;
+}

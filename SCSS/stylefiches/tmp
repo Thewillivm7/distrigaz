@@ -1,0 +1,98 @@
+		.entfiche {
+			align-content: start;
+			border: 1px solid var(--couleur_bordnorm);
+			border-radius: 10px;
+			grid-template-columns: 3fr 1fr;
+			background-color: yellow;
+			overflow: hidden;
+			> .section {
+				border: 2px solid red;
+				align-content: start;
+				.grdata {
+					gap: 10px;
+					align-items: center;
+				}
+			}
+			.section1 {
+				grid-template-rows: 1fr 2fr;
+				background-color: pink;
+				.zoneclient {
+					gap: 10px;
+					grid-template-columns: auto 1fr;
+					#client {
+						border-radius: 5px;
+						border: 1px solid var(--couleur_bordnorm);
+						height: 40px;
+						font-weight: bold;
+						font-size: 1.2em;
+						padding: 10px;
+						max-width: 65%;
+					}
+				}
+				.zoneobjet {
+					grid-template-rows: auto 1fr;
+					#objetfacture {
+						overflow: hidden;
+						height: 50px;
+						padding: 15px;
+						font-size: 1.2em;
+						color: var(--fondnormal);
+						font-weight: bold;
+					}
+				}
+			}
+			.section2 {
+				grid-template-rows: 1fr 1fr 2fr;
+				.zonetva {
+					grid-template-columns: 100%;
+					grid-template-rows: auto 1fr;
+					#tvalabel {
+						font-size: 15px;
+						width: 25px;
+						aspect-ratio: 1;
+						display: grid;
+						place-items: center;
+						border: 1px solid var(--couleur_bordnorm);
+						border-radius: 10%;
+						position: relative;
+						cursor: pointer;
+						&::before {
+							position: absolute;
+							display: none;
+							content: "\2714";
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							font-size: 1.2em;
+							color: #ffffff;
+						}
+					}
+					#tvacb {
+						display: none;
+						&:checked ~ #tvalabel {
+							background-color: var(--fondnormal);
+							border: none;
+							&::before {
+								display: block;
+							}
+						}
+					}
+					.checkbox {
+					}
+				}
+			}
+		}
+
+
+        <div class="grdata zonenum">
+        <label for="">Facture N° : </label>
+    </div>
+    <div class="grdata zonedate">
+        <label for="">Date : </label>
+        <input type="date" name="" id="datefacture">
+    </div>
+    <div class="grdata zonetva">
+        <label for="">Appliquer la TVA ? </label>
+        <input type="checkbox" name="" id="tvacb">
+        <label for="tvacb" id="tvalabel"></label for="">
+    </div>

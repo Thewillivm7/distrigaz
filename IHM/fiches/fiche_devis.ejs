@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="css/fiche_devis.css">
+<script defer src="js/fiches/fiche_devis.js"></script>
+<script>
+    var infoFiche = <%- JSON.stringify(infoFiche) %>;
+</script>
+<section class="fiche fichedevis">
+    <section class="newart">
+        <span class="titre">
+                <div class="corps" id="btnnewart">
+                    <span> &#10010;</span>
+        <span> Ajouter un article</span>
+        </div>
+        </span>
+    </section>
+    <section class="zonetitre">
+        <section class="titrepage">
+            <div class="titre"></div>
+            <div class="elcour"></div>
+        </section>
+        <span class="closefiche">&#10005;</span>
+    </section>
+    <section class="zonecorps">
+        <section class="entfiche">
+            <div class="zonenumdevis">
+                <span>Devis N° </span>
+                <span id="numdevis"></span>
+            </div>
+            <section class="section section1">
+                <div class="grdata zoneclient">
+                    <label for="">Client : </label>
+                    <div class="actif" id="listeclient"></div>
+                </div>
+                <div class="grdata zonedate">
+                    <label for="">Date :</label>
+                    <input type="date" name="" id="datedevis">
+                </div>
+            </section>
+            <section class="section section2">
+                <div class="zoneobjet">
+                    <label>Objet du devis</label>
+                    <textarea name="" id="objetdevis" cols="30" rows="10"></textarea>
+                </div>
+                <div class="zonetva">
+                    <label for="">Appliquer la TVA ?</label>
+                    <div class="cadretva">
+                        <input type="checkbox" name="" id="tvacb">
+                        <label class="tvaok" for="tvacb"></label>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="detailfiche">
+            <section class="entarticle">
+                <div class="colent"></div>
+                <div class="colent">#</div>
+                <div class="colent">Article</div>
+                <div class="colent">Qté</div>
+                <div class="colent">Prix unitaire</div>
+                <div class="colent">Total HT</div>
+            </section>
+            <section class="listearticle"></section>
+        </section>
+        <section class="piedfiche">
+            <label for="">Nb Articles :</label>
+            <div class="valeur" id="totallig"></div>
+            <label for="">Total HT :</label>
+            <div class="valeur" id="totalht"></div>
+            <label for="">Total TVA :</label>
+            <div class="valeur" id="totaltva"></div>
+            <label for="">Net à payer :</label>
+            <div class="valeur" id="totalttc"></div>
+        </section>
+    </section>
+    <div class="zonebtn">
+        <button class="btnappli" id="btnannul">Annuler</button>
+        <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+    </div>
+</section>
+<section class="ligdata ligmodele" style="display: none;">
+    <section class="coldata colsupp">
+        <span class="btnsuppart">&#10008;</span>
+    </section>
+    <section class="coldata colnum">1</section>
+    <section class="coldata colart">
+        <span class="article"></span>
+        <textarea name="" class="descart" cols="30" rows="10"></textarea>
+    </section>
+    <section class="coldata colqte" placeholder="1">
+        <input type="number" name="" class="qteart" value="1" min="1" />
+    </section>
+    <section class="coldata colpu">
+        <input class="puart" type="number" name="" placeholder="0" />
+    </section>
+    <section class="coldata colht">
+        <span class="montantht">0</span>
+    </section>
+</section>

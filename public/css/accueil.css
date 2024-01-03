@@ -1,0 +1,421 @@
+@charset "UTF-8";
+@import url("styles.css");
+.logo {
+  height: 100px;
+}
+
+body {
+  overflow: hidden;
+}
+
+.accueil {
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: auto 1fr;
+  gap: 15px;
+  grid-template-columns: 100% !important;
+  background-color: var(--couleur_fond);
+}
+@keyframes anime {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.accueil .listemenu {
+  display: none;
+  padding: 5px;
+  align-content: start;
+  border-radius: 10px;
+  gap: 5px;
+}
+.accueil .listemenu .menuitem {
+  padding: 10px;
+  padding-left: 60px;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  transition: 0.25s;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.accueil .listemenu .menuitem span {
+  font-size: 12.5px !important;
+}
+.accueil .listemenu .menuitem:hover {
+  background-color: rgba(0, 0, 0, 0.7450980392);
+  box-shadow: 0 0 5px var(--fondnormal);
+}
+.accueil .listemenu .menuitem:hover span {
+  color: rgba(0, 0, 0, 0.7450980392);
+  color: #fff;
+}
+.accueil .listemenu .menuitem.selected {
+  background-color: var(--fondnormal);
+}
+.accueil .listemenu .menuitem.selected span {
+  color: var(--textehover) !important;
+}
+.accueil .header {
+  grid-template-columns: 150px 120px 1fr;
+  box-shadow: 0 12px 12px -12px var(--fondnormal);
+  z-index: 5;
+}
+.accueil .header .zonelogo {
+  place-items: center;
+}
+.accueil .header .zonelogo img {
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.accueil .header .zonehamnotif {
+  align-items: center;
+  grid-auto-flow: column;
+  align-content: center;
+  gap: 15px;
+  justify-items: center;
+  box-shadow: 15px 0 15px -15px var(--fondnormal);
+}
+.accueil .header .zonehamnotif .btnham {
+  font-size: 30px !important;
+  cursor: pointer;
+}
+.accueil .header .zonehamnotif img {
+  width: 20px;
+  filter: var(--filtre_img);
+}
+.accueil .header .zoneentete {
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+  padding: 0 10px;
+}
+@keyframes anim {
+  0% {
+    top: calc(100% + 10px);
+    opacity: 0;
+  }
+  100% {
+    top: calc(100% - 10px);
+    opacity: 1;
+  }
+}
+.accueil .header .zoneentete .zonemenu_horiz .zonemodule {
+  justify-content: left;
+  gap: 10px;
+  padding: 10px;
+  grid-auto-flow: column;
+  position: relative;
+  background-color: var(--couleur_fond);
+}
+.accueil .header .zoneentete .zonemenu_horiz .zonemodule .grmodule {
+  align-content: start;
+  width: max-content;
+  align-content: center;
+}
+.accueil .header .zoneentete .zonemenu_horiz .zonemodule .grmodule .module {
+  width: max-content;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 12px !important;
+  position: relative;
+  gap: 5px;
+  width: 120px;
+  height: 50px;
+  border-radius: 5px;
+  place-items: center;
+  text-align: center;
+  padding: 10px 20px 10px 10px;
+  transition: 0.5s;
+}
+.accueil .header .zoneentete .zonemenu_horiz .zonemodule .grmodule .module img {
+  width: 20px;
+  filter: var(--filtre_img);
+}
+.accueil .header .zoneentete .zonemenu_horiz .zonemodule .grmodule .module::after {
+  position: absolute;
+  content: "❯";
+  right: 7px;
+  bottom: 7px;
+  font-size: 1.2em;
+  transform: rotate(90deg);
+}
+.accueil .header .zoneentete .zonemenu_horiz .zonemodule .grmodule:hover .module {
+  background-color: none;
+  background-image: linear-gradient(to bottom, var(--fondhover), var(--fondnormal));
+  color: var(--textehover);
+  border: none;
+}
+.accueil .header .zoneentete .zonemenu_horiz .zonemodule .grmodule:hover .module > span {
+  color: var(--textehover);
+}
+.accueil .header .zoneentete .zonemenu_horiz .zonemodule .grmodule:hover .listemenu {
+  display: grid;
+}
+.accueil .header .zoneentete .zonemenu_horiz .zonemodule .grmodule .listemenu {
+  z-index: 50;
+  position: absolute;
+  top: calc(100% - 15px);
+  background-color: var(--couleur_fond);
+  animation: anim 0.5s ease-in-out forwards;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(170, 170, 170, 0.5843137255);
+  padding: 10px 25px;
+  display: none;
+}
+.accueil .header .zoneentete .zonemenu_horiz .zonemodule .grmodule .listemenu .menuitem {
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+  padding: 10px 25px;
+}
+.accueil .main {
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: auto 1fr;
+}
+.accueil .main .zonemenu_vert {
+  align-content: start;
+  gap: 10px;
+  box-shadow: 12px 0 12px -12px #aaa;
+  height: 100%;
+  padding-right: 15px;
+  width: 270px;
+  left: 0;
+  top: 0;
+}
+.accueil .main .zonemenu_vert .grmodule {
+  padding-top: 5px;
+  gap: 5px;
+}
+.accueil .main .zonemenu_vert .grmodule .module {
+  gap: 20px;
+  padding: 5px 20px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  white-space: nowrap;
+}
+.accueil .main .zonemenu_vert .grmodule .module span {
+  font-size: 15px !important;
+}
+.accueil .main .zonemenu_vert .grmodule .module img {
+  width: 20px;
+  filter: var(--filtre_img);
+}
+.accueil .main .zonemenu_vert .grmodule .module::after {
+  position: absolute;
+  content: "❯";
+  right: 5px;
+  font-size: 1.2em;
+  transition: 0.5s;
+}
+.accueil .main .zonemenu_vert .grmodule .module.actif {
+  box-shadow: 0 12px 12px -12px var(--fondnormal);
+}
+.accueil .main .zonemenu_vert .grmodule .module.actif::after {
+  transform: rotate(90deg);
+}
+.accueil .main .zonemenu_vert .grmodule .module:hover {
+  box-shadow: 0 12px 12px -12px var(--fondnormal);
+}
+.accueil .main .zonemain {
+  width: 100%;
+  max-width: 100vw;
+  padding: 15px;
+}
+.accueil .main .zonemain .zonelistedata {
+  background-color: var(--couleur_fond);
+  width: 100%;
+  place-items: center;
+}
+.accueil .footer {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--couleur_fond);
+  height: 40px;
+  box-shadow: 0 -12px 12px -12px rgba(170, 170, 170, 0.5843137255);
+  grid-template-columns: auto 1fr auto 60px;
+  gap: 15px;
+  text-align: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.accueil .footer:hover {
+  height: 70px;
+}
+.accueil .footer:hover .zonecompte .zoneimage > img {
+  transform: scale(1);
+}
+.accueil .footer .zonecompte {
+  z-index: 10;
+  justify-items: center;
+  align-content: center;
+  gap: 10px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+}
+.accueil .footer .zonecompte .zoneimage {
+  transition: 0.3s;
+  place-items: center;
+  font-size: 1.5em;
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.accueil .footer .zonecompte .zoneimage img {
+  transform: scale(0.5);
+  padding: 5px;
+}
+.accueil .footer .zonecompte .zoneimage span {
+  color: #fff !important;
+}
+.accueil .footer .zonecompte .infocompte {
+  cursor: default;
+  bottom: 50%;
+  left: 60%;
+  position: absolute;
+  height: auto;
+  z-index: 10;
+  width: auto;
+  align-content: start;
+  box-shadow: 0 0 35px rgba(68, 85, 102, 0.337254902);
+  transition: 0.8s;
+  opacity: 0;
+  transform-origin: bottom left;
+  border-radius: 5px;
+  background-color: var(--couleur_fond);
+  transform: scale(0);
+}
+.accueil .footer .zonecompte .infocompte.actif {
+  transform: scale(1);
+  opacity: 1;
+}
+.accueil .footer .zonecompte .infocompte img {
+  width: 20px !important;
+  filter: var(--filtre_img);
+}
+.accueil .footer .zonecompte .infocompte .zoneprofil {
+  padding: 15px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: var(--fondnormal);
+  font-size: 1.3em;
+}
+.accueil .footer .zonecompte .infocompte .zonematr {
+  background-color: #fff;
+  color: var(--fondnormal);
+  box-shadow: 0 12px 12px -12px var(--fondnormal);
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  place-items: center;
+  border-radius: 50%;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--fondnormal);
+  border: 2px solid #fff;
+}
+.accueil .footer .zonecompte .infocompte .zoneinfo {
+  padding: 15px;
+  padding-top: 40px;
+  text-align: center;
+  align-content: center;
+  gap: 10px;
+  white-space: nowrap;
+  color: #fff;
+}
+.accueil .footer .zonecompte .infocompte .zoneinfo .grnom {
+  color: var(--fondnormal);
+  font-weight: bold;
+}
+.accueil .footer .zonecompte .infocompte .zoneinfo .grnom .nom {
+  line-height: 25px;
+  text-transform: uppercase;
+}
+.accueil .footer .zonecompte .infocompte .zoneinfo .grnom .prenom {
+  text-transform: capitalize;
+}
+.accueil .footer .zonecompte .infocompte .zoneinfo .service {
+  text-transform: uppercase;
+}
+.accueil .footer .zonecompte .infocompte .zoneinfo .fonction {
+  font-weight: bold;
+  height: 30px;
+}
+.accueil .footer .zonecompte .infocompte .zoneinfo .email {
+  font-style: italic;
+  font-size: 0.9em;
+}
+.accueil .footer .zonecompte .infocompte .zoneaction > div {
+  font-size: 0.85em;
+  padding: 15px 25px;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  justify-content: left;
+  gap: 5px;
+}
+.accueil .footer .zonecompte .infocompte .zoneaction > div a {
+  text-align: left;
+}
+.accueil .footer .zonecopyright {
+  font-size: 11px;
+  color: var(--couleur_texte) !important;
+}
+.accueil .footer .dateheure {
+  border-radius: 5px;
+  transition: 0.5s;
+  width: max-content;
+  justify-self: right;
+  padding: 10px;
+  text-align: right;
+}
+.accueil .footer .dateheure:hover {
+  box-shadow: 0 0 5px rgba(68, 85, 102, 0.3725490196);
+  background-color: var(--fondhover);
+  transform: scale(1.05);
+  color: var(--textehover);
+}
+.accueil .footer .settings {
+  cursor: pointer;
+  position: relative;
+}
+.accueil .footer .settings img {
+  width: 25px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  filter: var(--filtre_img);
+}
+.accueil .footer .settings::before {
+  content: "Configurer le thème";
+  position: absolute;
+  right: 100%;
+  padding: 10px 25px;
+  border-radius: 10px 10px 0 10px;
+  background-color: var(--couleur_texte);
+  color: var(--couleur_fond);
+  white-space: nowrap;
+  height: fit-content;
+  width: fit-content;
+  top: -30px;
+  display: none;
+  font-weight: bold;
+  animation: anime 0.3s ease-in-out forwards;
+}
+.accueil .footer .settings:hover::before {
+  display: grid;
+}

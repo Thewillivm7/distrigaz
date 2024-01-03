@@ -1,0 +1,38 @@
+@import url("styles.css");
+.fichedashboard {
+  width: 80vw;
+  height: 90%;
+  overflow: hidden;
+  background-color: #fff;
+  grid-template-rows: auto 1fr;
+  padding: 20px;
+  box-shadow: 0 0 25px #aaa;
+  justify-self: center;
+}
+.fichedashboard .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.fichedashboard .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.fichedashboard .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.fichedashboard .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.fichedashboard .zonetitre .closefiche:hover {
+  color: red;
+}
+.fichedashboard .zonecorps {
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  gap: 15px;
+  overflow: hidden;
+}

@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="css/fiche_etapeprod.css">
+<script src="js/fiches/fiche_etapeprod.js"></script>
+
+<script>
+    var infoFiche = <%- JSON.stringify(infoFiche) %>;
+</script>
+
+<section class="fiche ficheetape">
+    <section class="zonetitre">
+        <section class="titrepage">
+            <div class="titre"></div>
+            <div class="elcour"></div>
+        </section>
+        <span class="closefiche">&#10005;</span>
+    </section>
+    <section class="zonecorps">
+        <div class="section section1">
+            <div class="grdata">
+                <label for="">Code type : </label>
+                <input type="text" class="codetable" disabled id="codeetape">
+            </div>
+
+        </div>
+        <div class="section section2">
+            <div class="grdata">
+                <label class="requis" for="">Libellé type : </label>
+                <input type="text" class="" id="libetape">
+            </div>
+
+        </div>
+    </section>
+    <div class="zonebtn">
+        <button class="btnappli" id="btnannul">Annuler</button>
+        <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+    </div>
+</section>

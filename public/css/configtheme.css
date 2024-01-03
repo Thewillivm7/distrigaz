@@ -1,0 +1,137 @@
+@import url("styles.css");
+.configtheme {
+  width: 300px;
+  height: 100vh;
+  background-color: var(--couleur_fond);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 200;
+  box-shadow: -12px 0 12px -12px var(--couleur_ombre);
+  border-left: 2px solid var(--couleur_bordcadre);
+  grid-template-rows: auto 1fr;
+  align-content: start;
+  transform: translateX(102%);
+  overflow: hidden;
+}
+.configtheme.actif {
+  transform: translateX(0);
+}
+.configtheme .zonetitre {
+  padding: 10px 25px;
+  grid-template-columns: 1fr auto;
+  background-color: var(--fondhover);
+  color: var(--textenormal);
+}
+.configtheme .zonetitre span {
+  color: #fff;
+  white-space: no-wrap;
+  font-size: 0.8em;
+}
+.configtheme .zonetitre .closetheme {
+  cursor: pointer;
+}
+.configtheme .zonetitre .closetheme:hover {
+  color: #f0f;
+}
+.configtheme .corpstheme {
+  align-content: start;
+  color: var(--textenormal);
+  gap: 15px;
+  overflow-y: auto;
+}
+.configtheme .corpstheme .zone {
+  grid-template-rows: auto 1fr;
+  align-content: start;
+  gap: 25px;
+  padding: 10px 25px;
+  border-bottom: 1px solid var(--couleur_bordnorm);
+}
+.configtheme .corpstheme .zone .titrezone {
+  padding: 0 15px;
+  white-space: no-wrap;
+  font-weight: bold;
+}
+.configtheme .corpstheme .zone .detail {
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+.configtheme .corpstheme .zone .detail .cadreconfig {
+  border: 2px solid var(--couleur_bordnorm);
+  padding: 10px;
+  grid-auto-flow: column;
+  place-items: center;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.configtheme .corpstheme .zone .detail .cadreconfig.actif {
+  border-color: var(--fondnormal);
+}
+.configtheme .corpstheme .zone .detail .cadreconfig:not(.actif):hover {
+  border: 2px solid var(--couleur_bordhover);
+}
+.configtheme .corpstheme .zone .detail .cadreconfig img {
+  width: 35px;
+}
+.configtheme .corpstheme .zone .detail .cadreconfig .config {
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 5px;
+}
+.configtheme .corpstheme .zonetheme .detailtheme .cadreconfig {
+  width: 100%;
+}
+.configtheme .corpstheme .zonetheme .detailtheme .cadreconfig.actif {
+  border-color: var(--fondnormal);
+}
+.configtheme .corpstheme .zonetheme .detailtheme .cadreclair {
+  background-color: #fff;
+}
+.configtheme .corpstheme .zonetheme .detailtheme .cadreclair img {
+  filter: none;
+}
+.configtheme .corpstheme .zonetheme .detailtheme .cadresombre {
+  background-color: #444;
+}
+.configtheme .corpstheme .zonetheme .detailtheme .cadresombre img {
+  filter: var(--filtre_blanc);
+}
+.configtheme .corpstheme .zonecouleur .detailcouleur {
+  justify-items: center;
+  gap: 25px;
+  padding-bottom: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+}
+.configtheme .corpstheme .zonebordure .detailbordure .cadreconfig {
+  padding: 10px !important;
+  width: 100%;
+}
+.configtheme .corpstheme .zonebordure .detailbordure .cadreconfig.actif {
+  border-color: var(--fondnormal);
+}
+.configtheme .corpstheme .zonebordure .detailbordure .cadreconfig .config {
+  display: grid;
+  place-items: center;
+  width: 100% !important;
+  font-size: 12px;
+  border: 1px solid var(--couleur_bordnorm);
+}
+.configtheme .corpstheme .zonebordure .detailbordure .cadreombre .config {
+  border: none;
+  box-shadow: 0 0 25px var(--couleur_ombre);
+}
+.configtheme .corpstheme .zonetypemenu .detailtypemenu .config {
+  display: grid;
+  place-items: center;
+  width: 100% !important;
+  font-size: 12px;
+}
+.configtheme .corpstheme .zonetypemenu .detailtypemenu .cadrevert {
+  width: 100%;
+}
+.configtheme .corpstheme .zonetypemenu .detailtypemenu .cadrevert.actif {
+  border-color: var(--fondnormal);
+}

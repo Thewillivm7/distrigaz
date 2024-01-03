@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="css/docfacture.css" />
+	<script src="utils/jquery-3.6.1.min.js"></script>
+	<script src='utils/constantes.js'></script>
+	<script src='utils/utilitaires.js'></script>
+	<script src='utils/fonctions.js'></script>
+
+	<script src="js/docfacture.js"></script>
+
+</head>
+
+<body>
+	<div class="docfacture">
+		<div class="factureentete">
+			<div class="lig1">
+				<div class="zonelogo">
+					<img src="./images/logo-olive.png" alt="">
+				</div>
+				<div class="zoneinfofacture">
+					<p>FACTURE N°</p>
+					<span id="prev_numfacture"></span>
+				</div>
+			</div>
+			<div class="infoste">
+				<p class="prev_nomste">OLIVE SARL</p>
+				<p>Marcory, Cité Hibiscus</p>
+				<p>ABIDJAN - Région des Lagunes - Côte d'Ivoire</p>
+				<p>Tél. : 27 27 12 12 12</p>
+			</div>
+			<div class="lig3">
+				<div class="infoclient">
+					<p>Facturé à</p>
+					<p id="prev_nomclient"></p>
+					<p id="prev_telclient"></p>
+				</div>
+				<div class="infodate">
+					<span>Date du facture : </span>
+					<span id="prev_datefacture"></span>
+				</div>
+			</div>
+		</div>
+		<div class="facturecorps">
+			<div class="enttabfacture">
+				<div class="colent">#</div>
+				<div class="colent">Article</div>
+				<div class="colent">Qté</div>
+				<div class="colent">Prix unitaire</div>
+				<div class="colent">Total HT</div>
+			</div>
+			<div class="detailtabfacture"></div>
+		</div>
+		<div class="facturepied">
+			<div class="ligpied light">
+				<div class="colpied"></div>
+				<div class="colpied">Total HT</div>
+				<div class="montant colpied" id="montantht"></div>
+			</div>
+			<div class="ligpied ligtva">
+				<div class="colpied"></div>
+				<div class="colpied">Total TVA</div>
+				<div class="montant colpied" id="montanttva"></div>
+			</div>
+			<div class="ligpied lignet">
+				<div class="colpied"></div>
+				<div class="colpied">Total TTC</div>
+				<div class="montant colpied" id="montantttc"></div>
+			</div>
+			<div class="liglettre">
+				<span>
+					Arrêtée la facture la présente facture à la somme
+				</span>
+				<span id="montantlettre"></span>
+			</div>
+		</div>
+		<div class="piedpage">
+			<p>
+				Siège social : Marcory Hibiscus, villa 73 près du terrain de basket -
+				SARL Capital 10 000 000 - 10 BP 3124 Abidjan 10 - Tél. : (+225) 27 21
+				38 90 36 - Cel : (+225) 07 79 76 00 00
+			</p>
+			<p>
+				Email : infos@olive-ci.com - Site web : www.olive-ci.com N° CC :
+				1112030Q / RC: CI-ABJ-2011-B-5482 / Banque : NSIA N° CI042 01280
+				062590302001 09
+			</p>
+		</div>
+	</div>
+</body>
+
+</html>

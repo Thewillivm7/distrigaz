@@ -1,0 +1,49 @@
+@import url("styles.css");
+$couleurprinc: var(--couleurprinc, #610e4f);
+$ombrepanel: var(--ombrepanel, #0e1519);
+$couleurcopy: var(--couleurcopy, #fccdf2);
+$bordinput_norm: var(--bordinput_norm);
+$bordinput_hover: var(--bordinput_hover);
+.fichedashboard {
+	width: 80vw;
+	height: 90%;
+	overflow: hidden;
+	background-color: #fff;
+	grid-template-rows: auto 1fr;
+	padding: 20px;
+	box-shadow: 0 0 25px #aaa;
+	justify-self: center;
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			font-size: 1.05em;
+
+			.titre {
+				font-size: inherit;
+			}
+			.elcour {
+				font-size: inherit;
+				color: $couleurprinc;
+				font-weight: bold;
+			}
+		}
+		.closefiche {
+			font-size: 1.05em;
+			cursor: pointer;
+			&:hover {
+				color: red;
+			}
+		}
+	}
+	.zonecorps {
+		align-content: start;
+		grid-template-rows: auto auto 1fr;
+		gap: 15px;
+		overflow: hidden;
+	}
+}

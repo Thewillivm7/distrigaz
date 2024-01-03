@@ -1,0 +1,344 @@
+@charset "UTF-8";
+:root {
+  --couleur_fond: #fff;
+  --couleur_fondcadre: #fff;
+  --couleur_ombre: #aaaaaa80;
+  --couleur_bordnorm: #ccc;
+  --couleur_bordcadre: #ccc;
+  --couleur_bordhover: #666;
+  --couleur_texte: #1d2936;
+  --fond_menuhover: #000;
+  --texte_menuhover: #fff;
+  --input_inactif: #f5f5f5;
+  --filtre_img: none;
+  --filtre_imginv: invert(100%) sepia(100%) saturate(2%) hue-rotate(275deg)
+  	brightness(104%) contrast(101%);
+  --fondhover: #1829e6;
+  --fondnormal: #0faba1;
+  --textenormal: #eee;
+  --textehover: #fff;
+  --fondinactif: #666;
+  --texteinactif: #eee;
+  --filtre_blanc: invert(100%) sepia(100%) saturate(2%) hue-rotate(275deg)
+  	brightness(104%) contrast(101%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  min-width: none;
+  color: var(--couleur_texte);
+}
+
+section,
+main,
+footer,
+header,
+div {
+  display: grid;
+}
+
+.btnappli {
+  padding: 10px 15px;
+  height: 40px;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+  width: max-content;
+  background-color: var(--fondinactif);
+  color: var(--texteinactif);
+}
+.btnappli:not(:disabled) {
+  background-image: linear-gradient(var(--fondnormal), var(--fondhover));
+  color: var(--textenormal);
+}
+.btnappli:not(:disabled):hover {
+  background-image: linear-gradient(to top, var(--fondnormal), var(--fondhover));
+  color: var(--textenormal);
+  box-shadow: 0 15px 15px -15px #000;
+  transform: translateY(-5px);
+}
+
+input,
+textarea,
+select {
+  min-width: 20px;
+  width: 100%;
+  border: 1px solid var(--couleur_bordnorm);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: transparent;
+  color: var(--couleur_texte);
+  height: 40px;
+  font-size: 15px;
+  resize: none;
+}
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: var(--input_inactif);
+  cursor: not-allowed;
+}
+input:not(:disabled):hover,
+textarea:not(:disabled):hover,
+select:not(:disabled):hover {
+  border: 1px solid var(--couleur_bordhover);
+}
+input:not(:disabled):focus,
+textarea:not(:disabled):focus,
+select:not(:disabled):focus {
+  border: 1px solid var(--fondnormal);
+}
+
+input,
+select {
+  height: 40px;
+  padding: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* Cacher les flèches d'incrémentation et de décrémentation dans Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  text-align: right;
+}
+
+input[type=radio],
+input[type=checkbox] {
+  width: 15px;
+  height: 15px;
+}
+
+input[type=date] {
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+  height: max-content;
+  white-space: nowrap;
+}
+
+img {
+  object-fit: cover;
+}
+
+select option {
+  margin: 5px;
+  color: #000;
+  padding: 10px 20px;
+}
+
+a {
+  white-space: nowrap;
+  text-decoration: none;
+  color: #137be3;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+b {
+  color: var(--couleurprinc);
+}
+
+.requis {
+  position: relative;
+  width: fit-content;
+  padding-right: 5px;
+}
+.requis::after {
+  position: absolute;
+  color: red;
+  content: "*";
+  top: -5px;
+  right: -10px;
+  font-size: 1.3em;
+}
+
+.codetable {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cs-custom {
+  background-color: transparent;
+  font-size: 15px;
+  cursor: not-allowed;
+  border: 1px solid var(--couleur_bordnorm);
+  border-radius: 5px;
+  padding: 10px;
+  height: 40px;
+  font-weight: bold;
+  position: relative;
+}
+.cs-custom.actif {
+  cursor: pointer;
+  background-color: transparent;
+}
+.cs-custom.actif::after {
+  content: "❯";
+  position: absolute;
+  right: 15px;
+  top: 7px;
+  transform: rotate(90deg);
+}
+
+.custom-select {
+  position: absolute;
+  height: max-content;
+  background-color: var(--couleur_fondcadre);
+  border: 3px solid var(--couleur_bordnorm);
+  border-radius: 5px;
+  z-index: 5000;
+  box-shadow: 0 0 25px rgba(83, 106, 113, 0.2196078431);
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  padding: 5px;
+  transition: 0.5s;
+}
+.custom-select .cs-zonefiltre {
+  margin: 10px;
+  border-radius: 25px;
+  border: 1px solid var(--couleur_bordnorm);
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 0 15px;
+  gap: 10px;
+}
+.custom-select .cs-zonefiltre img {
+  width: 20px;
+  filter: var(--filtre_img);
+}
+.custom-select .cs-zonefiltre .cs-filtre {
+  border: none !important;
+}
+.custom-select .cs-zonefiltre .cs-filtre:focus {
+  border: none !important;
+}
+.custom-select .cs-zonefiltre .cs-filtre:hover {
+  border: none !important;
+}
+.custom-select .cs-zonefiltre .cs-clearfiltre {
+  cursor: pointer;
+  display: none;
+}
+.custom-select .cs-liste {
+  overflow: hidden;
+  overflow-y: auto;
+  align-content: start;
+  height: fit-content;
+  max-height: 120px !important;
+  padding-bottom: 15px;
+}
+.custom-select .cs-liste .cs-option {
+  padding: 5px 25px;
+  grid-template-columns: auto 1fr;
+  white-space: nowrap;
+  font-size: 14px;
+}
+.custom-select .cs-liste .cs-option:hover {
+  background-color: var(--fondnormal);
+  color: #fff !important;
+}
+
+.ms_select {
+  position: relative;
+  cursor: pointer;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+.ms_select .ms_val {
+  position: absolute;
+  align-content: center;
+  padding-left: 10px;
+  white-space: nowrap;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 35px) !important;
+  height: calc(100% - 10px) !important;
+  padding-left: 15px;
+}
+.ms_select::after {
+  position: absolute;
+  content: "▼";
+  top: 30%;
+  right: 10px;
+}
+.ms_select.inactif {
+  cursor: not-allowed;
+  background-color: rgba(243, 243, 243, 0.4862745098);
+}
+.ms_select.inactif::after {
+  display: none;
+}
+.ms_select.inactif .ms_contenu {
+  display: none;
+}
+.ms_select .ms_contenu {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  min-width: 150px;
+  z-index: 1;
+  top: calc(100% + 5px);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: none;
+  border-radius: 5px;
+  grid-template-rows: 50px 1fr;
+  gap: 10px;
+}
+.ms_select .ms_contenu.actif {
+  box-shadow: 0 0 25px rgba(152, 160, 173, 0.4862745098);
+  z-index: 10;
+  display: grid;
+}
+.ms_select .ms_contenu .ms_zonefiltre {
+  padding: 5px 10px;
+  align-content: center;
+  z-index: 1;
+}
+.ms_select .ms_contenu .ms_zonefiltre input {
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  width: 100%;
+  height: 35px;
+  padding: 10px;
+}
+.ms_select .ms_contenu .ms_listeoption {
+  z-index: 2;
+  overflow: hidden;
+  overflow-y: auto;
+  gap: 2px;
+  align-content: start;
+  height: max-content !important;
+  max-height: 150px;
+  border-top: 1px solid #ccc;
+  padding: 5px 0;
+}
+.ms_select .ms_contenu .ms_listeoption .ms_option {
+  padding: 5px 10px;
+  height: fit-content;
+}
+.ms_select .ms_contenu .ms_listeoption .ms_option:hover {
+  background-color: var(--fondnormal);
+  color: #fff;
+}

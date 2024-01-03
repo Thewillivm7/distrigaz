@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combobox avec exclusion</title>
+</head>
+<body>
+
+  <label for="zone1">Zone 1:</label>
+  <select id="zone1" onchange="updateOptions('zone1')"></select>
+
+  <label for="zone2">Zone 2:</label>
+  <select id="zone2" onchange="updateOptions('zone2')"></select>
+
+  <label for="zone3">Zone 3:</label>
+  <select id="zone3" onchange="updateOptions('zone3')"></select>
+
+  <script>
+    // Les options initiales pour chaque zone
+    const initialOptions = {
+      zone1: ['Option A', 'Option B', 'Option C'],
+      zone2: ['Option X', 'Option Y', 'Option Z'],
+      zone3: ['Option I', 'Option II', 'Option III']
+    };
+
+    // Les options actuelles pour chaque zone
+    let currentOptions = { ...initialOptions };
+
+    // Fonction pour mettre à jour les options en fonction des sélections
+    function updateOptions(zoneId) {
+      // Récupérer la sélection actuelle de la zone
+      const selectedOption = document.getElementById(zoneId).value;
+
+      // Remettre l'option précédente dans les autres zones
+      for (const zone in currentOptions) {
+        if (zone !== zoneId) {
+          currentOptions[zone].push(selectedOption);
+        }
+      }
+
+      // Mettre à jour les options de chaque zone
+      for (const zone in currentOptions) {
+        const selectElement = document.getElementById(zone);
+
+        // Supprimer toutes les options existantes
+        selectElement.innerHTML = '';
+
+        // Ajouter les options actualisées
+        currentOptions[zone].forEach(option => {
+          const optionElement = document.createElement('option');
+          optionElement.value = option;
+          optionElement.text = option;
+          selectElement.add(optionElement);
+        });
+
+        // Retirer l'option sélectionnée des autres zones
+        currentOptions[zone] = currentOptions[zone].filter(option => option !== selectedOption);
+      }
+    }
+
+    // Initialiser les options pour chaque zone
+    for (const zone in initialOptions) {
+      const selectElement = document.getElementById(zone);
+
+      initialOptions[zone].forEach(option => {
+        const optionElement = document.createElement('option');
+        optionElement.value = option;
+        optionElement.text = option;
+        selectElement.add(optionElement);
+      });
+    }
+  </script>
+
+</body>
+</html>

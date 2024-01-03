@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="css/listedevis.css">
+<script defer src="js/listedevis.js" type=""></script>
+<script>
+        var infoFiche = <%- JSON.stringify(menuSelected) %>;
+    </script>
+<section class="listedevis">
+    <section class="titrepage">
+        <span>Gestion des devis client</span>
+        <button class="btnappli" id="btnnew">Nouveau devis</button>
+        <div class="closeliste">&#10005;</div>
+    </section>
+    <section class="tablist">
+        <section class="headlist">
+            <div class="colhead">N° devis</div>
+            <div class="colhead">Date</div>
+            <div class="colhead">Client</div>
+            <div class="colhead">Objet</div>
+            <div class="colhead">Montant HT</div>
+            <div class="colhead">Montant TTC</div>
+            <div class="colhead">Statut</div>
+            <div class="colhead">Actions</div>
+        </section>
+        <section class="bodylist" id="bodylist">
+        </section>
+        <div class="footerlist">
+        </div>
+    </section>
+</section>
+<section class="modal modalfiche">
+</section>
+<section class="modal modalconfirmation">
+    <div class="confirmation">
+        <div class="titreconfirmation">
+            <div class="titre">Confirmation de désactivation </div>
+            <div class="btnclose">&#10005;</div>
+
+        </div>
+        <div class="corpsconfirmation">
+            <div class="messageconfirm">
+                <div class="message">Confirmez-vous la désactivation (O/N) ?</div>
+            </div>
+            <div class="dataconfirm">021 - SORO Joseph </div>
+        </div>
+        <div class="piedconfirmation">
+            <button class="btnappli btnoui">Oui</button>
+            <button class="btnappli btnnon">Non</button>
+        </div>
+    </div>
+</section>
+<section class="modal modalprint">
+    <section class="zoneparam">
+        <div class="closeprint">&#10005;</div>
+        <div class="zonebtnprint">
+            <button class="btnappli">Envoyer par mail</button>
+            <button class="btnappli">Enregistrer PDF</button>
+            <button class="btnappli">Imprimer</button>
+        </div>
+        <div class="zoneinfodevis"></div>
+    </section>
+    <section class="zonepreview"></section>
+</section>

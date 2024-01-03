@@ -1,0 +1,130 @@
+@charset "UTF-8";
+@import url("styles.css");
+.logo {
+  height: 100px;
+}
+
+body {
+  overflow: hidden;
+}
+
+.accueil2 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  grid-template-rows: auto 1fr;
+  gap: 15px;
+}
+.accueil2 .header {
+  grid-template-columns: 150px 100px 1fr;
+  box-shadow: 0 12px 12px -12px var(--fondnormal);
+  z-index: 5;
+}
+.accueil2 .header .zonelogo {
+  place-items: center;
+}
+.accueil2 .header .zonehamnotif {
+  align-items: center;
+  grid-auto-flow: column;
+  align-content: center;
+  gap: 15px;
+  justify-items: center;
+  box-shadow: 12px 0 12px -12px var(--couleur_ombre);
+}
+.accueil2 .header .zonehamnotif .btnham {
+  font-size: 30px !important;
+  cursor: pointer;
+}
+.accueil2 .header .zonehamnotif img {
+  width: 20px;
+}
+.accueil2 .header .zoneentete {
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+  padding: 0 25px;
+}
+.accueil2 .header .zoneentete .zonemenu_horiz {
+  grid-template-rows: auto 1fr;
+}
+.accueil2 .header .zoneentete .zonemenu_horiz .zonemodule {
+  grid-auto-flow: column;
+  justify-content: left;
+  gap: 20px;
+  padding: 10px;
+  position: relative;
+}
+.accueil2 .header .zoneentete .zonemenu_horiz .zonemodule .selecteur_horiz {
+  position: absolute;
+  width: 0;
+  height: 4px;
+  background-color: var(--fondnormal);
+  bottom: 5px;
+  transition: 0.3s;
+  transform-origin: center;
+}
+.accueil2 .header .zoneentete .zonemenu_horiz .zonemodule .module {
+  cursor: pointer;
+  padding: 5px 0;
+  white-space: nowrap;
+}
+.accueil2 .main {
+  gap: 15px;
+  grid-template-columns: 250px 1fr;
+}
+.accueil2 .main .zonemenu_vert {
+  align-content: start;
+  gap: 15px;
+  border-right: 2px solid var(--couleur_bordcadre);
+  box-shadow: 12px 0 12px -12px var(--couleur_ombre);
+  height: 100%;
+  padding-right: 15px;
+  position: relative;
+}
+.accueil2 .main .zonemenu_vert .selecteur_vert {
+  position: absolute;
+  font-size: 25px;
+  left: -5px;
+  top: 45%;
+  transition: 0.5s;
+}
+.accueil2 .main .zonemenu_vert .grmodule .module {
+  padding: 5px 20px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+}
+.accueil2 .main .zonemenu_vert .grmodule .module::after {
+  position: absolute;
+  content: "❯";
+  right: 5px;
+  font-size: 1.2em;
+  transition: 0.5s;
+}
+.accueil2 .main .zonemenu_vert .grmodule.actif .module::after {
+  transform: rotate(90deg);
+}
+.accueil2 .main .zonemenu_vert .grmodule .listemenu {
+  display: none;
+  padding-left: 50px;
+  gap: 10px;
+}
+.accueil2 .footer {
+  height: 25px;
+  background-color: #fff;
+  border-top: 2px solid var(--couleur_bordcadre);
+  box-shadow: 0 -12px 12px -12px var(--couleur_ombre);
+  grid-template-columns: auto 1fr auto;
+  gap: 15px;
+  text-align: center;
+  align-items: center;
+  transition: 0.5s;
+  padding: 5px;
+}
+.accueil2 .footer:hover {
+  height: 70px;
+}
+.accueil2 .footer .zonecopyright {
+  font-size: 12px;
+}

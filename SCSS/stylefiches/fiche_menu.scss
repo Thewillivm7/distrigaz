@@ -1,0 +1,178 @@
+@import url("styles.css");
+@import url("listedata.css");
+.fichemenu {
+	overflow-y: auto;
+	grid-template-rows: 60px 1fr 60px;
+	gap: 10px;
+	width: min(97vw, 1300px);
+	height: min(800px, 90vh);
+	overflow: hidden;
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		padding: 10px 20px;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			font-size: 13pt;
+			.titre {
+				font-size: inherit;
+			}
+			.menucour {
+				font-size: inherit;
+				color: var(--fondnormal);
+				font-weight: bold;
+			}
+		}
+		.closefiche {
+			font-size: 1.2em;
+			color: var(--couleur_texte);
+			cursor: pointer;
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+	.zonecorps {
+		grid-template-rows: auto 1fr;
+		gap: 15px;
+		.zone {
+			border: 1px solid var(--couleur_bordcadre);
+			border-radius: 5px;
+		}
+		.zonegeneral {
+			.section1 {
+				grid-template-columns: auto 1fr 1fr 2fr;
+			}
+			.section2 {
+				.zonetype {
+					align-items: center;
+					grid-template-columns: 1fr 1fr;
+					border: 1px dotted var(--couleur_bordcadre);
+					border-radius: 5px;
+					padding: 20px 0;
+					position: relative;
+					&::before {
+						position: absolute;
+						top: -10px;
+						left: 15px;
+						color: var(--couleur_texte);
+						background-color: var(--couleur_fondcadre);
+						padding: 0 15px;
+						content: "Type de page";
+						font-style: italic;
+						font-size: 0.95em;
+					}
+					.typepage {
+						grid-auto-flow: column;
+						align-items: center;
+						gap: 10px;
+						justify-content: center;
+						input {
+							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
+		.zoneliste {
+			grid-template-columns: 1.5fr 2fr;
+			.zoneconfig {
+				padding: 15px 25px;
+				border-right: 1px solid var(--couleur_bordcadre);
+				gap: 15px;
+				.zonetable {
+					grid-template-columns: 2fr 1.5fr;
+					align-items: center;
+					gap: 10px;
+				}
+				.zonedim {
+					gap: 10px;
+					grid-template-columns: 2fr 1fr 1fr;
+				}
+				.zoneaction {
+					grid-template-columns: repeat(2, 1fr);
+					padding: 15px;
+					padding-top: 25px;
+					gap: 15px;
+					position: relative;
+					border: 1px dotted var(--couleur_bordcadre);
+
+					&::before {
+						position: absolute;
+						top: -10px;
+						left: 15px;
+						color: var(--couleur_texte);
+						background-color: var(--couleur_fondcadre);
+						padding: 0 15px;
+						content: "Liste des actions";
+						font-style: italic;
+						font-size: 0.8em;
+					}
+					.action {
+						grid-template-columns: auto auto 1fr;
+						gap: 10px;
+						white-space: nowrap;
+						img {
+							width: 20px;
+							filter: var(--filtre_img);
+						}
+					}
+				}
+			}
+			.zonevue {
+				grid-template-rows: auto 1fr;
+				padding: 15px;
+				.vue {
+					grid-template-columns: auto auto;
+					justify-content: center;
+					align-items: center;
+					gap: 15px;
+					padding: 10px;
+					select {
+						width: 400px;
+					}
+					border-bottom: var(--couleur_bordcadre);
+				}
+				.zonetabchamp {
+					grid-template-rows: auto 1fr;
+					overflow: hidden;
+					gap: 5px;
+					max-height: 300px;
+					.enttab,
+					.ligch {
+						align-items: center;
+						padding: 10px;
+						grid-template-columns: 50px repeat(4, 1fr);
+						gap: 10px;
+						border-bottom: var(--bordinput_norm);
+						.colent,
+						.colch {
+							text-align: center;
+							input,
+							select {
+								text-align: center;
+								width: 100% !important;
+							}
+						}
+					}
+
+					.enttab {
+						box-shadow: 0 5px 5px -5px #aaa;
+						font-weight: bold;
+					}
+					.detailtab {
+						align-content: start;
+						overflow-y: auto;
+						.ligch {
+							background-color: var(--couleur_fondcadre);
+							border-bottom: 1px solid var(--couleur_bordcadre);
+						}
+					}
+				}
+			}
+		}
+	}
+}

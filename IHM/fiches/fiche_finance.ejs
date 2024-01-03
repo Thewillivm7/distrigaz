@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="css/fiche_finance.css">
+<script src="js/fiches/fiche_finance.js"></script>
+<script>
+      var infoFiche = <%- JSON.stringify(infoFiche) %>;
+</script>
+
+<section class="fiche fichefinance">
+    <section class="zonetitre">
+        <section class="titrepage">
+            <div class="titre"></div>
+        </section>
+        <span class="closefiche">&#10005;</span>
+    </section>
+    <section class="zonecorps">
+        <section class="zone zonesaisie">
+            <section class="section1">
+                <label for="">Client : </label>
+                <div id="listeclient"></div>
+            </section>
+            <section class="section2">
+                <div class="grdata">
+                    <label for="">Type d'opération</label>
+                    <select name="" id="listetype"></select>
+                </div>
+                <div class="grdata">
+                    <label for="">Date opération</label>
+                    <input type="date" id="dateop">
+                </div>
+            </section>
+            <section class="section3">
+                <div class="grdata">
+                    <label for="">Montant : </label>
+                    <input type="text" name="" id="montant">
+                </div>
+                <div class="grdata">
+                    <label for="">Libellé</label>
+                    <textarea name="" id="libop" ></textarea>
+                </div>
+            </section>
+        </section>
+        <section class="zone zoneinfo">
+            <div class="zonechiffre">
+                <div class="grdata">
+                    <label for="">Solde initial :</label>
+                    <span class="infoext" id="soldeinit">0</span>
+                </div>
+                <div class="grdata">
+                    <label for="">Chiffre d'affaires :</label>
+                    <span class="infoext" id="catotal">0</span>
+                </div>
+                <div class="grdata">
+                    <label for="">Total paiement :</label>
+                    <span class="infoext" id="payetotal">0</span>
+                </div>
+                <div class="grdata">
+                    <label for="">Total Avoir :</label>
+                    <span class="infoext" id="avoirtotal">0</span>
+                </div>
+                <div class="grdata">
+                    <label for="">Solde actuel :</label>
+                    <span class="infoext" id="soldeclient">0</span>
+                </div>
+            </div>
+
+        </section>
+    </section>
+    <div class="zonebtn">
+        <button class="btnappli" id="btnannul">Annuler</button>
+        <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+    </div>
+</section>

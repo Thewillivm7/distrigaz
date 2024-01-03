@@ -1,0 +1,53 @@
+@import url("styles.css");
+$couleurprinc: var(--couleurprinc, #610e4f);
+$ombrepanel: var(--ombrepanel, #0e1519);
+$couleurcopy: var(--couleurcopy, #fccdf2);
+$bordinput_norm: var(--bordinput_norm);
+$bordinput_hover: var(--bordinput_hover);
+.ficheservice {
+	width: 40vw;
+	height: 400px;
+	overflow: hidden;
+
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			.titre {
+				font-size: inherit;
+			}
+			.elcour {
+				font-size: inherit;
+				color: $couleurprinc;
+				font-weight: bold;
+			}
+		}
+		.closefiche {
+			font-size: 1.05em;
+			cursor: pointer;
+			&:hover {
+				color: red;
+			}
+		}
+	}
+	.zonecorps {
+		grid-template-rows: auto auto 1fr;
+		gap: 15px;
+		overflow: hidden;
+
+		.section1 {
+			grid-template-columns: auto 1fr;
+
+			.grdata {
+				grid-template-columns: auto 1fr;
+			}
+		}
+
+		.section2 {
+		}
+	}
+}

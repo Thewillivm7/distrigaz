@@ -1,0 +1,350 @@
+@charset "UTF-8";
+@import url("styles.css");
+.listedata {
+  height: auto;
+  min-height: 60vh;
+  max-height: 70vh;
+  border: 3px solid var(--couleur_bordcadre);
+  box-shadow: 0 0 25px var(--couleur_ombre);
+  background-color: var(--couleur_fondcadre);
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 25px;
+  grid-template-rows: auto auto 1fr;
+  gap: 20px;
+  color: #eee;
+  transition: 0.5s;
+  z-index: 10;
+}
+@keyframes anime2 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.listedata .titrepage {
+  font-size: 18px;
+  align-items: center;
+  grid-auto-flow: column;
+  position: relative;
+}
+.listedata .titrepage .closeliste {
+  right: -40px;
+  top: -40px;
+  background-color: var(--couleur_texte);
+  color: var(--couleur_fondcadre);
+  height: 35px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 5px #aaa;
+  transition: 0.5s;
+  border: 2px solid #fff;
+  position: absolute;
+}
+.listedata .titrepage .closeliste:hover {
+  border: none;
+  background-color: var(--fondnormal);
+  color: #fff;
+}
+.listedata .titrepage .btnappli {
+  padding: 0 25px;
+  justify-self: right;
+}
+.listedata .zonefiltre {
+  border-radius: 25px;
+  width: 50%;
+  padding: 5px 15px;
+  border: 1px solid var(--couleur_bordnorm);
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+.listedata .zonefiltre img {
+  width: 15px;
+  filter: var(--filtre_img);
+}
+.listedata .zonefiltre input {
+  height: 25px !important;
+  width: 100%;
+  border: none !important;
+}
+.listedata .zonefiltre #clearfilter {
+  cursor: pointer;
+  display: none;
+}
+.listedata .tablist {
+  grid-template-rows: auto 1fr 40px;
+  align-content: start;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--couleur_bordnorm);
+  overflow: hidden;
+}
+.listedata .tablist .headlist {
+  align-items: center;
+  grid-auto-flow: column;
+  border-bottom: 1px solid var(--couleur_bordnorm);
+  font-size: 14px;
+  padding-right: 10px;
+}
+.listedata .tablist .headlist .colhead {
+  position: relative;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-weight: 550;
+}
+.listedata .tablist .headlist .colhead::first-letter {
+  text-transform: uppercase;
+}
+.listedata .tablist .headlist .colhead::after {
+  right: 5px;
+  position: absolute;
+  content: "⬆";
+  font-size: 1.5em;
+  font-weight: normal;
+  color: #999;
+  display: none;
+  animation: anime2 0.3s ease-in-out forwards;
+}
+.listedata .tablist .headlist .colhead:hover::after {
+  display: block;
+}
+.listedata .tablist .headlist .headaction {
+  text-align: center;
+}
+.listedata .tablist .headlist,
+.listedata .tablist .datarow {
+  gap: 5px;
+  align-items: center;
+}
+.listedata .tablist .headlist .colhead,
+.listedata .tablist .headlist .coldata,
+.listedata .tablist .datarow .colhead,
+.listedata .tablist .datarow .coldata {
+  padding: 5px 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.listedata .tablist .bodylist {
+  font-size: 11.5pt;
+  align-content: start;
+  overflow: auto;
+  overflow: hidden;
+  overflow-y: auto;
+  padding-top: 20px;
+}
+.listedata .tablist .bodylist .datarow {
+  border-top: 1px solid var(--couleur_bordnorm);
+  padding: 5px 0;
+  gap: 5px;
+  cursor: pointer;
+}
+.listedata .tablist .bodylist .datarow:hover .colaction .action {
+  display: block;
+}
+.listedata .tablist .bodylist .datarow .coldata {
+  font-size: 11.5pt;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.listedata .tablist .bodylist .datarow .coldata::first-letter {
+  text-transform: uppercase;
+}
+.listedata .tablist .bodylist .datarow .colaction {
+  align-items: center;
+  gap: 5px;
+  grid-auto-flow: column;
+  justify-content: right;
+  width: auto;
+  padding: 0 15px;
+}
+.listedata .tablist .bodylist .datarow .colaction img {
+  filter: var(--filtre_img);
+}
+.listedata .tablist .bodylist .datarow .colaction .action {
+  position: relative;
+  display: none;
+  z-index: 3;
+  cursor: not-allowed;
+}
+.listedata .tablist .bodylist .datarow .colaction .action:not(.inactif) {
+  cursor: pointer;
+  filter: none;
+}
+.listedata .tablist .bodylist .datarow .colaction .action:not(.inactif)::after {
+  z-index: 5;
+  position: absolute;
+  content: attr(data-action);
+  padding: 5px 20px;
+  background-color: var(--couleur_texte);
+  color: var(--couleur_fondcadre);
+  border: 1px solid #fff;
+  top: -28px;
+  right: 0;
+  display: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  place-items: center;
+  white-space: nowrap;
+}
+.listedata .tablist .bodylist .datarow .colaction .action:not(.inactif):hover::after {
+  display: grid;
+}
+.listedata .tablist .footerlist {
+  justify-content: right;
+  align-items: end;
+  grid-auto-flow: column;
+  box-shadow: 0 -12px 12px -12px #aaa;
+  gap: 5px;
+  padding: 0 10px;
+  color: var(--couleur_texte);
+}
+
+.modalfiche {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7882352941);
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  place-items: center;
+  overflow: hidden;
+  padding: 5px;
+}
+.modalfiche .fiche {
+  border-radius: 10px;
+  padding: 5px 15px;
+  overflow: hidden;
+  transition: 0.5s;
+  min-width: 750px;
+  grid-template-rows: auto 1fr auto;
+  align-content: start;
+  box-shadow: 0 0 25px var(--couleur_ombre);
+  border: 3px solid var(--couleur_bordcadre);
+  background-color: var(--couleur_fondcadre);
+  position: absolute;
+}
+.modalfiche .fiche .codetable {
+  width: 80px;
+}
+.modalfiche .fiche .zonetitre {
+  padding: 7px 15px;
+  font-size: 13pt;
+  box-shadow: 0 6px 6px -6px #aaa;
+}
+.modalfiche .fiche .zonetitre .titre {
+  color: var(--couleur_texte);
+}
+.modalfiche .fiche .zonetitre .elcour {
+  font-size: inherit;
+  color: var(--fondnormal);
+  font-weight: bold;
+}
+.modalfiche .fiche input {
+  background-color: transparent;
+  color: var(--couleur_texte);
+}
+.modalfiche .fiche .zonecorps {
+  align-content: start;
+  overflow-y: auto;
+  color: var(--couleur_texte);
+}
+.modalfiche .fiche .zonecorps .section {
+  grid-auto-flow: column;
+  align-items: center;
+}
+.modalfiche .fiche .zonecorps .section .grdata {
+  align-items: center;
+  white-space: nowrap;
+  gap: 10px 15px;
+}
+.modalfiche .fiche .zonebtn {
+  align-items: center;
+  padding: 0 25px;
+  grid-auto-flow: column;
+  box-shadow: 0 -6px 6px -6px #aaa;
+  padding: 10px 25px;
+}
+.modalfiche .fiche .zonebtn .btnappli {
+  width: 170px;
+  padding: 10px 25px !important;
+}
+.modalfiche .fiche .zonebtn .btnappli:last-child {
+  justify-self: right;
+}
+
+.modalconfirmation {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  z-index: 21;
+  background-color: rgba(14, 21, 25, 0.4117647059);
+  justify-items: center;
+  padding-top: 75px;
+  display: none;
+}
+@keyframes anim01 {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.modalconfirmation .confirmation {
+  top: 75px;
+  position: absolute;
+  height: 300px;
+  width: 600px;
+  background-color: #fff;
+  grid-template-rows: auto 1fr auto;
+  animation: anim01 0.3s ease-in-out 0.1s 1 normal forwards;
+  transform: scale(0);
+}
+.modalconfirmation .confirmation .titreconfirmation {
+  padding: 15px 25px;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  background-color: var(--fondnormal);
+}
+.modalconfirmation .confirmation .titreconfirmation .titre {
+  color: #fff;
+  font-size: 1.2em;
+}
+.modalconfirmation .confirmation .titreconfirmation .btnclose {
+  cursor: pointer;
+  color: #aaa;
+}
+.modalconfirmation .confirmation .titreconfirmation .btnclose:hover {
+  color: #fff;
+}
+.modalconfirmation .confirmation .corpsconfirmation {
+  padding: 15px;
+  gap: 25px;
+  text-align: center;
+  align-content: center;
+}
+.modalconfirmation .confirmation .corpsconfirmation .messageconfirm {
+  text-align: center;
+}
+.modalconfirmation .confirmation .corpsconfirmation .dataconfirm {
+  text-align: center;
+  color: var(--couleur_texte);
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.modalconfirmation .confirmation .piedconfirmation {
+  align-items: center;
+  padding: 15px;
+  grid-auto-flow: column;
+  justify-items: center;
+}
+.modalconfirmation .confirmation .piedconfirmation .btnappli {
+  padding: 0 30px;
+  height: 35px !important;
+}

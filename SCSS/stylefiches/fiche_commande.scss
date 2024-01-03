@@ -1,0 +1,94 @@
+@import url("styles.css");
+$couleurprinc: var(--couleurprinc, #610e4f);
+$ombrepanel: var(--ombrepanel, #0e1519);
+$couleurcopy: var(--couleurcopy, #fccdf2);
+$bordinput_norm: var(--bordinput_norm);
+$bordinput_hover: var(--bordinput_hover);
+.fichecommande {
+	width: 60vw;
+	height: 60vh;
+	overflow: hidden;
+	transform: translateY(-20%);
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			font-size: 1.05em;
+
+			.titre {
+				font-size: inherit;
+			}
+			.elcour {
+				font-size: inherit;
+				color: $couleurprinc;
+				font-weight: bold;
+			}
+		}
+		.closefiche {
+			font-size: 1.05em;
+			cursor: pointer;
+			&:hover {
+				color: red;
+			}
+		}
+	}
+	.zonecorps {
+		align-content: start;
+		grid-template-rows: auto auto 1fr;
+		gap: 15px;
+		overflow: hidden;
+		.listearticle {
+			grid-template-rows: 50px 30px 1fr;
+			gap: 10px;
+			.infocommande {
+				align-content: center;
+				padding-left: 25px;
+				font-size: 1.5em;
+				background-color: #f4f6f8;
+			}
+			.enttab {
+				box-shadow: 0 12px 12px -12px #0b8d7a;
+			}
+			.enttab,
+			.ligdata {
+				gap: 5px;
+				grid-template-columns: 1fr 70px 90px 80px 100px 70px;
+				.coldata {
+					text-align: right;
+					padding-right: 5px;
+					width: 100%;
+					&:nth-last-child(2) {
+						text-align: center;
+					}
+					&:last-child {
+						text-align: center;
+					}
+				}
+				.colart {
+					padding-left: 15px;
+					text-align: left;
+					gap: 5px;
+					.codeart {
+						font-weight: bold;
+					}
+					.descart {
+						padding-left: 25px;
+						font-style: italic;
+						font-size: 0.9em;
+					}
+				}
+			}
+			.ligdata {
+				.coldata {
+					&:nth-last-child(2) {
+						font-size: 0.8em;
+					}
+				}
+			}
+		}
+	}
+}

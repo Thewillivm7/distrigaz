@@ -1,0 +1,165 @@
+@media print {
+	body {
+		margin: 0;
+		box-shadow: none;
+	}
+}
+
+.doccommande {
+	inset: 0;
+	margin: auto;
+	width: 842px;
+	height: 1191px;
+	overflow-y: auto;
+	padding: 28px;
+	grid-template-rows: auto 1fr 200px 50px;
+	padding-bottom: 0;
+	gap: 10px;
+	border: 2px solid #ddd;
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
+
+	.commandeentete {
+		background-color: #fff;
+		grid-template-rows: 100px 1fr;
+		gap: 20px;
+		padding: 0 28px;
+		.lig1 {
+			grid-auto-flow: column;
+			.zonelogo {
+				img {
+					width: 50%;
+				}
+			}
+			.zoneinfocommande {
+				padding: 0 25px;
+				gap: 10px;
+				align-content: center;
+				justify-content: right;
+				p {
+					font-size: 1.4em;
+				}
+				span {
+					font-size: 1.6em;
+					font-weight: bold;
+				}
+			}
+		}
+		.infoste {
+			gap: 5px;
+			.nomste {
+				font-size: 1.3em;
+				font-weight: bold;
+			}
+		}
+		.lig3 {
+			grid-auto-flow: column;
+			.infoclient {
+				#prev_nomclient {
+					font-size: 1.2em;
+					font-weight: bold;
+				}
+			}
+			.infodate {
+				grid-auto-flow: column;
+				justify-content: right;
+				padding: 0 15px;
+				gap: 5px;
+				align-content: center;
+				#prev_datecommande {
+					font-weight: bold;
+					font-size: 1.1em;
+				}
+			}
+		}
+	}
+	.commandecorps {
+		grid-template-rows: 35px 1fr;
+		border: 1px solid #ccc;
+		.enttabcommande,
+		.ligartcommande,
+		.infopiedcommande {
+			background-color: #203229;
+			grid-template-columns: 50px 3fr 1fr 1fr 1fr;
+			align-content: center;
+			padding: 0 10px;
+			gap: 3px;
+			.colent,
+			.ligartcommande,
+			.colart {
+				color: #fff;
+				align-items: center;
+				padding-left: 7px;
+				font-size: 1.1em;
+				&:not(:nth-child(2)) {
+					text-align: center;
+				}
+			}
+		}
+		.detailtabcommande {
+			align-content: flex-start;
+			// background-color: #fff;
+			gap: 5px;
+			.ligartcommande {
+				gap: 5px;
+				padding: 10px;
+				box-shadow: 0 7px 12px -12px #666;
+				background-color: #fff;
+				.colart {
+					align-content: flex-start;
+					color: #203229;
+					.article {
+						font-weight: bold;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+	}
+	.commandepied {
+		background-color: rgb(255, 255, 255);
+		align-content: flex-start;
+		.ligpied {
+			grid-template-columns: 3fr 100px 1fr;
+			font-weight: bold;
+			padding: 5px;
+			text-align: left;
+			justify-items: right;
+			column-gap: 5px;
+			.colpied {
+				padding: 5px 10px;
+				background-color: #e7e4e4;
+				border-radius: 5px;
+				font-weight: normal;
+				&:nth-child(1) {
+					background-color: #fff;
+				}
+				&:nth-child(2) {
+					width: 100%;
+				}
+				&:last-child {
+					text-align: right;
+					font-weight: bold;
+					font-size: 1.05em;
+				}
+			}
+		}
+		.liglettre {
+			padding-top: 10px;
+			text-align: center;
+			align-content: center;
+			#montantlettre {
+				font-weight: bold;
+				font-size: 1.1em;
+			}
+		}
+	}
+	.piedpage {
+		align-content: flex-start;
+		justify-items: center;
+		p {
+			font-size: 0.7em;
+		}
+	}
+}

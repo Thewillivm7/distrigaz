@@ -1,0 +1,54 @@
+@import url("styles.css");
+$couleurprinc: var(--couleurprinc, #610e4f);
+$ombrepanel: var(--ombrepanel, #0e1519);
+$couleurcopy: var(--couleurcopy, #fccdf2);
+$bordinput_norm: var(--bordinput_norm);
+$bordinput_hover: var(--bordinput_hover);
+.fichecommune {
+	width: 40vw;
+	height: auto;
+	overflow: hidden;
+	transform: translateY(-70%);
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			font-size: 1.05em;
+
+			.titre {
+				font-size: inherit;
+			}
+			.elcour {
+				font-size: inherit;
+				color: $couleurprinc;
+				font-weight: bold;
+			}
+		}
+		.closefiche {
+			font-size: 1.05em;
+			cursor: pointer;
+			&:hover {
+				color: red;
+			}
+		}
+	}
+	.zonecorps {
+		align-content: start;
+		grid-template-rows: auto auto 1fr;
+		gap: 15px;
+		overflow: hidden;
+		#libcommune {
+			text-transform: uppercase;
+		}
+		.section {
+			gap: 15px;
+			.grdata {
+				grid-template-columns: auto 1fr;
+			}
+		}
+	}
+}

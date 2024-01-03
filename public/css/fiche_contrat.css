@@ -1,0 +1,46 @@
+@import url("styles.css");
+.fichecontrat {
+  width: 40vw;
+  height: auto;
+  overflow: hidden;
+  transform: translateY(-70%);
+}
+.fichecontrat .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.fichecontrat .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.fichecontrat .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.fichecontrat .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.fichecontrat .zonetitre .closefiche:hover {
+  color: red;
+}
+.fichecontrat .zonecorps {
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  gap: 15px;
+  overflow: hidden;
+}
+.fichecontrat .zonecorps #libcontrat {
+  text-transform: uppercase;
+}
+.fichecontrat .zonecorps .section .grdata {
+  grid-template-columns: auto 1fr;
+}
+.fichecontrat .zonecorps .section3 .grdata {
+  grid-template-columns: auto 1fr 40px;
+}
+.fichecontrat .zonecorps .section3 .grdata img {
+  width: 25px;
+}

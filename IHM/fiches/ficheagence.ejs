@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="css/ficheagence.css">
+<script src="js/fiches/ficheagence.js"></script>
+
+
+<% let newDataFiche=JSON.stringify(infoFiche); %>
+    <section class="fiche ficheagence">
+        <section class="zonetitre">
+            <section class="titrepage">
+                <div class="titre"></div>
+                <div class="elcour"></div>
+            </section>
+            <span class="closefiche">&#10005;</span>
+        </section>
+        <section class="zonecorps">
+            <input type="hidden" name="" id="cachefiche" value="<%= newDataFiche %>">
+            <div class="section section1">
+                <div class="grdata">
+                    <label for="">Code agence : </label>
+                    <input type="text" class="codetable" disabled id="codeagence">
+                </div>
+
+            </div>
+            <div class="section section2">
+                <div class="grdata">
+                    <label class="requis" for="">Libellé agence : </label>
+                    <input type="text" class="" id="libagence">
+                </div>
+
+            </div>
+        </section>
+        <div class="zonebtn">
+            <button class="btnappli" id="btnannul">Annuler</button>
+            <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+        </div>
+    </section>

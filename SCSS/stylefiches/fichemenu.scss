@@ -1,0 +1,162 @@
+@import url("styles.css");
+$couleurprinc: var(--couleurprinc, #610e4f);
+$ombrepanel: var(--ombrepanel, #0e1519);
+$couleurcopy: var(--couleurcopy, #fccdf2);
+$bordinput_norm: var(--bordinput_norm);
+$bordinput_hover: var(--bordinput_hover);
+.fichemenu {
+	width: max(1000px, 60vw);
+	height: min(750px, 98vh);
+	overflow: auto;
+	grid-template-rows: auto 1fr auto;
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			font-size: 13pt;
+			.titre {
+				font-size: inherit;
+			}
+			.menucour {
+				font-size: inherit;
+				color: $couleurprinc;
+				font-weight: bold;
+			}
+		}
+		.closefiche {
+			font-size: 1.01em;
+			color: #aaa;
+			cursor: pointer;
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+	.zonecorps {
+		grid-template-rows: auto auto 1fr;
+		gap: 15px;
+		overflow-y: scroll;
+		.section1 {
+			grid-template-columns: auto 1fr 1fr 1fr;
+			.grdata {
+				grid-template-rows: auto 1fr;
+			}
+		}
+		.section2 {
+			grid-template-columns: 1fr repeat(3, auto);
+		}
+		.section3 {
+			grid-template-columns: 1fr 2.5fr;
+			overflow: hidden;
+			.zonedata {
+				border: var(--bordinput_norm, #ddd);
+				grid-template-rows: auto auto 1fr;
+				overflow: hidden;
+
+				.titresection {
+					text-align: center;
+					padding: 10px 25px;
+					font-size: 1.1em;
+					border-bottom: var(--bordinput_norm, #ddd);
+				}
+
+				.zonetable {
+					grid-template-columns: 1fr 1fr;
+					padding: 10px 25px;
+					align-items: center;
+					gap: 15px;
+					.grdata {
+						align-items: center;
+						grid-template-columns: auto 1fr;
+						gap: 15px;
+					}
+				}
+
+				.zonetabchamp {
+					grid-template-rows: auto 1fr;
+					overflow: hidden;
+					gap: 5px;
+					.enttab,
+					.ligch {
+						align-items: center;
+						padding: 10px;
+						grid-template-columns: 50px repeat(4, 1fr);
+						gap: 10px;
+						border-bottom: var(--bordinput_norm);
+						.colent,
+						.colch {
+							text-align: center;
+							input,
+							select {
+								text-align: center;
+								width: 100% !important;
+							}
+						}
+					}
+
+					.enttab {
+						box-shadow: 0 5px 5px -5px #aaa;
+						font-weight: bold;
+					}
+					.detailtab {
+						align-content: start;
+						overflow-y: auto;
+						.ligch {
+							background-color: #fff;
+							border-bottom: 1px solid #ddd;
+						}
+					}
+				}
+			}
+
+			.zonecomp {
+				padding: 15px;
+				grid-template-rows: auto auto auto;
+				align-content: start;
+				gap: 20px;
+				border: var(--bordinput_norm, #ddd);
+				border-right: none;
+				.grdata {
+					gap: 15px;
+				}
+				.typepage {
+					border: var(--bordinput_norm, #ddd);
+					padding: 20px 10px;
+					position: relative;
+					::before {
+						content: "Type de page";
+						position: absolute;
+						background-color: #fff;
+						top: -10px;
+						left: 15px;
+						padding: 0 5px;
+						font-style: italic;
+						font-size: 0.8em;
+					}
+					.zonetype {
+						grid-template-columns: 1fr 1fr;
+						justify-content: center;
+						gap: 15px;
+						.grradio {
+							justify-content: center;
+							grid-auto-flow: column;
+							align-items: center;
+							gap: 10px;
+
+							&:last-child {
+								justify-self: right;
+							}
+						}
+						select {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,180 @@
+@import url("styles.css");
+@import url("listedata.css");
+.fichemenu {
+  overflow-y: auto;
+  grid-template-rows: 60px 1fr 60px;
+  gap: 10px;
+  width: min(97vw, 1300px);
+  height: min(800px, 90vh);
+  overflow: hidden;
+}
+.fichemenu .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 10px 20px;
+}
+.fichemenu .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 13pt;
+}
+.fichemenu .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.fichemenu .zonetitre .titrepage .menucour {
+  font-size: inherit;
+  color: var(--fondnormal);
+  font-weight: bold;
+}
+.fichemenu .zonetitre .closefiche {
+  font-size: 1.2em;
+  color: var(--couleur_texte);
+  cursor: pointer;
+}
+.fichemenu .zonetitre .closefiche:hover {
+  color: #000;
+}
+.fichemenu .zonecorps {
+  grid-template-rows: auto 1fr;
+  gap: 15px;
+}
+.fichemenu .zonecorps .zone {
+  border: 1px solid var(--couleur_bordcadre);
+  border-radius: 5px;
+}
+.fichemenu .zonecorps .zonegeneral .section1 {
+  grid-template-columns: auto 1fr 1fr 2fr;
+}
+.fichemenu .zonecorps .zonegeneral .section2 .zonetype {
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  border: 1px dotted var(--couleur_bordcadre);
+  border-radius: 5px;
+  padding: 20px 0;
+  position: relative;
+}
+.fichemenu .zonecorps .zonegeneral .section2 .zonetype::before {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  color: var(--couleur_texte);
+  background-color: var(--couleur_fondcadre);
+  padding: 0 15px;
+  content: "Type de page";
+  font-style: italic;
+  font-size: 0.95em;
+}
+.fichemenu .zonecorps .zonegeneral .section2 .zonetype .typepage {
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.fichemenu .zonecorps .zonegeneral .section2 .zonetype .typepage input {
+  cursor: pointer;
+}
+.fichemenu .zonecorps .zoneliste {
+  grid-template-columns: 1.5fr 2fr;
+}
+.fichemenu .zonecorps .zoneliste .zoneconfig {
+  padding: 15px 25px;
+  border-right: 1px solid var(--couleur_bordcadre);
+  gap: 15px;
+}
+.fichemenu .zonecorps .zoneliste .zoneconfig .zonetable {
+  grid-template-columns: 2fr 1.5fr;
+  align-items: center;
+  gap: 10px;
+}
+.fichemenu .zonecorps .zoneliste .zoneconfig .zonedim {
+  gap: 10px;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+.fichemenu .zonecorps .zoneliste .zoneconfig .zoneaction {
+  grid-template-columns: repeat(2, 1fr);
+  padding: 15px;
+  padding-top: 25px;
+  gap: 15px;
+  position: relative;
+  border: 1px dotted var(--couleur_bordcadre);
+}
+.fichemenu .zonecorps .zoneliste .zoneconfig .zoneaction::before {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  color: var(--couleur_texte);
+  background-color: var(--couleur_fondcadre);
+  padding: 0 15px;
+  content: "Liste des actions";
+  font-style: italic;
+  font-size: 0.8em;
+}
+.fichemenu .zonecorps .zoneliste .zoneconfig .zoneaction .action {
+  grid-template-columns: auto auto 1fr;
+  gap: 10px;
+  white-space: nowrap;
+}
+.fichemenu .zonecorps .zoneliste .zoneconfig .zoneaction .action img {
+  width: 20px;
+  filter: var(--filtre_img);
+}
+.fichemenu .zonecorps .zoneliste .zonevue {
+  grid-template-rows: auto 1fr;
+  padding: 15px;
+}
+.fichemenu .zonecorps .zoneliste .zonevue .vue {
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-bottom: var(--couleur_bordcadre);
+}
+.fichemenu .zonecorps .zoneliste .zonevue .vue select {
+  width: 400px;
+}
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp {
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  gap: 5px;
+  max-height: 300px;
+}
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .enttab,
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .ligch {
+  align-items: center;
+  padding: 10px;
+  grid-template-columns: 50px repeat(4, 1fr);
+  gap: 10px;
+  border-bottom: var(--bordinput_norm);
+}
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .enttab .colent,
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .enttab .colch,
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .ligch .colent,
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .ligch .colch {
+  text-align: center;
+}
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .enttab .colent input,
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .enttab .colent select,
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .enttab .colch input,
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .enttab .colch select,
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .ligch .colent input,
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .ligch .colent select,
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .ligch .colch input,
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .ligch .colch select {
+  text-align: center;
+  width: 100% !important;
+}
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .enttab {
+  box-shadow: 0 5px 5px -5px #aaa;
+  font-weight: bold;
+}
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .detailtab {
+  align-content: start;
+  overflow-y: auto;
+}
+.fichemenu .zonecorps .zoneliste .zonevue .zonetabchamp .detailtab .ligch {
+  background-color: var(--couleur_fondcadre);
+  border-bottom: 1px solid var(--couleur_bordcadre);
+}

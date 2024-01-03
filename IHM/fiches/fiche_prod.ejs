@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="css/fiche_prod.css">
+<script defer src="js/fiches/fiche_prod.js"></script>
+<script>
+    var infoFiche = <%- JSON.stringify(infoFiche) %>;
+</script>
+<section class="fiche ficheprod">
+    <section class="zonetitre">
+        <section class="titrepage">
+            <div class="titre"></div>
+        </section>
+        <span class="closefiche">&#10005;</span>
+    </section>
+    <section class="zonecorps">
+        <section class="section section1">
+            <div class="grdata">
+                <label for="">Infos Commande</label>
+                <span class="infocde"></span>
+            </div>
+            <div class="grdata">
+                <label for="">Infos Devis</label>
+                <span class="infodevis"></span>
+            </div>
+            <div class="grdata">
+                <label for="">Infos Client</label>
+                <span class="infoclient"></span>
+            </div>
+
+        </section>
+        <section class="section section2">
+            <div class="zoneart">
+                <div id="infosarticle">0001 - Livre photo </div>
+                <textarea name="" id="descart"></textarea>
+            </div>
+            <div class="zoneqte">
+                <label for="">Qté à Produire </label>
+                <div id="qteart">2000</div>
+            </div>
+            <div class="zonedelai">
+                <label for="">Délai de livraison prévu</label>
+                <input type="datetime-local" name="" id="delaiprev">
+            </div>
+
+        </section>
+        <section class="section section3">
+            <div class="zoneetape etapedispo">
+                <div class="entetape">Etapes disponibles</div>
+                <div class="listeetape"></div>
+            </div>
+            <div class="zoneetape etapesel">
+                <div class="entetape">Etapes sélectionnés</div>
+                <div class="listeetape"></div>
+            </div>
+        </section>
+        <section class="section section4">
+            <div class="grdata">
+                <label for="">Commentaire</label>
+                <textarea name="" id="commentodp" ></textarea>
+            </div>
+        </section>
+    </section>
+    <div class="zonebtn">
+        <button class="btnappli" id="btnannul">Annuler</button>
+        <button class="btnappli" id="btnenr" disabled>Enregistrer</button>
+    </div>
+</section>

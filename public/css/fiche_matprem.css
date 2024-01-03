@@ -1,0 +1,48 @@
+@import url("styles.css");
+.fichematprem {
+  width: 40vw;
+  height: auto;
+  overflow: hidden;
+  transform: translateY(-35%);
+}
+.fichematprem .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.fichematprem .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.fichematprem .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.fichematprem .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.fichematprem .zonetitre .closefiche:hover {
+  color: red;
+}
+.fichematprem .zonecorps {
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  gap: 15px;
+  padding-bottom: 40px !important;
+  overflow: hidden;
+}
+.fichematprem .zonecorps #libmatprem {
+  text-transform: uppercase;
+}
+.fichematprem .zonecorps .section {
+  gap: 15px;
+}
+.fichematprem .zonecorps .section .grdata {
+  grid-template-columns: auto 1fr;
+}
+.fichematprem .zonecorps .section1 {
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+}

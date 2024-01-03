@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation avec Défilement Fluide</title>
+    <style>
+        /* Ajoutez du style CSS si nécessaire */
+        .section {
+            height: 100vh;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="section" id="section1">
+        <h2>Section 1</h2>
+        <p>Contenu de la section 1.</p>
+        <a href="#section2" class="scroll-link">Aller à la Section 2</a>
+    </div>
+
+    <div class="section" id="section2">
+        <h2>Section 2</h2>
+        <p>Contenu de la section 2.</p>
+        <a href="#section1" class="scroll-link">Retour à la Section 1</a>
+    </div>
+
+    <script>
+        // Ajoutez un script JavaScript pour le défilement fluide
+        document.querySelectorAll('.scroll-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

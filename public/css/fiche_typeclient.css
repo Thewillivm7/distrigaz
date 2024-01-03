@@ -1,0 +1,45 @@
+@import url("styles.css");
+.fichetypeclient {
+  width: 30vw;
+  height: auto;
+  overflow: hidden;
+  transform: translateY(-20vh);
+  padding: 25px;
+}
+.fichetypeclient .zonetitre {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.fichetypeclient .zonetitre .titrepage {
+  grid-template-columns: auto auto;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.fichetypeclient .zonetitre .titrepage .titre {
+  font-size: inherit;
+}
+.fichetypeclient .zonetitre .closefiche {
+  font-size: 1.05em;
+  cursor: pointer;
+}
+.fichetypeclient .zonetitre .closefiche:hover {
+  color: red;
+}
+.fichetypeclient .zonecorps {
+  padding: 25px;
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  gap: 25px;
+  overflow: hidden;
+}
+.fichetypeclient .zonecorps #libville {
+  text-transform: uppercase;
+}
+.fichetypeclient .zonecorps .section {
+  gap: 15px;
+}
+.fichetypeclient .zonecorps .section .grdata {
+  grid-template-columns: auto 1fr;
+}

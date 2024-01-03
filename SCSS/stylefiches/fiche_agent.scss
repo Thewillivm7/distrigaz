@@ -1,0 +1,64 @@
+@import url("styles.css");
+
+.ficheagent {
+	width: max(50vw, 700px);
+	height: auto;
+	overflow: hidden;
+	transform: translateY(-2vh);
+	gap: 25px;
+	.zonetitre {
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		.titrepage {
+			grid-template-columns: auto auto;
+			justify-content: left;
+			align-items: center;
+			gap: 10px;
+			font-size: 1.05em;
+
+			.titre {
+				font-size: inherit;
+			}
+		}
+		.closefiche {
+			font-size: 1.05em;
+			cursor: pointer;
+			&:hover {
+				color: red;
+			}
+		}
+	}
+	.zonecorps {
+		align-content: start;
+		grid-template-rows: auto auto 1fr;
+		gap: 45px;
+		overflow: hidden;
+		padding: 25px;
+
+		input[type="date"] {
+			text-align: center;
+		}
+		#nomagent,
+		#matragent {
+			text-transform: uppercase;
+		}
+		#prenomagent {
+			text-transform: capitalize;
+		}
+		.section {
+			gap: 25px;
+			.grdata {
+				gap: 15px;
+			}
+		}
+		.section2 {
+			grid-template-columns: 100px 1fr 1.5fr;
+		}
+		.section3 {
+			grid-template-columns: 1.5fr 2fr 0.75fr;
+		}
+		.section4 {
+			grid-template-columns: 0.75fr 1fr 1fr;
+		}
+	}
+}
