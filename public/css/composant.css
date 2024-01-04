@@ -1,0 +1,107 @@
+@charset "UTF-8";
+.m_select {
+  width: 300px;
+  border: 1px solid #939393;
+  height: 40px;
+  align-content: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: #ebebeb;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: not-allowed;
+}
+.m_select.actif {
+  background-color: #fff;
+  cursor: pointer;
+}
+.m_select.actif::after {
+  content: "▼";
+  position: absolute;
+  border-radius: 0 5px 5px 0;
+  font-size: 0.8em;
+  right: 2px;
+  padding: 0 3px;
+  display: grid;
+  align-content: center;
+  height: 100%;
+}
+
+.cadre_select {
+  z-index: 2200;
+  position: absolute;
+  width: max-content;
+  background-color: #fff;
+  box-shadow: 0 0 15px -5px #999;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding: 0 5px;
+  height: fit-content;
+}
+.cadre_select .zonefiltre_select {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.cadre_select .zonefiltre_select .filtre_select {
+  padding: 5px 10px;
+  height: 35px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  background-color: #f6ffec;
+  font-size: 1.2em;
+}
+.cadre_select .zonefiltre_select .filtre_select:focus {
+  box-shadow: none;
+}
+.cadre_select .zoneliste_select {
+  overflow-y: auto;
+  align-content: start;
+  max-height: 120px;
+}
+.cadre_select .zoneliste_select .option {
+  padding: 5px 20px;
+  height: auto;
+}
+.cadre_select .zoneliste_select .option:hover {
+  background-color: #0c850c;
+  color: #fff;
+}
+
+.window {
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 0 35px rgba(76, 84, 86, 0.5098039216);
+  border-radius: 5px;
+  grid-template-rows: 45px 1fr;
+  justify-items: center;
+  overflow: hidden;
+}
+.window .wintitre {
+  grid-template-columns: 1fr 40px;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 12px 12px -12px rgba(26, 202, 85, 0.8431372549);
+  background-color: #ffffff;
+}
+.window .wintitre .titre {
+  padding-left: 25px;
+  align-content: center;
+  font-size: min(18px, 1.15vw);
+}
+.window .wintitre .btnclose {
+  border-radius: 0 5px 0 0;
+  height: 100%;
+  justify-content: center;
+}
+.window.actif .wintitre {
+  color: #0c850c;
+  font-weight: bold;
+}
+.window.actif .wintitre .titre {
+  font-size: min(20px, 1.3vw);
+}
+.window .winworps {
+  justify-items: center;
+  overflow: hidden;
+}

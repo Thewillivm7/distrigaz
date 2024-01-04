@@ -124,32 +124,17 @@ $(async () => {
 		let ligCour = $(this).parent().parent();
 		cleRech = ligCour.attr("data-code");
 		let data = {
-			fiche: ficheMenu,
-			table: vueliste,
-			champcle: champCle,
+			fiche: "docfacture",
+			table: "vue_facture",
+			champcle:"numfacture",
 			valeur: cleRech,
 		};
-		$(".modalfiche .fiche").remove();
-		let HTMLFiche = postData("/fiche", data, "html");
-		$(".modalfiche").html(HTMLFiche);
-
-		// Génération du PDF à partir des données de la fiche
-		generatePDF(HTMLFiche);
+		let HTMLPrint = postData("/printFac", data, "html");
+		$(".modalprint .zonepreview").empty();
+		$(".modalprint .zonepreview").append(HTMLPrint);
+		$(".modalprint").fadeIn(400);
 	});
 
-	function generatePDF(content) {
-		// Création d'une nouvelle instance de jsPDF
-		var doc = new jsPDF();
-
-		// Ajout du contenu HTML converti en PDF
-		doc.fromHTML(content, 15, 15, {
-			width: 170,
-		});
-
-		// Enregistrement ou affichage du PDF
-		doc.save("fiche.pdf"); // Cette ligne téléchargera le PDF automatiquement
-		// doc.output('dataurlnewwindow');  // Cette ligne ouvrira le PDF dans une nouvelle fenêtre du navigateur
-	}
 
 
 	$(".bodylist").on("click", ".btnsupp", function (e) {

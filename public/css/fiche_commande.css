@@ -19,6 +19,11 @@
 .fichecommande .zonetitre .titrepage .titre {
   font-size: inherit;
 }
+.fichecommande .zonetitre .titrepage .elcour {
+  font-size: inherit;
+  color: var(--couleurprinc, #610e4f);
+  font-weight: bold;
+}
 .fichecommande .zonetitre .closefiche {
   font-size: 1.05em;
   cursor: pointer;

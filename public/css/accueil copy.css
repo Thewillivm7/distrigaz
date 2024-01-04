@@ -1,0 +1,355 @@
+@import url("styles.css");
+.accueil {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  background-color: var(--couleur_fond);
+}
+.accueil .zonemenu {
+  box-shadow: 10px 0 10px -10px var(--couleur_ombre);
+  border-right: 2px solid var(--couleur_bordcadre);
+  height: 100%;
+  width: 17vw;
+  min-width: 200px;
+  transition: 0.7s;
+  grid-template-rows: auto 1fr auto;
+  gap: 15px;
+  padding-bottom: 15px;
+}
+.accueil .zonemenu .zonelogo {
+  place-items: center;
+  padding: 10px;
+  box-shadow: 0 20px 20px -20px var(--fondnormal);
+}
+.accueil .zonemenu .zonelogo img {
+  height: 80px;
+}
+.accueil .zonemenu .listemenu {
+  padding: 20px 0;
+  align-content: start;
+  gap: 10px;
+}
+.accueil .zonemenu .listemenu .grmodule {
+  overflow: hidden;
+  height: auto;
+  transition: 0.5s;
+  align-content: start;
+  gap: 5px;
+}
+.accueil .zonemenu .listemenu .grmodule.actif .listemenu_enf {
+  align-content: start;
+}
+.accueil .zonemenu .listemenu .grmodule .module {
+  cursor: pointer;
+  position: relative;
+  padding: 7px 20px;
+  transition: background-color 0.4s;
+  align-items: center;
+  user-select: none;
+  grid-template-columns: 20px 1fr 20px;
+  width: 100%;
+  white-space: nowrap;
+  gap: 10px;
+}
+.accueil .zonemenu .listemenu .grmodule .module span {
+  font-size: min(17px, 0.8vw);
+  color: var(couleur_texte);
+}
+.accueil .zonemenu .listemenu .grmodule .module img {
+  width: 20px;
+  filter: var(--filtre_img);
+}
+.accueil .zonemenu .listemenu .grmodule .module .openbtn {
+  transition: 0.3s;
+  width: 17px;
+}
+.accueil .zonemenu .listemenu .grmodule .module.selected {
+  box-shadow: 0 12px 12px -12px #fff;
+}
+.accueil .zonemenu .listemenu .grmodule .module.selected::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: var(--fondnormal);
+  height: 80%;
+  left: 10px;
+}
+.accueil .zonemenu .listemenu .grmodule .module:hover {
+  background-color: var(--fondnormal);
+}
+.accueil .zonemenu .listemenu .grmodule .module:hover img {
+  filter: var(--filtre_blanc);
+}
+.accueil .zonemenu .listemenu .grmodule .module:hover span {
+  color: #fff;
+}
+.accueil .zonemenu .listemenu .grmodule .listemenu_enf {
+  display: none;
+  padding: 0 10px;
+}
+.accueil .zonemenu .listemenu .grmodule .listemenu_enf .menuitem {
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  font-size: min(14px, 1.2vw);
+  white-space: nowrap;
+  border-radius: 5px;
+}
+.accueil .zonemenu .listemenu .grmodule .listemenu_enf .menuitem img {
+  width: 15px;
+  height: 15px;
+  filter: var(--filtre_img) !important;
+}
+.accueil .zonemenu .listemenu .grmodule .listemenu_enf .menuitem:hover {
+  background-color: var(--fond_menuhover);
+}
+.accueil .zonemenu .listemenu .grmodule .listemenu_enf .menuitem:hover span {
+  color: #fff;
+}
+.accueil .zonemenu .listemenu .grmodule .listemenu_enf .menuitem:hover img {
+  filter: var(--filtre_blanc);
+}
+.accueil .zonemenu .listemenu .grmodule .listemenu_enf .menuitem.selected {
+  background-color: var(--fondnormal);
+}
+.accueil .zonemenu .listemenu .grmodule .listemenu_enf .menuitem.selected span {
+  color: #fff !important;
+}
+.accueil .zonemenu .listemenu .grmodule .listemenu_enf .menuitem.selected img {
+  filter: var(--filtre_imginv);
+}
+.accueil .zonemenu .zonecompte {
+  z-index: 10;
+  justify-items: center;
+  align-content: center;
+  gap: 10px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  padding: 25px;
+  background-color: var(--fondnormal);
+}
+.accueil .zonemenu .zonecompte .zoneimage {
+  place-items: center;
+  font-size: 1.5em;
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.accueil .zonemenu .zonecompte .zoneimage img {
+  width: 100%;
+  padding: 5px;
+}
+.accueil .zonemenu .zonecompte .zoneimage span {
+  color: #fff !important;
+}
+.accueil .zonemenu .zonecompte .infocompte {
+  cursor: default;
+  bottom: 50%;
+  left: 60%;
+  position: absolute;
+  height: auto;
+  z-index: 10;
+  width: auto;
+  align-content: start;
+  box-shadow: 0 0 35px rgba(68, 85, 102, 0.337254902);
+  transition: 0.8s;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: bottom left;
+  border-radius: 5px;
+  background-color: var(--couleur_fond);
+}
+.accueil .zonemenu .zonecompte .infocompte.actif {
+  transform: scale(1);
+  opacity: 1;
+}
+.accueil .zonemenu .zonecompte .infocompte img {
+  width: 20px;
+}
+.accueil .zonemenu .zonecompte .infocompte .zoneprofil {
+  padding: 15px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+}
+.accueil .zonemenu .zonecompte .infocompte .zonematr {
+  background-color: var(--couleurdomhover);
+  color: #000;
+  box-shadow: 0 12px 12px -12px var(--couleurdomhover);
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  place-items: center;
+  border-radius: 50%;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--fondnormal);
+  border: 2px solid #fff;
+}
+.accueil .zonemenu .zonecompte .infocompte .zoneinfo {
+  padding: 15px;
+  padding-top: 40px;
+  text-align: center;
+  align-content: center;
+  gap: 10px;
+  white-space: nowrap;
+  color: #fff;
+}
+.accueil .zonemenu .zonecompte .infocompte .zoneinfo .grnom {
+  color: var(--fondnormal);
+  font-weight: bold;
+}
+.accueil .zonemenu .zonecompte .infocompte .zoneinfo .grnom .nom {
+  line-height: 25px;
+  text-transform: uppercase;
+}
+.accueil .zonemenu .zonecompte .infocompte .zoneinfo .grnom .prenom {
+  text-transform: capitalize;
+}
+.accueil .zonemenu .zonecompte .infocompte .zoneinfo .service {
+  text-transform: uppercase;
+}
+.accueil .zonemenu .zonecompte .infocompte .zoneinfo .fonction {
+  font-weight: bold;
+  height: 30px;
+}
+.accueil .zonemenu .zonecompte .infocompte .zoneinfo .email {
+  font-style: italic;
+  font-size: 0.8em;
+}
+.accueil .zonemenu .zonecompte .infocompte .zoneaction > div {
+  font-size: 0.85em;
+  padding: 15px 25px;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  justify-content: left;
+  gap: 15px;
+}
+.accueil .main {
+  height: 100%;
+  grid-template-rows: auto 1fr;
+  gap: 15px;
+  overflow: hidden;
+}
+.accueil .main .header {
+  padding: 10px 25px;
+  color: #ddd;
+  box-shadow: 0 15px 12px -12px #bdc9cd;
+  align-items: center;
+  grid-template-columns: 150px 1fr auto;
+  box-shadow: 0 15px 15px -15px #aaa;
+  gap: 15px;
+}
+.accueil .main .header .zoneham {
+  gap: 15px;
+  justify-items: center;
+  display: none;
+}
+.accueil .main .header .zoneham .btnham {
+  width: 35px;
+  cursor: pointer;
+  height: 35px;
+  line-height: 35px;
+  user-select: none;
+  transition: 0.5s;
+  text-align: center;
+  color: var(--fondnormal);
+  background-color: #fff;
+  font-size: 2em;
+}
+.accueil .main .header .zoneham .btnham:hover {
+  transform: rotate(180deg);
+}
+.accueil .main .header .zoneham .btnham.actif {
+  transform: rotate(180deg);
+  color: var(--fondhover);
+  background-color: var(--fondnormal);
+}
+.accueil .main .header .zonenotif {
+  align-content: center;
+  height: fit-content;
+  cursor: pointer;
+}
+.accueil .main .header .zonenotif img {
+  width: 25px;
+  justify-self: center;
+  filter: var(--filtre_img);
+}
+.accueil .main .zonemain {
+  overflow: hidden;
+  padding: 15px;
+  padding-bottom: 50px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  grid-template-columns: 1fr 300px;
+  transition: 0.5s;
+  gap: 10px;
+}
+.accueil .main .zonemain .zonelistedata {
+  position: absolute;
+  z-index: 25;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  overflow-y: auto;
+  display: none;
+}
+.accueil .footer {
+  z-index: 300;
+  position: fixed;
+  bottom: 0;
+  padding: 5px 15px;
+  text-align: center;
+  font-size: 12px;
+  align-items: center;
+  grid-template-columns: 1fr 300px;
+  width: 100vw;
+  box-shadow: 0 -12px 12px -12px var(--couleur_ombre);
+  border-top: 2px solid var(--couleur_bordcadre);
+  background-color: var(--couleur_fondcadre);
+}
+.accueil .footer .dateheure {
+  border-radius: 5px;
+  transition: 0.5s;
+  width: max-content;
+  justify-self: right;
+  padding: 5px;
+  text-align: right;
+}
+.accueil .footer .dateheure:hover {
+  box-shadow: 0 0 5px rgba(68, 85, 102, 0.3725490196);
+  background-color: var(--fondhover);
+  transform: scale(1.05);
+  color: var(--textehover);
+}
+.accueil .settings {
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+  background-color: #042521;
+  cursor: pointer;
+}
+.accueil .settings:hover {
+  background-color: #0d7569;
+}
+.accueil .settings img {
+  width: 25px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(275deg) brightness(104%) contrast(101%);
+}

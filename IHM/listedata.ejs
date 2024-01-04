@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="css/listedata.css">
 
 <script src="js/listedata.js" type=""></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 <script>
     var dataMenu = <%- JSON.stringify(dataMenu) %>;
@@ -46,9 +45,7 @@
     </section>
 </section>
 <section class="modalfiche">
-<div class="facture-details">
-    <!-- Les détails de la facture seront affichés ici -->
-</div>
+
 </section>
 <section class="modalconfirmation">
     <div class="confirmation">
@@ -68,6 +65,18 @@
             <button class="btnappli btnnon">Non</button>
         </div>
     </div>
+</section>
+<section class="modal modalprint">
+    <section class="zoneparam">
+        <div class="closeprint">&#10005;</div>
+        <div class="zonebtnprint">
+            <button class="btnrhplus">Envoyer par mail</button>
+            <button class="btnrhplus">Enregistrer PDF</button>
+            <button class="btnrhplus">Imprimer</button>
+        </div>
+        <div class="zoneinfodevis"></div>
+    </section>
+    <section class="zonepreview"></section>
 </section>
 <script>
 

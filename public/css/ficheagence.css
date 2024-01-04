@@ -18,6 +18,11 @@
 .ficheagence .zonetitre .titrepage .titre {
   font-size: inherit;
 }
+.ficheagence .zonetitre .titrepage .elcour {
+  font-size: inherit;
+  color: var(--couleurprinc, #610e4f);
+  font-weight: bold;
+}
 .ficheagence .zonetitre .closefiche {
   font-size: 1.05em;
   cursor: pointer;

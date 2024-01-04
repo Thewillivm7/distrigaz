@@ -357,3 +357,44 @@
 		}
 	}
 }
+.modalprint {
+	grid-template-rows: auto 1fr;
+	gap: 5px;
+
+	.zoneparam {
+		gap: 5px;
+		padding: 10px 45px;
+		background-color: #fff;
+		width: 100%;
+		position: relative;
+		.closeprint {
+			position: absolute;
+			right: 15px;
+			top: 15px;
+			font-size: 1.4em;
+			color: #666;
+			cursor: pointer;
+			&:hover {
+				color: #000;
+			}
+		}
+		.zonebtnprint {
+			padding: 10px 25px;
+			grid-auto-flow: column;
+			align-items: center;
+			justify-content: space-around;
+			.btnrhplus {
+				width: 170px;
+			}
+		}
+	}
+	.zonepreview {
+		width: 100%;
+		height: 100%;
+		background-color: #434446c5;
+		justify-items: center;
+		overflow: hidden;
+		overflow-y: auto;
+		position: relative;
+	}
+}

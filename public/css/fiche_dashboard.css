@@ -23,6 +23,11 @@
 .fichedashboard .zonetitre .titrepage .titre {
   font-size: inherit;
 }
+.fichedashboard .zonetitre .titrepage .elcour {
+  font-size: inherit;
+  color: var(--couleurprinc, #610e4f);
+  font-weight: bold;
+}
 .fichedashboard .zonetitre .closefiche {
   font-size: 1.05em;
   cursor: pointer;
